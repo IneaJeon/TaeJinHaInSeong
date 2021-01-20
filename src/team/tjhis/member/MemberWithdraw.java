@@ -1,6 +1,6 @@
 package team.tjhis.member;
 
-public class MemberWithdrawal {
+public class MemberWithdraw {
 
 	// 회원탈퇴 메소드
 	
