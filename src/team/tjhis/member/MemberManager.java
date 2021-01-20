@@ -1,7 +1,35 @@
 package team.tjhis.member;
 
 public class MemberManager {
+	
+	public MemberManager() {}
+	
+	public void signUp() {
+		
+	}
 
+	public void login() {
+		
+	}
+
+	public void amend() {
+		
+	}
+
+	public void withdraw() {
+		
+	}
+
+	public void findId() {
+		
+	}
+	
+	public void findPwd() {
+		
+	}
+	
+	
+	
 	// 로그인 메소드(매개변수 MemberDB)
 	
 	// 회원가입 메소드(매개변수 MemberDB)
