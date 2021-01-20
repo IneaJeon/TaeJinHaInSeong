@@ -6,9 +6,9 @@ public class MemberManager {
 	
 	// 회원가입 메소드(매개변수 MemberDB)
 	
-	// 개인정보 수정 메소드(매개변수 MemberDB)
+	// 개인정보 수정 메소드(매개변수 MemberDB, int no(고유번호))
 	
-	// 회원탈퇴 메소드(매개변수 MemberDB)
+	// 회원탈퇴 메소드(매개변수 MemberDB, int no(고유번호))
 	
 	// 아이디 찾기 메소드(매개변수 MemberDB)
 	
