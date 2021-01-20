@@ -4,7 +4,9 @@ public class Application {
 
 	public static void main(String[] args) {
 		
-		// 커밋 확인
+		// 로그인 시 반환받은 고유넘버를 저장할 int변수
+		// MemberDB 인스턴스
+		// MemberManager 인스턴스
 
 	}
 
