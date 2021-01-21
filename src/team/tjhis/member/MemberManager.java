@@ -6,7 +6,7 @@ public class MemberManager {
 	
 	public void signUp() {
 		
-		SignUp signUp = new SignUp();
+		SignUp signUp = new SignUp(); 
 		
 	}
 

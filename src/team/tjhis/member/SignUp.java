@@ -6,46 +6,12 @@ public class SignUp {
 
 	public static void main(String[] args) {
 
-
-		System.out.println("Welcome to 저기요!");
-		System.out.println("1. 입력 2. 비밀번호 입력 3. 이름입력 4. 성별입력");
-
-		Scanner sc = new Scanner(System.in);
-		MemberList ml = new MemberList();
-		MemberList m = new MemberList();
-
-		System.out.print("id :");
-		ml.id = sc.nextLine();
-
-		if (!m.equals(ml.id)) {
-			System.out.println("아이디가 올바르지 않습니다.");
-		} else {
-			System.out.println("다시 입력하세요 다시 입력하세요");
-		}
-
-		System.out.print("name :");
-		ml.name = sc.nextLine();
-
-		System.out.print("adress :");
-		ml.adress = sc.nextLine();
-
-		System.out.print("pwd :");
-		ml.pwd = sc.nextInt();
-
-		System.out.print("phone 입력 :");
-		ml.phone = sc.nextInt();
-
-	}
-}
-
-class MemberList {
-
 		/* navi */
-		System.out.println("Welcome to �����!");
-		System.out.println("step1. ���̵��Է� \nstep2. ��й�ȣ �Է� \nstep3. �̸��Է�  \nstep4. �ּ��Է�");
+		System.out.println("Welcome to 저기요!");
+		System.out.println("step1. 아이디입력 \nstep2. 비밀번호 입력 \nstep3. 이름입력  \nstep4. 주소입력");
 		System.out.println();
 		
-		String[] list = {"win","ȫ�浿", "����� ���ʱ�"};
+		String[] list = {"win","홍길동", "서울시 서초구"};
 		int[] num = {123, 01234};
 
 		Scanner sc = new Scanner(System.in);
@@ -54,27 +20,27 @@ class MemberList {
 		Member m = new Member();
 
 		while (true) {
-			System.out.print("id�� �Է��ϼ��� : ");
+			System.out.print("id를 입력하세요 : ");
 			m.id = sc.nextLine();
-			System.out.print("��й�ȣ�� �Է��ϼ��� : ");
+			System.out.print("비밀번호를 입력하세요 : ");
 			m.pwd = sc.nextInt();
-			System.out.println("�̸��� �Է��ϼ��� : ");
+			System.out.println("이름을 입력하세요 : ");
 			m.name = sc.nextLine();
-			System.out.println("�ּҸ� �Է��ϼ��� : ");
+			System.out.println("주소를 입력하세요 : ");
 			m.adress = sc.nextLine();			
-			System.out.println("�ּҸ� �Է��ϼ��� : ");
+			System.out.println("주소를 입력하세요 : ");
 			m.phone = sc.nextInt();
 			
 			if(!list[0].equals(m.id)) {
-				System.out.println("���̵� �ٽ�");
+				System.out.println("아이디가 다시");
 			}else if(!list[1].equals(m.pwd)) {
-				System.out.println("��� �ٽ�");
+				System.out.println("비번 다시");
 			}else if(!list[2].equals(m.name)) {
-				System.out.println("�̸� �ٽ�");
+				System.out.println("이름 다시");
 			}else if(num[0] != m.pwd) {
-				System.out.println("��ȭ��ȣ �ٽ�");
+				System.out.println("전화번호 다시");
 			}else {
-				System.out.println("ȸ������ ����");
+				System.out.println("회원가입 성공");
 			}
 
 		} 
@@ -85,7 +51,6 @@ class MemberList {
 
 
 class Member {
-
 	String id, name, adress;
 	int pwd, phone;
 
