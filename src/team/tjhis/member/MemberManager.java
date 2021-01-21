@@ -24,8 +24,9 @@ public class MemberManager {
 		
 	}
 	
-	public void findPwd() {
-		
+	public void findPwd(MemberDB memberDb) {
+		FindPwd findPwd = new FindPwd();
+		findPwd.findPwd(memberDb);
 	}
 	
 	
