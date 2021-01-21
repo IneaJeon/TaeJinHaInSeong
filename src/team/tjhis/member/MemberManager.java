@@ -6,45 +6,43 @@ public class MemberManager {
 	
 	public void signUp() {
 		
-		MemberDTO members = new MemberDTO();
-		
 		SignUp signUp = new SignUp();
 		
 	}
 
 	public void login() {
 		
+		Login login = new Login();
+		
 	}
 
 	public void amend() { 
+		
+		MyDataAmend amend = new MyDataAmend();
 		
 	}
 
 	public void withdraw() {
 		
+		MemberWithdraw withdraw = new MemberWithdraw();
+		
 	}
 
 	public void findId() {
 		
+		FindId findId = new FindId();
+		
+		
+		
 	}
 	
 	public void findPwd(MemberDB db) {
+		
 		FindPwd findPwd = new FindPwd();
+		
 		findPwd.findPwd(db);
 	}
 	
 	
-	
-	// 로그인 메소드(매개변수 MemberDB)
-	
-	// 회원가입 메소드(매개변수 MemberDB)
-	
-	// 개인정보 수정 메소드(매개변수 MemberDB, int no(고유번호))
-	
-	// 회원탈퇴 메소드(매개변수 MemberDB, int no(고유번호))
-	
-	// 아이디 찾기 메소드(매개변수 MemberDB)
-	
-	// 비밀번호 찾기 메소드(매개변수 MemberDB)
 	
 }
