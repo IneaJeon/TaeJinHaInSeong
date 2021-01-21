@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class FindId {
 
-   public void findId(MemberDB db) { 
+   public void findId(MemberDB db) {  
       
       Scanner sc = new Scanner(System.in); 
       
