@@ -16,7 +16,7 @@ public class MemberManager {
 		
 	}
 
-	public void amend() {
+	public void amend() { 
 		
 	}
 
