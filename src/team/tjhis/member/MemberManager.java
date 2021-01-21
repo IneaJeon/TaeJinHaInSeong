@@ -14,7 +14,7 @@ public class MemberManager {
 		
 		Login login = new Login();
 		
-	}
+	} 
 
 	public void amend() { 
 		
