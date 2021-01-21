@@ -6,7 +6,7 @@ public class MemberWithdraw {
 	public MemberDTO[] withdraw(MemberDTO[] members, int no) {
 	
 		members[no-1] = null;
-				
+				 
 		return members; 
 	}	
 
