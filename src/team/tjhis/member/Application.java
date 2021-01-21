@@ -40,14 +40,14 @@ public class Application {
 //				no = memberManager.login(memberDb); // 로그인에 성공하면 로그인된 회원의 고유넘버를 리턴값으로 넘겨받음
 				break;
 			case 3: // 3. 개인정보 조회 <- 따로 클래스나 메소드로 구현하지 않고 메인에서 구현(반환받은 int값 활용)
-				if(no == 0) {
+				if(no == 0) { // 로그인에 성공하여 고유번호를 리턴받으면 0이 아니고 0이면 로그인X
 					System.out.println("로그인이 되어있지 않습니다.");
 					System.out.println("먼저 로그인을 시도해 주세요.");
 					continue;
 				}
-				for(int i = 0 ; memberDb.memberDTO[i] != null ; i++) {
-					if(memberDb.memberDTO[i].getNo() == no) {
-						System.out.println(memberDb.memberDTO[i]);
+				for(int i = 0 ; memberDb.memberDB[i] != null ; i++) {
+					if(memberDb.memberDB[i].getNo() == no) {
+						System.out.println(memberDb.memberDB[i]);
 						break;
 					}
 				}
@@ -75,9 +75,9 @@ public class Application {
 				memberManager.findPwd(memberDb);
 				break;
 			case 8: // 8. 데이터베이스에 들어있는 회원 목록 조회(admin) 실행 시 테스트용도
-				for(int i = 0 ; memberDb.memberDTO[i] != null ; i++) {
-					if(memberDb.memberDTO[i].getNo() != 0) {
-						System.out.println(memberDb.memberDTO[i]);
+				for(int i = 0 ; memberDb.memberDB[i] != null ; i++) {
+					if(memberDb.memberDB[i].getNo() != 0) {
+						System.out.println(memberDb.memberDB[i]);
 						break;
 					}
 				}
