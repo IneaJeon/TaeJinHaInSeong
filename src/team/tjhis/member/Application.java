@@ -11,7 +11,7 @@ public class Application {
 		// 로그인 시 반환받은 고유넘버를 저장할 int변수
 		int no = 0;
 		// MemberDB 인스턴스
-		MemberDB memberDb = new MemberDB();
+		MemberDB db = new MemberDB();
 		// MemberManager 인스턴스
 		MemberManager memberManager = new MemberManager();
 		
@@ -34,10 +34,10 @@ public class Application {
 			choose = sc.nextInt();
 			switch(choose) {
 			case 1: // 1. 회원가입
-//				memberManager.signUp(memberDb);
+//				memberManager.signUp(db);
 				break;
 			case 2: // 2. 로그인
-//				no = memberManager.login(memberDb); // 로그인에 성공하면 로그인된 회원의 고유넘버를 리턴값으로 넘겨받음
+//				no = memberManager.login(db); // 로그인에 성공하면 로그인된 회원의 고유넘버를 리턴값으로 넘겨받음
 				break;
 			case 3: // 3. 개인정보 조회 <- 따로 클래스나 메소드로 구현하지 않고 메인에서 구현(반환받은 int값 활용)
 				if(no == 0) { // 로그인에 성공하여 고유번호를 리턴받으면 0이 아니고 0이면 로그인X
@@ -45,9 +45,9 @@ public class Application {
 					System.out.println("먼저 로그인을 시도해 주세요.");
 					continue;
 				}
-				for(int i = 0 ; memberDb.memberDB[i] != null ; i++) {
-					if(memberDb.memberDB[i].getNo() == no) {
-						System.out.println(memberDb.memberDB[i]);
+				for(int i = 0 ; db.memberDB[i] != null ; i++) {
+					if(db.memberDB[i].getNo() == no) {
+						System.out.println(db.memberDB[i]);
 						break;
 					}
 				}
@@ -58,7 +58,7 @@ public class Application {
 					System.out.println("먼저 로그인을 시도해 주세요.");
 					continue;
 				}
-//				memberManager.amend(memberDb);
+//				memberManager.amend(db);
 				break;
 			case 5: // 5. 회원 탈퇴
 				if(no == 0) {
@@ -66,18 +66,18 @@ public class Application {
 					System.out.println("먼저 로그인을 시도해 주세요.");
 					continue;
 				}
-//				memberManager.withdraw(memberDb);
+//				memberManager.withdraw(db);
 				break;
 			case 6: // 6. 아이디 찾기
-//				memberManager.findId(memberDb);
+//				memberManager.findId(db);
 				break;
 			case 7: // 7. 비밀번호 찾기
-				memberManager.findPwd(memberDb);
+				memberManager.findPwd(db);
 				break;
 			case 8: // 8. 데이터베이스에 들어있는 회원 목록 조회(admin) 실행 시 테스트용도
-				for(int i = 0 ; memberDb.memberDB[i] != null ; i++) {
-					if(memberDb.memberDB[i].getNo() != 0) {
-						System.out.println(memberDb.memberDB[i]);
+				for(int i = 0 ; db.memberDB[i] != null ; i++) {
+					if(db.memberDB[i].getNo() != 0) {
+						System.out.println(db.memberDB[i]);
 						break;
 					}
 				}
