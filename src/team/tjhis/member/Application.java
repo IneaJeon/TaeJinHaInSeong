@@ -66,7 +66,7 @@ public class Application {
 					System.out.println("먼저 로그인을 시도해 주세요.");
 					continue;
 				}
-//				memberManager.withdraw(db);
+				memberManager.withdraw(db, no);
 				break;
 			case 6: // 6. 아이디 찾기
 //				memberManager.findId(db);
