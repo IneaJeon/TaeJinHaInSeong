@@ -6,6 +6,10 @@ public class MemberManager {
 	
 	public void signUp() {
 		
+		MemberDTO members = new MemberDTO();
+		
+		SignUp signUp = new SignUp();
+		
 	}
 
 	public void login() {
