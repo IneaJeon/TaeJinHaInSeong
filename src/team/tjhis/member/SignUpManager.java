@@ -2,7 +2,7 @@ package team.tjhis.member;
 
 import java.util.Scanner;
 
-public class SignUp {
+public class SignUpManager {
 
 	public static void main(String[] args) {
 

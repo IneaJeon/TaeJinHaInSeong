@@ -13,7 +13,6 @@ public class Application {
 		// MemberDB 인스턴스
 		MemberDB db = new MemberDB();
 		// MemberManager 인스턴스
-		MemberManager memberManager = new MemberManager();
 		
 		// 반복문으로 프로그램 종료 될때까지 어떤 함수를 실행 해야할지 선택하는 알고리즘 설계
 		// 입력하면 해당하는 메소드를 MemberManager 인스턴스에서 골라 작성
@@ -24,10 +23,6 @@ public class Application {
 			System.out.println("1. 회원 가입");
 			System.out.println("2. 로그인");
 			System.out.println("3. 내 정보 조회");
-			System.out.println("4. 내 정보 수정");
-			System.out.println("5. 회원 탈퇴");
-			System.out.println("6. 아이디 찾기");
-			System.out.println("7. 패스워드 찾기");
 			System.out.println("8. 데이터베이스 확인(admin)");
 			System.out.println("9. 프로그램 종료");
 			System.out.print("원하시는 항목을 선택해 주세요 : ");
@@ -51,28 +46,6 @@ public class Application {
 						break;
 					}
 				}
-				break;
-			case 4: // 4. 개인정보 수정
-				if(no == 0) {
-					System.out.println("로그인이 되어있지 않습니다.");
-					System.out.println("먼저 로그인을 시도해 주세요.");
-					continue;
-				}
-//				memberManager.amend(db);
-				break;
-			case 5: // 5. 회원 탈퇴
-				if(no == 0) {
-					System.out.println("로그인이 되어있지 않습니다.");
-					System.out.println("먼저 로그인을 시도해 주세요.");
-					continue;
-				}
-				memberManager.withdraw(db, no);
-				break;
-			case 6: // 6. 아이디 찾기
-//				memberManager.findId(db);
-				break;
-			case 7: // 7. 비밀번호 찾기
-				memberManager.findPwd(db);
 				break;
 			case 8: // 8. 데이터베이스에 들어있는 회원 목록 조회(admin) 실행 시 테스트용도
 				for(int i = 0 ; db.memberDB[i] != null ; i++) {
