@@ -9,7 +9,7 @@ public class MemberDB {
 	
 	ArrayList memberDB = new ArrayList();		// 객체 배열 대신 ArrayList 활용
 
-	public int getWdNum() {
+	public int getWdNum() {						// 직접 접근 막기 위해 getter & setter 사용
 		return wdNum;
 	}
 
