@@ -19,7 +19,12 @@ public class MemberWithdraw {
 			
 			if(answer == 'Y' || answer == 'y') {
 				
-				db.memberDB[no-1] = null;
+				int wdNum = db.getWdNum();
+				int index = no - 1 - wdNum;
+				
+				db.memberDB.remove(index);
+				db.setWdNum(wdNum++);
+				
 				System.out.println("탈퇴가 완료되었습니다.");
 				System.out.println("그동안 감사했습니다.");
 				System.out.println();
