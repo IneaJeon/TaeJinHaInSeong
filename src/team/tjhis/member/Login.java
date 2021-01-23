@@ -6,9 +6,10 @@ import java.util.Scanner;
 public class Login {
 
 	public void login(String id, String pwd) {
+		
 
 		Scanner sc = new Scanner(System.in);
-		ArrayList<String> arr = new ArrayList<>();
+		ArrayList<String> memberDB = new ArrayList<>();
 		MemberDTO memberDto = new MemberDTO();
 		
 		System.out.println("로그인");
@@ -21,20 +22,20 @@ public class Login {
 			if(saw == 1) {
 				System.out.print("아이디 입력 하세요 : ");
 				id = sc.nextLine();
-				arr.add(id);
+				memberDB.add(id);
 			}else if(saw == 2){
 				System.out.print("아이디 입력 하세요 : ");
 				id = sc.nextLine();
-				if(arr.contains(id)) {
+				if(memberDB.contains(id)) {
 					System.out.println("존재하는 아이디 입니다.");
 				}
 			}else if(saw == 3) {
 				System.out.print("아이디 입력 하세요 : ");
 				id = sc.nextLine();
-				if(arr.contains(id)) {
-					for(int i = 0; i< arr.size(); i++) {
-						if(arr.get(i).equals(id)) {
-							arr.remove(i);
+				if(memberDB.contains(id)) {
+					for(int i = 0; i< memberDB.size(); i++) {
+						if(memberDB.get(i).equals(id)) {
+							memberDB.remove(i);
 							break;
 						}
 					}
@@ -44,7 +45,7 @@ public class Login {
 			}else {
 				break;
 			}
-			System.out.println(arr);
+			System.out.println(memberDB);
 
 		}//while
 	}//login
