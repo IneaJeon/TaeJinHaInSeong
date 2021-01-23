@@ -17,18 +17,20 @@ public class FindId {
          System.out.print("휴대폰번호를 입력해주세요 : ");
          String phoneNum = sc.nextLine();
 
-//         for (int i = 0; i < db.aList.size(); i++) {
-//
-//            if (db.aList.get(i) == null) {
-//               System.out.println("일치하는 회원의 정보가 없습니다.");
-//               break;
-//            } else {
-//               if (name.equals(db.aList.get(i).getName()) && phoneNum.equals(db.aList.get(i).getPhoneNum())) {
-//                  System.out.println(name + "회원님의 ID는 " + db.aList.get(i).getId() + "입니다.");
-//               }
-//               return;
-//            }
-//         }
+			for (int i = 0; i < db.memberDB.size(); i++) {
+
+				if (db.memberDB.get(i) == null) {
+					System.out.println("일치하는 회원의 정보가 없습니다.");
+					break;
+				} else {
+					
+					if (name.equals(db.memberDB.get(i).getName())
+							&& phoneNum.equals(db.memberDB.get(i).getPhoneNum())) {
+						System.out.println(name + "회원님의 ID는 " + db.memberDB.get(i).getId() + "입니다.");
+					}
+					return;
+				}
+         }
       }
    }
 
