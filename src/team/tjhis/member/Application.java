@@ -12,7 +12,10 @@ public class Application {
 		int no = 0;
 		// MemberDB 인스턴스
 		MemberDB db = new MemberDB();
-		// MemberManager 인스턴스
+		// Manager 인스턴스들
+		SignInManager signInManager = new SignInManager();
+		SignUpManager signUpManager = new SignUpManager();
+		MyPageManager myPageManager = new MyPageManager();
 		
 		// 반복문으로 프로그램 종료 될때까지 어떤 함수를 실행 해야할지 선택하는 알고리즘 설계
 		// 입력하면 해당하는 메소드를 MemberManager 인스턴스에서 골라 작성
@@ -28,24 +31,25 @@ public class Application {
 			System.out.print("원하시는 항목을 선택해 주세요 : ");
 			choose = sc.nextInt();
 			switch(choose) {
-			case 1: // 1. 회원가입
-//				memberManager.signUp(db);
+			case 1: // 1. 회원가입 매니저 실행
+//				signUpManager.signUp(db);
 				break;
-			case 2: // 2. 로그인
-//				no = memberManager.login(db); // 로그인에 성공하면 로그인된 회원의 고유넘버를 리턴값으로 넘겨받음
+			case 2: // 2. 사인업 매니저 실행
+				no = signInManager.signIn(db);
 				break;
-			case 3: // 3. 개인정보 조회 <- 따로 클래스나 메소드로 구현하지 않고 메인에서 구현(반환받은 int값 활용)
-				if(no == 0) { // 로그인에 성공하여 고유번호를 리턴받으면 0이 아니고 0이면 로그인X
-					System.out.println("로그인이 되어있지 않습니다.");
-					System.out.println("먼저 로그인을 시도해 주세요.");
-					continue;
-				}
-				for(int i = 0 ; i < db.memberDB.size() ; i++) {
-					if(db.memberDB.get(i).getNo() == no) {
-						System.out.println(db.memberDB.get(i));
-						break;
-					}
-				}
+			case 3: // 3. 마이 페이지 매니저 실행
+				myPageManager.myPage(db, no);
+//				if(no == 0) { // 로그인에 성공하여 고유번호를 리턴받으면 0이 아니고 0이면 로그인X
+//					System.out.println("로그인이 되어있지 않습니다.");
+//					System.out.println("먼저 로그인을 시도해 주세요.");
+//					continue;
+//				}
+//				for(int i = 0 ; i < db.memberDB.size() ; i++) {
+//					if(db.memberDB.get(i).getNo() == no) {
+//						System.out.println(db.memberDB.get(i));
+//						break;
+//					}
+//				}
 				break;
 			case 8: // 8. 데이터베이스에 들어있는 회원 목록 조회(admin) 실행 시 테스트용도
 				for(int i = 0 ; i < db.memberDB.size() ; i++) {
@@ -56,6 +60,7 @@ public class Application {
 				}
 			case 9: // 9. 프로그램 종료
 				System.out.println("프로그램을 종료합니다!");
+				return;
 			default: // default. 잘못된값 입력 안내, 재입력 안내
 				System.out.println("잘못 입력 하셨습니다.");
 				System.out.println("다시 입력해 주세요.");
