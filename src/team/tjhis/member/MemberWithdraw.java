@@ -15,7 +15,7 @@ public class MemberWithdraw {
 			System.out.println();
 			System.out.print("정말로 탈퇴하시겠습니까?(y/n) : ");
 			char answer = sc.next().charAt(0);
-			System.out.println();
+			System.out.println(); 
 			
 			if(answer == 'Y' || answer == 'y') {	// 탈퇴 요청한 경우
 				
