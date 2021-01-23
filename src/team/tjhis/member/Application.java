@@ -40,17 +40,17 @@ public class Application {
 					System.out.println("먼저 로그인을 시도해 주세요.");
 					continue;
 				}
-				for(int i = 0 ; db.memberDB[i] != null ; i++) {
-					if(db.memberDB[i].getNo() == no) {
-						System.out.println(db.memberDB[i]);
+				for(int i = 0 ; i < db.memberDB.size() ; i++) {
+					if(db.memberDB.get(i).getNo() == no) {
+						System.out.println(db.memberDB.get(i));
 						break;
 					}
 				}
 				break;
 			case 8: // 8. 데이터베이스에 들어있는 회원 목록 조회(admin) 실행 시 테스트용도
-				for(int i = 0 ; db.memberDB[i] != null ; i++) {
-					if(db.memberDB[i].getNo() != 0) {
-						System.out.println(db.memberDB[i]);
+				for(int i = 0 ; i < db.memberDB.size() ; i++) {
+					if(db.memberDB.get(i).getNo() != 0) {
+						System.out.println(db.memberDB.get(i));
 						break;
 					}
 				}
