@@ -10,7 +10,7 @@ public class MemberWithdraw {
 	private MemberWithdraw() {}	// 외부에서 인스턴스 생성하는 것 방지
 
 	public static MemberWithdraw getInstance() {
-		return withdraw;	// 인스턴스 반환
+		return withdraw;	// 인스턴스 반환 
 	}
 	
 	
