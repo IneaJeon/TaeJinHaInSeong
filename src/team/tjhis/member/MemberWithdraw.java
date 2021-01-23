@@ -22,7 +22,7 @@ public class MemberWithdraw {
 				for(int i = 0 ; i < db.memberDB.size(); i++) {	// 회원번호 저장된 인덱스 찾기 위한 반복문
 					if(db.memberDB.get(i).getNo() == no) {	// 회원번호와 일치하는 회원번호 가진 인덱스인 경우
 						db.memberDB.remove(i);	// 해당 인덱스에 저장된 인스턴스 삭제
-						break;
+						break; 
 					}
 				}				
 				System.out.println("탈퇴가 완료되었습니다.");
