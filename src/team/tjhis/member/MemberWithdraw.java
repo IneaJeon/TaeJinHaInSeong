@@ -15,16 +15,16 @@ public class MemberWithdraw {
 			System.out.println();
 			System.out.print("정말로 탈퇴하시겠습니까?(y/n) : ");
 			char answer = sc.next().charAt(0);
-			System.out.println();
+			System.out.println(); 
 			
 			if(answer == 'Y' || answer == 'y') {	// 탈퇴 요청한 경우
 				
-				int wdNum = db.getWdNum();	// 인덱스 계산 위해 탈퇴한 회원 수 받아옴
-				int index = no - 1 - wdNum;	// 해당하는 회원 번호가 저장된 인덱스 번호 계산
-				
-				db.memberDB.remove(index);	// 해당 인덱스에 저장된 인스턴스 삭제
-				db.setWdNum(wdNum++);	// 탈퇴한 회원 수 1 증가
-				
+				for(int i = 0 ; i < db.memberDB.size(); i++) {	// 회원번호 저장된 인덱스 찾기 위한 반복문
+					if(db.memberDB.get(i).getNo() == no) {	// 회원번호와 일치하는 회원번호 가진 인덱스인 경우
+						db.memberDB.remove(i);	// 해당 인덱스에 저장된 인스턴스 삭제
+						break; 
+					}
+				}				
 				System.out.println("탈퇴가 완료되었습니다.");
 				System.out.println("그동안 감사했습니다.");
 				System.out.println();
