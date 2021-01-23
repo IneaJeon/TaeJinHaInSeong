@@ -10,7 +10,6 @@ public class MyDataAmend {
 
       int no = 0;	// 회원번호 변수
       
-		while (true) {
 			System.out.println("===== 회원정보수정 =====");
 			System.out.println("1. 비밀번호 수정");
 			System.out.println("2. 휴대폰번호 수정");
@@ -43,13 +42,13 @@ public class MyDataAmend {
 						String changePhoneNum = sc.nextLine();
 						db.memberDB.get(i).setPhoneNum(changePhoneNum);
 						System.out.println("휴대폰번호가 " + changePhoneNum + "로 변경되었습니다. ");
-						return;
+						break;
 					case 3:
 						System.out.print("변경할 주소를 입력해주세요 : ");
 						String changeAddr = sc.nextLine();
 						db.memberDB.get(i).setAddr(changeAddr);
 						System.out.println("주소가 " + changeAddr + "로 변경되었습니다. ");
-						return;
+						break;
 					case 9:
 						System.out.println("이전 메뉴로 돌아갑니다.");
 						return;
@@ -61,4 +60,3 @@ public class MyDataAmend {
 			}
 		}
 	}
-}
