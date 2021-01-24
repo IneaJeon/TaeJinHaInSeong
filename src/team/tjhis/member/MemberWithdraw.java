@@ -29,11 +29,14 @@ public class MemberWithdraw {
 			if(answer == 'Y' || answer == 'y') {	// 탈퇴 요청한 경우
 				
 				for(int i = 0 ; i < db.memberDB.size(); i++) {	// 회원번호 저장된 인덱스 찾기 위한 반복문
-					if(db.memberDB.get(i).getNo() == no) {	// 회원번호와 일치하는 회원번호 가진 인덱스인 경우
+					if(db.memberDB.get(i).getNo() == db.getLogNo()) {	// 회원번호와 일치하는 회원번호 가진 인덱스인 경우
 						db.memberDB.remove(i);	// 해당 인덱스에 저장된 인스턴스 삭제
 						break; 
 					}
-				}				
+				}
+				
+				db.setLogNo(0);		// 로그인 되어 있는 회원의 번호를 0으로 변경 (아무도 로그인 하지 않은 상태로 돌림)
+				
 				System.out.println("탈퇴가 완료되었습니다.");
 				System.out.println("그동안 감사했습니다.");
 				System.out.println();
