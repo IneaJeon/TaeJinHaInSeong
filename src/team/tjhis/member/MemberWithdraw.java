@@ -15,7 +15,7 @@ public class MemberWithdraw {
 	
 	
 	// 회원탈퇴 메소드
-	public boolean withdraw(MemberDB db, int no) {
+	public boolean withdraw(MemberDB db) {
 		
 		Scanner sc = new Scanner(System.in);
 		
