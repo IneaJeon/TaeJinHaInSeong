@@ -4,10 +4,38 @@ import java.util.ArrayList;
 
 public class MemberDB {
 	
-	// 객체 배열 대신 ArrayList 활용 
-	// 제네릭 타입을 MemberDTO로 지정
-	ArrayList <MemberDTO> memberDB = new ArrayList<>();		
-
+	private int logNo;
 	
+	ArrayList <MemberDTO> memberDB = new ArrayList<>();
+	
+	public MemberDB() {
+		super();
+	}
 
+//	private static ArrayList <MemberDTO> memberDB = new ArrayList<>();		
+//	
+//	private MemberDB() {}
+//	
+//	public MemberDB(int logNo, ArrayList<MemberDTO> memberDB) {
+//		super();
+//		this.logNo = logNo;
+//		this.memberDB = memberDB;
+//	}
+
+	public int getLogNo() {
+		return logNo;
+	}
+
+	public void setLogNo(int logNo) {
+		this.logNo = logNo;
+	}
+
+//	public ArrayList<MemberDTO> getMemberDB() {
+//		return memberDB;
+//	}
+//
+//	public void setMemberDB(ArrayList<MemberDTO> memberDB) {
+//		this.memberDB = memberDB;
+//	}
+	
 }
