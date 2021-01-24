@@ -15,7 +15,7 @@ public class MemberWithdraw {
 	
 	
 	// 회원탈퇴 메소드
-	public void withdraw(MemberDB db, int no) {
+	public boolean withdraw(MemberDB db, int no) {
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -40,14 +40,14 @@ public class MemberWithdraw {
 				System.out.println("탈퇴가 완료되었습니다.");
 				System.out.println("그동안 감사했습니다.");
 				System.out.println();
-				return;
+				return true;
 			
 			}else if (answer == 'N' || answer == 'n'){	// 탈퇴 취소한 경우
 				
 				System.out.println("회원 탈퇴를 취소하셨습니다.");
 				System.out.println("마이페이지로 돌아갑니다.");
 				System.out.println();
-				return;
+				return false;
 				
 			}else {		// 예외 처리
 				
