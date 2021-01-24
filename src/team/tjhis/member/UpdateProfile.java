@@ -2,9 +2,9 @@ package team.tjhis.member;
 
 import java.util.Scanner;
 
-public class MyDataAmend {
+public class UpdateProfile {
 
-	public void amend(MemberDB db) {
+	public void updateProfile(MemberDB db) {
 
 		Scanner sc = new Scanner(System.in);
 
@@ -21,7 +21,7 @@ public class MyDataAmend {
 			case 1:
 				System.out.print("현재 비밀번호를 입력해주세요 : ");
 				String pwd = sc.nextLine();
-				if (pwd.equals(db.memberDB.get(i).getPwd())) { 
+				if (pwd.equals(db.memberDB.get(i).getPwd())) {
 					System.out.print("변경할 비밀번호를 입력해주세요 : ");
 					String changePwd = sc.nextLine();
 					db.memberDB.get(i).setPwd(changePwd);
@@ -53,3 +53,4 @@ public class MyDataAmend {
 		}
 	}
 }
+
