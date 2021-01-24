@@ -15,7 +15,7 @@ public class FindId {
 		String phoneNum = sc.nextLine();
 
 		if (db.memberDB.size() == 0) {
-			System.out.println("회원가입을 먼저 진행해주세요!");
+			System.out.println("회원가입을 먼저 진행해주세요!"); 
 			return;
 		} else {
 			for (int i = 0; i < db.memberDB.size(); i++) {
