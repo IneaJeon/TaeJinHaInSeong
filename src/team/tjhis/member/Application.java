@@ -20,8 +20,8 @@ public class Application {
 		// 반복문으로 프로그램 종료 될때까지 어떤 함수를 실행 해야할지 선택하는 알고리즘 설계
 		// 입력하면 해당하는 메소드를 MemberManager 인스턴스에서 골라 작성
 		// 선택 int변수 1개
-		int choose = 0;
-		while(choose != 9) {
+		int choice = 0;
+		while(choice != 9) {
 			System.out.println("======== 회원 관리 프로그램 ========");
 			System.out.println("1. 회원 가입");
 			System.out.println("2. 로그인");
@@ -29,8 +29,8 @@ public class Application {
 			System.out.println("8. 데이터베이스 확인(admin)");
 			System.out.println("9. 프로그램 종료");
 			System.out.print("원하시는 항목을 선택해 주세요 : ");
-			choose = sc.nextInt();
-			switch(choose) {
+			choice = sc.nextInt();
+			switch(choice) {
 			case 1: // 1. 회원가입 매니저 실행
 //				signUpManager.signUp(db);
 				break;

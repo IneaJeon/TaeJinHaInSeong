@@ -2,9 +2,9 @@ package team.tjhis.member;
 
 import java.util.Scanner;
 
-public class MyDataAmend {
+public class UpdateProfile {
 
-	public void amend(MemberDB db) {
+	public void updateProfile(MemberDB db) {
 
 		Scanner sc = new Scanner(System.in);
 
