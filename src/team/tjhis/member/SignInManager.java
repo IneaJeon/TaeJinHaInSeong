@@ -17,6 +17,7 @@ public class SignInManager {
 //		FindPwd findPwd = FindPwd.getInstance();		
 
 		while(true) {
+			System.out.println();
 			System.out.println("__________ 로그인 화면 __________");
 			System.out.println();
 			System.out.println("[ 1. 로그인 ]");
@@ -56,17 +57,12 @@ public class SignInManager {
 					
 				default :
 					System.out.println("잘못 입력하셨습니다. 다시 입력해 주세요."); 
+					
 			}
 			
-			
 		}
-			
+		
 	}
-	
-	
-	
-	
-	
 	
 }
 	
