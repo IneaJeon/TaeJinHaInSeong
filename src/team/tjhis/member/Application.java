@@ -8,8 +8,6 @@ public class Application {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		// 로그인 시 반환받은 고유넘버를 저장할 int변수
-		int no = 0;
 		// MemberDB 인스턴스
 		MemberDB db = new MemberDB();
 		// Manager 인스턴스들
@@ -21,7 +19,7 @@ public class Application {
 		// 입력하면 해당하는 메소드를 MemberManager 인스턴스에서 골라 작성
 		// 선택 int변수 1개
 		int choice = 0;
-		while(choice != 9) {
+		while(true) {
 			System.out.println("======== 회원 관리 프로그램 ========");
 			System.out.println("1. 회원 가입");
 			System.out.println("2. 로그인");
@@ -35,21 +33,15 @@ public class Application {
 //				signUpManager.signUp(db);
 				break;
 			case 2: // 2. 사인업 매니저 실행
-				no = signInManager.signIn(db);
+				signInManager.signIn(db);
 				break;
 			case 3: // 3. 마이 페이지 매니저 실행
-				myPageManager.myPage(db, no);
-//				if(no == 0) { // 로그인에 성공하여 고유번호를 리턴받으면 0이 아니고 0이면 로그인X
-//					System.out.println("로그인이 되어있지 않습니다.");
-//					System.out.println("먼저 로그인을 시도해 주세요.");
-//					continue;
-//				}
-//				for(int i = 0 ; i < db.memberDB.size() ; i++) {
-//					if(db.memberDB.get(i).getNo() == no) {
-//						System.out.println(db.memberDB.get(i));
-//						break;
-//					}
-//				}
+				if(db.getLogNo() == 0) { // 로그인에 성공하여 고유번호를 리턴받으면 0이 아니고 0이면 로그인X
+					System.out.println("로그인이 되어있지 않습니다.");
+					System.out.println("먼저 로그인을 시도해 주세요.");
+					continue;
+				}
+				myPageManager.myPage(db);
 				break;
 			case 8: // 8. 데이터베이스에 들어있는 회원 목록 조회(admin) 실행 시 테스트용도
 				for(int i = 0 ; i < db.memberDB.size() ; i++) {
