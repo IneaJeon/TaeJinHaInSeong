@@ -15,6 +15,8 @@ public class UpdateProfile {
 		System.out.println("9. 이전 메뉴로 돌아가기");
 		System.out.print("원하시는 메뉴의 번호를 입력해주세요 : ");
 		int num = sc.nextInt();
+		
+		sc.nextLine();
 
 		for (int i = 0; i < db.memberDB.size(); i++) {
 			switch (num) {
@@ -24,9 +26,17 @@ public class UpdateProfile {
 				if (pwd.equals(db.memberDB.get(i).getPwd())) {
 					System.out.print("변경할 비밀번호를 입력해주세요 : ");
 					String changePwd = sc.nextLine();
-					db.memberDB.get(i).setPwd(changePwd);
-					System.out.println("비밀번호가 " + changePwd + "로 변경되었습니다. ");
-					return;
+					System.out.print("변경할 비밀번호를 한번 더 입력해주세요 : ");
+					String changePwdConfirm = sc.nextLine();
+					
+						if(changePwd.equals(changePwdConfirm)) {
+							db.memberDB.get(i).setPwd(changePwd);
+							System.out.println("비밀번호가 " + changePwd + "로 변경되었습니다. ");
+							return;
+						} else {
+							System.out.println("변경할 비밀번호가 일치하지 않습니다.");
+							break;
+						}
 				} else {
 					System.out.println("현재 비밀번호를 잘못 입력하셨습니다.");
 					break;
