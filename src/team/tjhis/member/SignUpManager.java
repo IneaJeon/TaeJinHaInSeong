@@ -3,8 +3,10 @@ package team.tjhis.member;
 import java.util.Scanner;
 
 public class SignUpManager {
-
-	public void signUpStart(MemberDB db, int i) {
+	
+	public static int number = 1;
+	
+	public void signUpStart(MemberDB db) {
 
 		Scanner sc = new Scanner(System.in);
 
@@ -21,35 +23,11 @@ public class SignUpManager {
 		System.out.println("주소 입력 :");
 		String addr = sc.nextLine();
 
-		do {
-			/* 세팅하기 */
-//			MemberDTO md = new MemberDTO();
-//			db.memberDB.get(i).setNo(no);
-			db.memberDB.get(i).setId(id);
-			db.memberDB.get(i).setPwd(pwd);
-			db.memberDB.get(i).setPhoneNum(phoneNum);
-			db.memberDB.get(i).setAddr(addr);
-
-//			db.memberDB.add(md);
-
-			System.out.println("계속 진행 하시겠습니까?");
-			String yn = sc.nextLine();
-
-			if (yn.equals("y") || yn.equals("Y")) {
-				continue;
-			} else {
-				break;
-			}
-		} while (true);
+		db.memberDB.add(new MemberDTO(number, id, pwd, name, phoneNum, addr));
 		
-		for (int i1 = 0; i1 < db.memberDB.size(); i1++) {
-			System.out.println("회원 번호 : " + db.memberDB.get(i1).getNo()); // 해당 데이터 출력
-			System.out.println("회원 번호 : " + db.memberDB.get(i1).getId()); // 해당 데이터 출력
-			System.out.println("회원 번호 : " + db.memberDB.get(i1).getPwd()); // 해당 데이터 출력
-			System.out.println("회원 번호 : " + db.memberDB.get(i1).getName()); // 해당 데이터 출력
-			System.out.println("회원 번호 : " + db.memberDB.get(i1).getPhoneNum()); // 해당 데이터 출력
-			System.out.println("회원 번호 : " + db.memberDB.get(i1).getAddr()); // 해당 데이터 출력
-
-		}
+		 number += 1;
+		 
+		 System.out.println("회원가입 완료 됐습니다.");
+		
 	}// signUpStart
 }// SignUpManager

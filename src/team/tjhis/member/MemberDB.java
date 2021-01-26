@@ -29,6 +29,8 @@ public class MemberDB {
 	public void setLogNo(int logNo) {
 		this.logNo = logNo;
 	}
+	
+	
 
 //	public ArrayList<MemberDTO> getMemberDB() {
 //		return memberDB;
