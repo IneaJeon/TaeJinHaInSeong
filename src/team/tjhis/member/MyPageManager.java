@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MyPageManager {
 	
-	public void myPage(MemberDB db, int no) {
+	public void myPage(MemberDB db) {
 		
 		Scanner sc = new Scanner(System.in);
 //		MemberWithdraw withdraw = new MemberWithdraw();

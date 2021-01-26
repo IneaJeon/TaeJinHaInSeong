@@ -18,19 +18,26 @@ public class UpdateProfile {
 		
 		sc.nextLine();
 
+		int index = 0;
+		
 		for (int i = 0; i < db.memberDB.size(); i++) {
+			if(db.getLogNo() == db.memberDB.get(i).getNo()) {
+				index = i;
+				break;
+			}
+		}
 			switch (num) {
 			case 1:
 				System.out.print("현재 비밀번호를 입력해주세요 : ");
 				String pwd = sc.nextLine();
-				if (pwd.equals(db.memberDB.get(i).getPwd())) {
+				if (pwd.equals(db.memberDB.get(index).getPwd())) {
 					System.out.print("변경할 비밀번호를 입력해주세요 : ");
 					String changePwd = sc.nextLine();
 					System.out.print("변경할 비밀번호를 한번 더 입력해주세요 : ");
 					String changePwdConfirm = sc.nextLine();
 					
 						if(changePwd.equals(changePwdConfirm)) {
-							db.memberDB.get(i).setPwd(changePwd);
+							db.memberDB.get(index).setPwd(changePwd);
 							System.out.println("비밀번호가 " + changePwd + "로 변경되었습니다. ");
 							return;
 						} else {
@@ -44,13 +51,13 @@ public class UpdateProfile {
 			case 2:
 				System.out.print("변경할 휴대폰번호를 입력해주세요 : ");
 				String changePhoneNum = sc.nextLine();
-				db.memberDB.get(i).setPhoneNum(changePhoneNum);
+				db.memberDB.get(index).setPhoneNum(changePhoneNum);
 				System.out.println("휴대폰번호가 " + changePhoneNum + "로 변경되었습니다. ");
 				break;
 			case 3:
 				System.out.print("변경할 주소를 입력해주세요 : ");
 				String changeAddr = sc.nextLine();
-				db.memberDB.get(i).setAddr(changeAddr);
+				db.memberDB.get(index).setAddr(changeAddr);
 				System.out.println("주소가 " + changeAddr + "로 변경되었습니다. ");
 				break;
 			case 9:
@@ -59,7 +66,7 @@ public class UpdateProfile {
 			default:
 				System.out.println("번호를 잘못입력하셨습니다. 다시 입력해주세요.");
 				break;
-			}
+			
 		}
 	}
 }

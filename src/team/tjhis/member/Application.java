@@ -29,7 +29,7 @@ public class Application {
 			choice = sc.nextInt();
 			switch(choice) {
 			case 1: // 1. 회원가입 매니저 실행
-//				signUpManager.signUp(db);
+				signUpManager.signUpStart(db);
 				break;
 			case 2: // 2. 사인업 매니저 실행
 				signInManager.signIn(db);
@@ -40,7 +40,7 @@ public class Application {
 					System.out.println("로그인을 먼저 시도해주세요.");
 					continue;
 				}
-//				myPageManager.myPage(db);
+				myPageManager.myPage(db);
 				break;
 			case 8: // 8. 데이터베이스에 들어있는 회원 목록 조회(admin) 실행 시 테스트용도
 				for(int i = 0 ; i < db.memberDB.size() ; i++) {
