@@ -2,17 +2,17 @@ package team.tjhis.order;
 
 public class FoodDTO {
 	
-	/*Àü¿ªº¯¼ö Á¤ÀÇ*/
-	private String productName;		//Á¦Ç°¸í
-	private String productPrice;	//Á¦Ç°°¡°İ
-	private String productInfo;		//Á¦Ç°Á¤º¸
+	/*ì „ì—­ë³€ìˆ˜ ì •ì˜*/
+	private String productName;		//ì œí’ˆëª…
+	private String productPrice;	//ì œí’ˆê°€ê²©
+	private String productInfo;		//ì œí’ˆì •ë³´
 	
-	/*±âº»»ı¼ºÀÚ*/
+	/*ê¸°ë³¸ìƒì„±ì*/
 	public FoodDTO() {
 		super();
 	}
 
-	/*¸Å°³º¯¼ö ÀÖ´Â »ı¼ºÀÚ*/
+	/*ë§¤ê°œë³€ìˆ˜ ìˆëŠ” ìƒì„±ì*/
 	public FoodDTO(String productName, String productPrice, String productInfo) {
 		super();
 		this.productName = productName;
@@ -20,7 +20,7 @@ public class FoodDTO {
 		this.productInfo = productInfo;
 	}
 
-	/*getter setter Á¤ÀÇ*/
+	/*getter setter ì •ì˜*/
 	public String getProductName() {
 		return productName;
 	}
