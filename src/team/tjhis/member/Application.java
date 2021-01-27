@@ -31,8 +31,9 @@ public class Application {
 			System.out.print("원하시는 항목을 선택해 주세요 : ");
 			choice = sc.nextInt();
 			switch(choice) {
+
 			case 1: // 1. 사인 업 매니저 실행
-				signUpManager.signUpStart(db);
+				signUpManager.signUp(db);
 				break;
 			case 2: // 2. 사인 인 매니저 실행
 				signInManager.signIn(db);
