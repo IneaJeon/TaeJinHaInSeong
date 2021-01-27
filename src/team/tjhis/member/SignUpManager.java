@@ -4,30 +4,35 @@ import java.util.Scanner;
 
 public class SignUpManager {
 	
-	public static int number = 1;
-	
-	public void signUpStart(MemberDB db) {
+	public void signUp(MemberDB db) {
 
 		Scanner sc = new Scanner(System.in);
-
-		System.out.println("회원가입");
-
-		System.out.println("아이디 입력 :");
-		String id = sc.nextLine();
-		System.out.println("비밀번호 입력 :");
-		String pwd = sc.nextLine();
-		System.out.println("이름 입력 :");
-		String name = sc.nextLine();
-		System.out.println("전화번호 입력 :");
-		String phoneNum = sc.nextLine();
-		System.out.println("주소 입력 :");
-		String addr = sc.nextLine();
-
-		db.memberDB.add(new MemberDTO(number, id, pwd, name, phoneNum, addr));
+		SignUp signUp = new SignUp();
 		
-		 number += 1;
-		 
-		 System.out.println("회원가입 완료 됐습니다.");
+		while(true) {
+			
+			System.out.println("__________ 회원가입 __________");
+			System.out.println();
+			System.out.println("1. 회원가입");
+			System.out.println("2. 메인페이지로 돌아가기");
+			System.out.println();
+			System.out.print("원하시는 항목을 선택해 주세요 : ");
+			int choice = sc.nextInt();
+			sc.nextLine();
+			System.out.println();
+			
+			switch(choice) {
+			
+				case 1 : signUp.signUpStart(db); return;
+				
+				case 2 : return;
+				
+				default : 
+					System.out.println("잘못 입력하셨습니다. 다시 입력해 주세요.");
+					System.out.println();
+			}
+		}
 		
-	}// signUpStart
-}// SignUpManager
+	}
+
+}

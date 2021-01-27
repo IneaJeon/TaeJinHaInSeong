@@ -29,7 +29,7 @@ public class Application {
 			choice = sc.nextInt();
 			switch(choice) {
 			case 1: // 1. 회원가입 매니저 실행
-				signUpManager.signUpStart(db);
+				signUpManager.signUp(db);
 				break;
 			case 2: // 2. 사인업 매니저 실행
 				signInManager.signIn(db);
