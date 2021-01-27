@@ -32,7 +32,7 @@ public class ChineseFood extends Food {
 			case 2 : break;
 			case 3 : break;
 			case 9 : break;
-			default :
+			default : 
 			
 		}
 	
