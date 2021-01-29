@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class OrderManager {
 
-	public void order() {
+	public void order(FoodDB db, Cart cart) {
 
 		Scanner sc = new Scanner(System.in);
 
@@ -13,7 +13,7 @@ public class OrderManager {
 		JapaneseFood japaneseFood = new JapaneseFood();
 		ChineseFood chineseFood = new ChineseFood();
 		FastFood fastFood = new FastFood();
-		CartManager cartManager = new CartManager();
+		Cart basket = new Cart();
 
 		System.out.println("====== 주문하기 ======");
 		System.out.println("1. 한식");
@@ -29,13 +29,13 @@ public class OrderManager {
 
 		switch (choice) {
 		case 1:
-			koreanFood.orderKoreanFood();
+//			koreanFood.orderKoreanFood();
 			break;
 		case 2:
 //			schoolFood.orderSchoolFood();
 			break;
 		case 3:
-			japaneseFood.orderJapaneseFood();
+			japaneseFood.orderJapaneseFood(cart);
 			break;
 		case 4:
 //			chineseFood.orderChineseFood();
@@ -44,7 +44,7 @@ public class OrderManager {
 //			fastFood.orderFastFood();
 			break;
 		case 6:
-//			cartManager.?????();
+//			cart.?????();
 		case 9:
 			System.out.println("주문하기 종료");
 			return;
