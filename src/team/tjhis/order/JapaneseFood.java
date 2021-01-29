@@ -7,12 +7,11 @@ public class JapaneseFood /* extends JPanel */ {
 
 	ArrayList<Food> foodList = new ArrayList<>();
 
-	char confirm;
-
 	public void orderJapaneseFood(ArrayList<Food> foodList) {
 
 		Scanner sc = new Scanner(System.in);
 
+		char confirm;
 		int countOne = 0;
 		int countTwo = 0;
 		int countThree = 0;
@@ -78,7 +77,6 @@ public class JapaneseFood /* extends JPanel */ {
 			case 9:
 				System.out.println("메뉴 카테고리로 돌아갑니다.");
 				return;
-
 			default:
 				System.out.println("번호를 잘못 입력하셨습니다.");
 				break;
