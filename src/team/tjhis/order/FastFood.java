@@ -13,7 +13,7 @@ public class FastFood extends Food {
 	
 	/*매개변수 생성자*/
 	public FastFood(String foodName, int price, int calorie, String countryOfOrigin) {
-		super(foodName, price, calorie, countryOfOrigin);
+//		super(foodName, price, calorie, countryOfOrigin);
 	}
 	
 	public void oderFastFood() {

@@ -5,14 +5,18 @@ public class Food {
 	private String foodName;
 	private int price;
 	private int calorie;
+	private int foodNo;
+	private int count;
 	private String countryOfOrigin;
 	
 	public Food() {}
 
-	public Food(String foodName, int price, int calorie, String countryOfOrigin) {
+	public Food(String foodName, int price, int calorie, int foodNo, String countryOfOrigin) {
+		super();
 		this.foodName = foodName;
 		this.price = price;
 		this.calorie = calorie;
+		this.foodNo = foodNo;
 		this.countryOfOrigin = countryOfOrigin;
 	}
 
@@ -40,6 +44,22 @@ public class Food {
 		this.calorie = calorie;
 	}
 
+	public int getFoodNo() {
+		return foodNo;
+	}
+
+	public void setFoodNo(int foodNo) {
+		this.foodNo = foodNo;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
 	public String getCountryOfOrigin() {
 		return countryOfOrigin;
 	}
@@ -50,8 +70,7 @@ public class Food {
 
 	@Override
 	public String toString() {
-		return "Food [foodName=" + foodName + ", price=" + price + ", calorie=" + calorie + ", countryOfOrigin="
-				+ countryOfOrigin + "]";
+		return foodNo + ". : " + foodName + "\n가격 : " + price + "원\n칼로리 : " + calorie + "kcal\n원산지 : " + countryOfOrigin;
 	}
 	
 }

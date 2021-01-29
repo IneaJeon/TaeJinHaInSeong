@@ -10,7 +10,7 @@ public class SchoolFood extends Food {
 	public SchoolFood() {}
 
 	public SchoolFood(String foodName, int price, int calorie, String countryOfOrigin) {
-		super(foodName, price, calorie, countryOfOrigin);
+//		super(foodName, price, calorie, countryOfOrigin);
 	}
 
 	public void orderSchoolFood(FoodDB foodDB, Cart cart ) {
