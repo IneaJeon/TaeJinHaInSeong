@@ -1,11 +1,16 @@
 package team.tjhis.order;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class OrderManager {
+import javax.swing.JFrame;
 
-	public void order(FoodDB db, Cart cart) {
-
+public class OrderManager/* extends JFrame */{
+	
+	ArrayList<Food> foodList = new ArrayList<>();
+	
+	public void order() {
+		
 		Scanner sc = new Scanner(System.in);
 
 		KoreanFood koreanFood = new KoreanFood();
@@ -13,7 +18,7 @@ public class OrderManager {
 		JapaneseFood japaneseFood = new JapaneseFood();
 		ChineseFood chineseFood = new ChineseFood();
 		FastFood fastFood = new FastFood();
-		Cart basket = new Cart();
+		CartManager cartManager = new CartManager();
 
 		System.out.println("====== 주문하기 ======");
 		System.out.println("1. 한식");
@@ -35,7 +40,7 @@ public class OrderManager {
 //			schoolFood.orderSchoolFood();
 			break;
 		case 3:
-			japaneseFood.orderJapaneseFood(cart);
+			japaneseFood.orderJapaneseFood(foodList);
 			break;
 		case 4:
 //			chineseFood.orderChineseFood();
@@ -44,7 +49,8 @@ public class OrderManager {
 //			fastFood.orderFastFood();
 			break;
 		case 6:
-//			cart.?????();
+//			cartManager.cart(foodList);
+			break;
 		case 9:
 			System.out.println("주문하기 종료");
 			return;

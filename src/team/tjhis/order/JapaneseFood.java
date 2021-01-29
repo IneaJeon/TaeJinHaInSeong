@@ -3,59 +3,86 @@ package team.tjhis.order;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class JapaneseFood extends Food {
+public class JapaneseFood /* extends JPanel */ {
 
-	public JapaneseFood() {
-		super();
-	}
+	ArrayList<Food> foodList = new ArrayList<>();
 
-	public JapaneseFood(String foodName, int price, int calorie, String countryOfOrigin) {
-		super(foodName, price, calorie, countryOfOrigin);
-	}
+	char confirm;
 
-	public void orderJapaneseFood(Cart cart) {
+	public void orderJapaneseFood(ArrayList<Food> foodList) {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("======= 김태완 스시 =======");
-		System.out.println("1. 연어초밥 10ps");
-		System.out.println("9. 카테고리로 돌아가기");
-		int choice = sc.nextInt();
+		int countOne = 0;
+		int countTwo = 0;
+		int countThree = 0;
 
-		sc.nextLine();
-		
-		String foodName = "";
-		int price = 0;
-		int calorie = 0;
-		String countryOfOrigin = "";
+		while (true) {
 
-		switch (choice) {
-		case 1:
-			System.out.println("연어초밥을 장비구니에 추가하시겠습니까? [y/n]: ");
-			char confirm = sc.next().charAt(0);
+			System.out.println();
+			System.out.println("======= 김태완 스시 =======");
+//			System.out.println(new Food(1, "연어초밥 10ps", 12000, 500, "노르웨이"));
+//			System.out.println(new Food(2, "싱싱회덮밥", 7000, 450, "국내산"));
+//			System.out.println(new Food(3, "캘리포니아 롤", 13000, 800, "국내산"));
+			System.out.println("9. 음식 카테고리로 돌아가기");
+			System.out.print("메뉴를 선택해주세요 : ");
 
-			if (confirm == 'y') {
+			int choice = sc.nextInt();
 
-				System.out.println("가격은 12000원 입니다. 장바구니에 추가되었습니다.");
-				foodName = "연어초밥10ps";
-				price = 12000;
-				calorie = 500;
-				countryOfOrigin = "노르웨이";
+			sc.nextLine();
 
-//				cart.getCart().add(foodName);
-//				cart.getCart().add(price);
-//				cart.getCart().add(calorie);
-//				cart.getCart().add(countryOfOrigin);
+			switch (choice) {
+
+			case 1:
+				System.out.println("연어초밥을 장바구니에 추가하시겠습니까? [y/n]: ");
+				confirm = sc.next().charAt(0);
+
+				if (confirm == 'y' | confirm == 'Y') {
+
+					System.out.println("장바구니에 추가되었습니다.");
+//					foodList.add(new Food("연어초밥", 12000)); 
+//					foodList.get(0).setCount(countOne += 1);
+					break;
+				} else {
+					break;
+				}
+
+			case 2:
+				System.out.println("싱싱회덮밥을 장바구니에 추가하시겠습니까? [y/n]: ");
+				confirm = sc.next().charAt(0);
+
+				if (confirm == 'y' | confirm == 'Y') {
+
+					System.out.println("장바구니에 추가되었습니다.");
+//					foodList.add(new Food("싱싱회덮밥", 7000));
+//					foodList.get(1).setCount(countTwo += 1);
+					break;
+				} else {
+					break;
+				}
+
+			case 3:
+				System.out.println("캘리포니아롤을 장바구니에 추가하시겠습니까? [y/n]: ");
+				confirm = sc.next().charAt(0);
+
+				if (confirm == 'y' | confirm == 'Y') {
+
+					System.out.println("장바구니에 추가되었습니다.");
+//					foodList.add(new Food("캘리포니아롤", 12000)); 
+//					foodList.get(2).setCount(countThree += 1);
+					break;
+				} else {
+					break;
+				}
+
+			case 9:
+				System.out.println("메뉴 카테고리로 돌아갑니다.");
+				return;
+
+			default:
+				System.out.println("번호를 잘못 입력하셨습니다.");
+				break;
 			}
-			break;	
-		case 9:
-			System.out.println("메뉴 카테고리로 돌아갑니다.");
-			return;
-		default:
-			System.out.println("번호를 잘못 입력하셨습니다.");
-			break;
 		}
-
 	}
-
 }
