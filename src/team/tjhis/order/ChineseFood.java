@@ -1,15 +1,11 @@
 package team.tjhis.order;
 
+import java.util.List;
 import java.util.Scanner;
 
-public class ChineseFood extends Food {
+public class ChineseFood {
 
-	// 기본 생성자
-	public ChineseFood() {
-		super();
-	}
-	
-	public void orderChineseFood() {
+	public List<Food> orderChineseFood(List<Food> cartList) {
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -37,6 +33,7 @@ public class ChineseFood extends Food {
 		}
 	
 	
+		return cartList;
 	
 	}
 }
