@@ -4,12 +4,12 @@ import java.util.List;
 
 public class UpdateCart {
 	
-	public List<Food> plusMenu(List<Food> cartList, int index){
+	public void plusMenu(List<Food> cartList, int index){
 		cartList.get(index).setCount(cartList.get(index).getCount() + 1);
 		
 	}
 	
-	public List<Food> minusMenu(List<Food> cartList, int index){
+	public void minusMenu(List<Food> cartList, int index){
 		
 		int curCount = cartList.get(index).getCount();
 		
@@ -22,7 +22,7 @@ public class UpdateCart {
 		
 	}
 	
-	public List<Food> deleteMenu(List<Food> cartList, int index){
+	public void deleteMenu(List<Food> cartList, int index){
 		cartList.get(index).setCount(0);
 		
 	}
