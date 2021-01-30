@@ -1,6 +1,13 @@
 package team.tjhis.member;
 
-public class MemberDTO {
+import java.io.Serializable;
+
+public class MemberDTO implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1570342683425892001L;
 	
 	private int no;				// 회원번호
 	private String id;			// 아이디
