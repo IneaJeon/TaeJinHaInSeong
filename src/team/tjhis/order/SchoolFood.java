@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class SchoolFood {
 	
-	public void orderKoreanFood(List<Food> cartList) {
+	public void orderSchoolFood(List<Food> cartList) {
 		
 		CartManager cm = new CartManager();
 		Scanner sc = new Scanner(System.in);
