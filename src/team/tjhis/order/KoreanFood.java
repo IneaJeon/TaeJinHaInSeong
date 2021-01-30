@@ -30,11 +30,6 @@ public class KoreanFood{
 			
 		char answer = ' ';
 		int choice = 0;
-		int[] count = new int[3];
-		
-		for(int i = 0 ; i < 3 ; i++) {
-			count[i] = 1;
-		}
 		
 		while(true) {
 				
@@ -51,7 +46,7 @@ public class KoreanFood{
 					
 					if(answer == 'y' || answer == 'Y') {
 						System.out.println("돼지 김치찌개를 장바구니에 담았습니다.");
-						cartList.get(0).setCount(count[0]++);
+						cartList.get(0).setCount(cartList.get(0).getCount() + 1);
 						
 					}else if(answer == 'n' || answer == 'N') {
 						System.out.println("취소되었습니다.");
@@ -66,7 +61,7 @@ public class KoreanFood{
 					
 					if(answer == 'y' || answer == 'Y') {
 						System.out.println("해물 된장찌개를 장바구니에 담았습니다.");
-						cartList.get(1).setCount(count[1]++);
+						cartList.get(1).setCount(cartList.get(1).getCount() + 1);
 						
 					}else if(answer == 'n' || answer == 'N') {
 						System.out.println("취소되었습니다.");
@@ -81,7 +76,8 @@ public class KoreanFood{
 					
 					if(answer == 'y' || answer == 'Y') {
 						System.out.println("해물 순두부찌개를 장바구니에 담았습니다.");
-						cartList.get(2).setCount(count[2]++);
+						cartList.get(2).setCount(cartList.get(2).getCount() + 1);
+						
 						
 					}else if(answer == 'n' || answer == 'N') {
 						System.out.println("취소되었습니다.");
