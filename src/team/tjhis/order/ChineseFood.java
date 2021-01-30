@@ -25,12 +25,6 @@ public class ChineseFood {
 			cartList.add(food);	
 		}
 
-		// 각각의 메뉴 수량 카운트할 변수를 배열로 선언 및 각 인덱스 값을 1로 초기화
-		int[] count = new int[cartList.size()];
-		for(int i = 0 ; i < cartList.size() ; i++) {
-			count[i] = 1;
-		}
-
 		int choice = 0;	// 선택 메뉴 저장
 		int index = 0;	// cartList의 인덱스
 		String name = "";
@@ -55,8 +49,8 @@ public class ChineseFood {
 				
 				if(answer == 'Y' || answer == 'y') {
 				
-					// 선택한 음식 인스턴스의 count변수에 setter를 이용하여 값 대입 및 카운트 1 증가
-					cartList.get(index).setCount(count[index]++);
+					// 선택한 음식 인스턴스의 count변수에 저장된 값 1 증가시키기
+					cartList.get(index).setCount(cartList.get(index).getCount() + 1);
 					System.out.println(name + "을 장바구니에 담았습니다.");
 					System.out.println();
 					flag = false;
