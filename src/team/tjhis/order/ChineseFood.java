@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ChineseFood {
 
-	public List<Food> orderChineseFood(List<Food> cartList, CartManager cartManager) {
+	public void orderChineseFood(List<Food> cartList, CartManager cartManager) {
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -14,9 +14,9 @@ public class ChineseFood {
 		List<Food> cf = new ArrayList<>();
 		
 		// 메뉴 목록 어레이리스트에 추가
-//		cf.add(new Food(1, "짜장면", 6000, 864, "국내산"));
-//		cf.add(new Food(2, "짬뽕", 8000, 788, "국내산"));
-//		cf.add(new Food(3, "탕수육", 15000, 450, "국내산"));
+		cf.add(new Food(1, "짜장면", 6000, 864, "국내산"));
+		cf.add(new Food(2, "짬뽕", 8000, 788, "국내산"));
+		cf.add(new Food(3, "탕수육", 15000, 450, "국내산"));
 
 		printMenu(cf);	// 메뉴 출력
 		
@@ -29,7 +29,7 @@ public class ChineseFood {
 		int index = 0;	// cartList의 인덱스
 		String name = "";
 		char answer = ' ';
-		boolean flag = true;
+		boolean isEmpty = true;
 		
 		while(true) {
 			
@@ -53,7 +53,7 @@ public class ChineseFood {
 					cartList.get(index).setCount(cartList.get(index).getCount() + 1);
 					System.out.println(name + "을 장바구니에 담았습니다.");
 					System.out.println();
-					flag = false;
+					isEmpty = false;
 				
 				}else if(answer == 'N' || answer == 'n') {
 					
@@ -64,16 +64,16 @@ public class ChineseFood {
 				
 		/* 장바구니로 이동을 선택한 경우 */
 			}else if(choice == 9) {
-				cartList = cartManager.cart(cartList);
-				if(cartList.size() == 0) return cartList;	// 주문 완료된 경우
+				cartManager.cart(cartList);
+				if(cartList.size() == 0) return;	// 주문 완료된 경우
 				printMenu(cf);	// 더 담을 경우
 			
 //		/* 이전 페이지로 돌아가기를 선택한 경우(추후 구현) */
 //			}else if(choice == 0) {
-//				if(flag) {
+//				if(isEmpty) {
 //					System.out.println("이전 페이지로 돌아갑니다.");
 //					System.out.println();
-//					return cartList;
+//					return;
 //				}
 //			
 //				System.out.print("장바구니에 담긴 음식이 모두 삭제됩니다. 그래도 돌아가시겠습니까?(y/n) : ");
@@ -83,7 +83,7 @@ public class ChineseFood {
 //					cartList.clear();
 //					System.out.println("이전 페이지로 돌아갑니다.");
 //					System.out.println();
-//					return cartList;
+//					return;
 //					
 //				}else if(answer == 'N' || answer == 'n') {
 //					System.out.println("취소되었습니다.");

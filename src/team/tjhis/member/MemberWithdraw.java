@@ -4,16 +4,6 @@ import java.util.Scanner;
 
 public class MemberWithdraw {
 
-	// 싱글톤 객체 생성
-	private static MemberWithdraw withdraw = new MemberWithdraw();	// 클래스 초기화 시 인스턴스 생성
-	
-	private MemberWithdraw() {}	// 외부에서 인스턴스 생성하는 것 방지
-
-	public static MemberWithdraw getInstance() {
-		return withdraw;	// 인스턴스 반환 
-	}
-	
-	
 	// 회원탈퇴 메소드
 	public boolean withdraw(MemberDB db) {
 		
@@ -24,7 +14,7 @@ public class MemberWithdraw {
 			System.out.println();
 			System.out.print("정말로 탈퇴하시겠습니까?(y/n) : ");
 			char answer = sc.next().charAt(0);
-			System.out.println(); 
+			System.out.println();
 			
 			if(answer == 'Y' || answer == 'y') {	// 탈퇴 요청한 경우
 				
