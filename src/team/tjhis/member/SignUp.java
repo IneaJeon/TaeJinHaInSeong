@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class SignUp {
 
-	public static int number = 1;
+	public static int number = 6;
 	
 	public void signUpStart(MemberDB db) {
 
