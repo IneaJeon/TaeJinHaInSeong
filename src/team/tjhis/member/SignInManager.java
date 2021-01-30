@@ -9,12 +9,7 @@ public class SignInManager {
 		Scanner sc = new Scanner(System.in);
 		Login login = new Login();						
 		FindId findId = new FindId();					
-		FindPwd findPwd = new FindPwd();				
-		
-		/* 객체의 무분별한 생성 막기위해 싱글톤 사용 */
-//		Login login = Login.getInstance();				 
-//		FindId findId = FindId.getInstance();			
-//		FindPwd findPwd = FindPwd.getInstance();		
+		FindPwd findPwd = new FindPwd();					
 
 		while(true) {
 			System.out.println();

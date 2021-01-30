@@ -7,12 +7,8 @@ public class MyPageManager {
 	public void myPage(MemberDB db) {
 		
 		Scanner sc = new Scanner(System.in);
-//		MemberWithdraw withdraw = new MemberWithdraw();
+		MemberWithdraw withdraw = new MemberWithdraw();
 		UpdateProfile updateProfile = new UpdateProfile();
-		
-		/* 객체의 무분별한 생성 막기위해 싱글톤 사용 */
-//		MyDataAmend amend = MyDataAmend.getInstance();				 
-		MemberWithdraw withdraw = MemberWithdraw.getInstance();
 		
 		int index = 0;
 		for(int i = 0 ; i < db.memberDB.size() ; i++) {

@@ -12,16 +12,6 @@ public class MemberDB {
 		super();
 	}
 
-//	private static ArrayList <MemberDTO> memberDB = new ArrayList<>();		
-//	
-//	private MemberDB() {}
-//	
-//	public MemberDB(int logNo, ArrayList<MemberDTO> memberDB) {
-//		super();
-//		this.logNo = logNo;
-//		this.memberDB = memberDB;
-//	}
-
 	public int getLogNo() {
 		return logNo;
 	}
@@ -29,15 +19,5 @@ public class MemberDB {
 	public void setLogNo(int logNo) {
 		this.logNo = logNo;
 	}
-	
-	
-
-//	public ArrayList<MemberDTO> getMemberDB() {
-//		return memberDB;
-//	}
-//
-//	public void setMemberDB(ArrayList<MemberDTO> memberDB) {
-//		this.memberDB = memberDB;
-//	}
 	
 }
