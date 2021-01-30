@@ -12,9 +12,9 @@ public class KoreanFood{
 		
 		List<Food> kf = new ArrayList<>();
 		
-//		kf.add(new Food(1, "돼지 김치찌개", 8000, 465, "국내산"));
-//		kf.add(new Food(2, "해물 된장찌개", 8000, 183, "국내산"));
-//		kf.add(new Food(3, "해물 순두부찌개", 8000, 302, "국내산"));
+		kf.add(new Food(1, "돼지 김치찌개", 8000, 465, "국내산"));
+		kf.add(new Food(2, "해물 된장찌개", 8000, 183, "국내산"));
+		kf.add(new Food(3, "해물 순두부찌개", 8000, 302, "국내산"));
 		
 		System.out.println("__________ 1인가득밥상 __________");
 		System.out.println("[ MENU ]");
@@ -95,7 +95,6 @@ public class KoreanFood{
 //				
 //					if(answer == 'y' || answer == 'Y') {
 //						cartList.clear();
-//						return cartList;
 //					
 //					}else {
 //						break;
