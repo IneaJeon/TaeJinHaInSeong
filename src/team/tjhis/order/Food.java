@@ -11,7 +11,7 @@ public class Food {
 	
 	public Food() {}
 
-	public Food(String foodName, int price, int calorie, int foodNo, String countryOfOrigin) {
+	public Food(int foodNo, String foodName, int price, int calorie, String countryOfOrigin) {
 		super();
 		this.foodName = foodName;
 		this.price = price;
