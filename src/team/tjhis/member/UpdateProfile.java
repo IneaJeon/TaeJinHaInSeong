@@ -1,5 +1,6 @@
 package team.tjhis.member;
 
+
 import java.util.Scanner;
 
 public class UpdateProfile {
@@ -19,6 +20,7 @@ public class UpdateProfile {
 		sc.nextLine();
 
 		int index = 0;
+
 		
 		for (int i = 0; i < db.memberDB.size(); i++) {
 			if(db.getLogNo() == db.memberDB.get(i).getNo()) {

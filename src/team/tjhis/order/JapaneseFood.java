@@ -1,16 +1,16 @@
 package team.tjhis.order;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class JapaneseFood /* extends JPanel */ {
 
-	ArrayList<Food> cartList = new ArrayList<>();
+	List<Food> cartList = new ArrayList<>();
 
-	public void orderJapaneseFood(ArrayList<Food> cartList) {
+	public void orderJapaneseFood(List<Food> cartList, CartManager cartManager) {
 
 		Scanner sc = new Scanner(System.in);
-		CartManager cartManager = new CartManager();
 
 		char confirm;
 		int countOne = 0;

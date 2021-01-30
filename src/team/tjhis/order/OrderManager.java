@@ -1,13 +1,12 @@
 package team.tjhis.order;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-
-import javax.swing.JFrame;
 
 public class OrderManager/* extends JFrame */ {
 
-	ArrayList<Food> cartList = new ArrayList<>();
+	List<Food> cartList = new ArrayList<>();
 
 	public void order() {
 
@@ -18,7 +17,7 @@ public class OrderManager/* extends JFrame */ {
 		JapaneseFood japaneseFood = new JapaneseFood();
 		ChineseFood chineseFood = new ChineseFood();
 		FastFood fastFood = new FastFood();
-//		CartManager cartManager = new CartManager();
+		CartManager cartManager = new CartManager();
 
 		while (true) {
 			System.out.println();
@@ -28,7 +27,6 @@ public class OrderManager/* extends JFrame */ {
 			System.out.println("3. 일식");
 			System.out.println("4. 중식");
 			System.out.println("5. 패스트푸드");
-//			System.out.println("6. 장바구니");
 			System.out.println("9. 주문하기 종료");
 			int choice = sc.nextInt();
 
@@ -36,23 +34,20 @@ public class OrderManager/* extends JFrame */ {
 
 			switch (choice) {
 			case 1:
-			koreanFood.orderKoreanFood(cartList);
+//			koreanFood.orderKoreanFood(cartList, cartManager);
 				break;
 			case 2:
-			schoolFood.orderSchoolFood(cartList);
+//			schoolFood.orderSchoolFood(cartList, cartManager);
 				break;
 			case 3:
-				japaneseFood.orderJapaneseFood(cartList);
+				japaneseFood.orderJapaneseFood(cartList, cartManager);
 				break;
 			case 4:
-//			chineseFood.orderChineseFood(cartList);
+			chineseFood.orderChineseFood(cartList, cartManager);
 				break;
 			case 5:
-//			fastFood.orderFastFood(cartList);
+//			fastFood.orderFastFood(cartList, cartManager); 
 				break;
-//			case 6:
-//			cartManager.cart(foodList);
-//				break;
 			case 9:
 				System.out.println("주문하기 종료");
 				return;
