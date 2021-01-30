@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class CartManager {
 
-	public List<Food> cart(List<Food> cartList){
+	public void cart(List<Food> cartList){
 		
 		int totalPrice = 0;		// 총 주문금액 넣을 변수
-		boolean flag = true;
+		boolean isEmpty = true;
 		int choice = 0;
 		char answer = ' ';
 		int cnt = 0;
@@ -26,7 +26,7 @@ public class CartManager {
 			
 			cnt = 0;
 			totalPrice = 0;
-			flag = true;
+			isEmpty = true;
 			// 주문 목록 출력
 			for(Food food : cartList) {
 				
@@ -37,16 +37,16 @@ public class CartManager {
 				System.out.println("이름 : " + food.getFoodName() + ", 수량 : " + food.getCount() + ", 가격 : " + food.getPrice()*food.getCount());
 				totalPrice += food.getPrice()*food.getCount();
 				foodNo[cnt++] = food.getFoodNo();
-				flag = false;	// 장바구니에 담은 메뉴가 있을 경우 flag를 false로 변경
+				isEmpty = false;	// 장바구니에 담은 메뉴가 있을 경우 flag를 false로 변경
 			}
 			
-			if(flag) {	// 장바구니가 비어 있는 경우
+			if(isEmpty) {	// 장바구니가 비어 있는 경우
 				System.out.println("장바구니에 담으신 메뉴가 없습니다.");
 				System.out.println("________________________________");
 				System.out.println();
 				System.out.println("이전 페이지로 돌아갑니다.");
 				System.out.println();
-				return cartList;
+				return;
 			}
 			
 			System.out.println();
@@ -73,14 +73,14 @@ public class CartManager {
 				index = foodNo[(choice-2) / 3] - 1;
 				
 				switch(choice % 3) {			
-//					case 0 : cartList = updateCart.plusMenu(cartList, index); break;
-//					case 1 : cartList = updateCart.deleteMenu(cartList, index); break;
-//					case 2 : cartList = updateCart.minusMenu(cartList, index);
+					case 0 : updateCart.plusMenu(cartList, index); break;
+					case 1 : updateCart.deleteMenu(cartList, index); break;
+					case 2 : updateCart.minusMenu(cartList, index);
 				}
 			}else {
 				
 				switch(choice) {
-					case 1 : return cartList;
+					case 1 : return;
 					
 					case 0 : 
 						System.out.print("장바구니에 담긴 음식을 주문하시겠습니까?(y/n) : ");
@@ -92,7 +92,7 @@ public class CartManager {
 							System.out.println("배달 예상 시간은 " + ((int)(Math.random() * 10) + 30) + "분입니다.");
 							System.out.println();
 							cartList.clear();
-							return cartList;
+							return;
 						}else if(answer == 'N' || answer == 'n') {
 							System.out.println("취소되었습니다.");
 							break;
@@ -103,7 +103,6 @@ public class CartManager {
 				}
 			}
 
-		
 		}//while
 	}
 }
