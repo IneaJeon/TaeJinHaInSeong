@@ -1,6 +1,7 @@
 package team.tjhis.gui;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedInputStream;
@@ -10,12 +11,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import team.tjhis.member.FindId;
 import team.tjhis.member.MemberDTO;
 
 public class FindIdPage extends JPanel {
@@ -30,41 +33,44 @@ public class FindIdPage extends JPanel {
 		this.op = this;
 
 		this.setLayout(null);
-		this.setSize(1440 / 2, 830 / 2);
-		this.setBackground(new Color(0, 122, 251));
+		this.setBounds(0,160/2,1440 / 2, 830 / 2);
+		this.setBackground(Color.white);
 		
-		JLabel title = new JLabel("ID 찾기");
-		title.setSize(100,30);
-		title.setLocation(325, 50);
+		Image top = new ImageIcon("images/topid.PNG").getImage();
+		Image list = new ImageIcon("images/idlist.PNG").getImage();
 		
-		JLabel nameLabel = new JLabel("이름");
-		nameLabel.setSize(30,30);
-		nameLabel.setLocation(200,110);
+		JLabel topLabel = new JLabel(new ImageIcon(top));
+		topLabel.setSize(1400/2,100);
+		topLabel.setLocation(0, 0);
 		
-		JLabel pnLabel = new JLabel("휴대폰번호");
-		pnLabel.setSize(100,30);
-		pnLabel.setLocation(200, 160);
+		JLabel listLabel = new JLabel(new ImageIcon(list));
+		listLabel.setSize(90,120);
+		listLabel.setLocation(180, 150);
 		
 		JTextField nameTf = new JTextField(20);
 		nameTf.setSize(150,30);
-		nameTf.setLocation(300, 110);
+		nameTf.setLocation(300, 167);
 		
 		JTextField pnTf = new JTextField(20);
 		pnTf.setSize(150,30);
-		pnTf.setLocation(300, 160);
+		pnTf.setLocation(300, 223);
+		
+		JButton btn = new JButton("확인");
+		btn.setSize(120, 35);
+		btn.setLocation(280, 300);
+		btn.setBackground(new Color(0, 122, 251));
+		btn.setForeground(Color.white);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setSize(1440/2, 30);
-		textArea.setLocation(0, 346);
+		textArea.setSize(1440 / 2, 20);
+		textArea.setLocation(0, 394);
+		textArea.setBackground(new Color(0, 122, 251));
 		textArea.setEditable(false);
+		textArea.setForeground(Color.white);
 
-		JButton btn = new JButton("확인");
-		btn.setSize(100,50);
-		btn.setLocation(300, 230);
 		
-		this.add(title);
-		this.add(nameLabel);
-		this.add(pnLabel);
+		this.add(topLabel);
+		this.add(listLabel);
 		this.add(nameTf);
 		this.add(pnTf);
 		this.add(textArea);
@@ -83,13 +89,16 @@ public class FindIdPage extends JPanel {
 					while (true) {
 						MemberDTO dto = (MemberDTO) objIn.readObject();
 						if (nameTf.getText().equals(dto.getName()) && pnTf.getText().equals(dto.getPhoneNum())) {
+							textArea.setText("");
 							String text = nameTf.getText() + "회원님의 ID는 " + dto.getId() + "입니다.";
 							textArea.append(text);
 							return;
 						}
 					}
 				} catch (EOFException v) {
-					System.out.println("일치하는 회원의 정보가 없습니다.");
+					textArea.setText("");
+					String text = "일치하는 회원의 정보가 없습니다. 다시 입력해주세요.";
+					textArea.append(text);
 				} catch (FileNotFoundException v) {
 					v.printStackTrace();
 				} catch (IOException v) {
@@ -111,6 +120,6 @@ public class FindIdPage extends JPanel {
 
 //	public void findId() {
 //
-//		new FindIdPage(mf);
+//		new FindId(mf);
 //	}
 }
