@@ -24,7 +24,7 @@ public class KoreanFood{
 			cartList.add(food);
 		}
 			
-		System.out.println("[ 9. 장바구니 가기 ]");
+		System.out.println("[ 9. 장바구니로 이동 ]");
 //		System.out.println("[ 0. 이전 페이지로 돌아가기 ]");
 		System.out.println("______________________________");
 			
