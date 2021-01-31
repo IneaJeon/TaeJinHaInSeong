@@ -42,7 +42,7 @@ public class KoreanFoodPage extends JPanel{
 		choice3.setBounds((1084-82)/2, (493-50)/2, 249/2, 50/2);
 
 		JButton goCart = new JButton("장바구니로 이동");
-			goCart.setBounds(590/2, 734/2, 249/2, 50/2);
+			goCart.setBounds(590/2, (894-160)/2, 249/2, 50/2);
 
 			
 			this.addMouseListener(new MyMouseAdapter());
