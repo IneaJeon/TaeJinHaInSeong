@@ -26,10 +26,15 @@ public class JapaneseFood /* extends JPanel */ {
 			System.out.println();
 			System.out.println("======= 김태완 스시 =======");
 			System.out.println(menuOne);
+			System.out.println();
 			System.out.println(menuTwo);
+			System.out.println();
 			System.out.println(menuThree);
+			System.out.println();
 			System.out.println("4. 장바구니로 이동하기");
+			System.out.println();
 			System.out.println("9. 음식 카테고리로 돌아가기");
+			System.out.println();
 			System.out.print("메뉴를 선택해주세요 : ");
 
 			int choice = sc.nextInt();
