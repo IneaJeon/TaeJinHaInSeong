@@ -25,7 +25,7 @@ public class FindIdPage extends JPanel {
 	
 	public FindIdPage(MainFrame mf) {
 		
-		String dbFile = "src/member/memberDB.txt";
+		String dbFile = "src/team/tjhis/memberDB.txt";
 		this.mf = mf;
 		this.op = this;
 
