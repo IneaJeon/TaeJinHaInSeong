@@ -16,6 +16,8 @@ public class Application {
 		MyPageManager myPageManager = new MyPageManager();
 		OrderManager orderManager = new OrderManager();
 		
+		db.members();
+		
 		// 반복문으로 프로그램 종료 될때까지 어떤 함수를 실행 해야할지 선택하는 알고리즘 설계
 		// 입력하면 해당하는 메소드를 MemberManager 인스턴스에서 골라 작성
 		// 선택 int변수 1개
@@ -52,7 +54,7 @@ public class Application {
 					System.out.println("로그인을 먼저 시도해주세요.");
 					continue;
 				}
-//				orderManager.orderMethod();
+				orderManager.order();
 				break;				
 			case 8: // 8. 데이터베이스에 들어있는 회원 목록 조회(admin) 실행 시 테스트용도
 				for(int i = 0 ; i < db.memberDB.size() ; i++) {
