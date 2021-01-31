@@ -19,5 +19,5 @@ public class ChangePage {
 		mf.repaint(); // 새로고침
 		
 	}
-	
+
 }

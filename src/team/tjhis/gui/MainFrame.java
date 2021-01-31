@@ -3,6 +3,8 @@ package team.tjhis.gui;
 import javax.swing.JFrame;
 
 public class MainFrame extends JFrame{
+	
+	public static final String PATH = "src/team/tjhis/memberDB.txt";
 
 	public MainFrame() {
 		
