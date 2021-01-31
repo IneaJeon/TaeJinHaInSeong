@@ -20,7 +20,7 @@ public class MainFrame extends JFrame{
 //		new FindIdPage(this);
 //		new FindPwdPage(this);
 //		new MyPage(this);
-		new KoreanFoodPage(this);
+		new KoreanFoodPage(this); 
 //		new ChineseFoodPage(this);
 //		new FastFoodPage(this);
 //		new SchoolFoodPage(this);
