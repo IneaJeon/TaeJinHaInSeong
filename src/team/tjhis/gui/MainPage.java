@@ -36,8 +36,6 @@ public class MainPage extends JPanel {
 		this.add(goMyPage);
 		this.add(goOrderPage);
 		
-		mf.add(this); // 메인프레임에 메인페이지 붙이기
-		
 		goSignUpPage.addActionListener(new ActionListener() { // sign up 버튼 누를시
 			
 			@Override
