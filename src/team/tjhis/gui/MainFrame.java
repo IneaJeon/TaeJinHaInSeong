@@ -3,7 +3,7 @@ package team.tjhis.gui;
 import javax.swing.JFrame;
 
 public class MainFrame extends JFrame{
-	
+	// 입출력을 할때 작성해야 할 경로를 미리 변수로 만들어서 어디서든 사용할 수 있게 작성.
 	public static final String PATH = "src/team/tjhis/memberDB.txt";
 
 	public MainFrame() {
