@@ -1,6 +1,7 @@
 package team.tjhis.gui;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedInputStream;
@@ -9,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -17,6 +19,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import team.tjhis.member.MemberDTO;
+import team.tjhis.member.UpdateProfile;
 
 public class UpdateProfilePage extends JPanel {
 
@@ -31,57 +34,59 @@ public class UpdateProfilePage extends JPanel {
 		this.op = this;
 
 		this.setLayout(null);
-		this.setSize(1440 / 2, 830 / 2);
-		this.setBackground(new Color(0, 122, 251));
-
-		JLabel pwdLabel = new JLabel("새 비밀번호");
-		pwdLabel.setSize(100, 30);
-		pwdLabel.setLocation(170, 60);
+		this.setBounds(0,160/2,1440 / 2, 830 / 2);
+		this.setBackground(Color.white);
+		
+		Image top = new ImageIcon("images/top.PNG").getImage();
+		Image list = new ImageIcon("images/list.PNG").getImage();
+		
+		JLabel topLabel = new JLabel(new ImageIcon(top));
+		topLabel.setSize(1400/2,100);
+		topLabel.setLocation(0, 0);
+		
+		JLabel listLabel = new JLabel(new ImageIcon(list));
+		listLabel.setSize(116,181);
+		listLabel.setLocation(160, 120);
+		
 
 		JPasswordField pwdTf = new JPasswordField(20);
 		pwdTf.setSize(200, 30);
-		pwdTf.setLocation(280, 60);
+		pwdTf.setLocation(280, 120);
 
-		JLabel pwdConfirmLabel = new JLabel("새 비밀번호 확인");
-		pwdConfirmLabel.setSize(100, 30);
-		pwdConfirmLabel.setLocation(170, 110);
 
 		JPasswordField pwdConfirmTf = new JPasswordField(20);
 		pwdConfirmTf.setSize(200, 30);
-		pwdConfirmTf.setLocation(280, 110);
+		pwdConfirmTf.setLocation(280, 170);
 
-		JLabel pnLabel = new JLabel("휴대폰 번호");
-		pnLabel.setSize(100, 30);
-		pnLabel.setLocation(170, 160);
 
 		JTextField pnTf = new JTextField(20);
 		pnTf.setSize(200, 30);
-		pnTf.setLocation(280, 160);
+		pnTf.setLocation(280, 220);
 
-		JLabel addrLabel = new JLabel("주소");
-		addrLabel.setSize(100, 30);
-		addrLabel.setLocation(170, 210);
 
 		JTextField addrTf = new JTextField(20);
 		addrTf.setSize(200, 30);
-		addrTf.setLocation(280, 210);
+		addrTf.setLocation(280, 270);
 
 		JButton btn = new JButton("회원정보 수정");
-		btn.setSize(130, 50);
-		btn.setLocation(270, 260);
+		btn.setSize(120, 35);
+		btn.setLocation(280, 325);
+		btn.setBackground(new Color(0, 122, 251));
+		btn.setForeground(Color.white);
+		
 
 		JTextArea textArea = new JTextArea();
-		textArea.setSize(1440 / 2, 30);
-		textArea.setLocation(0, 346);
+		textArea.setSize(1440 / 2, 20);
+		textArea.setLocation(0, 394);
+		textArea.setBackground(new Color(0, 122, 251));
 		textArea.setEditable(false);
+		textArea.setForeground(Color.white);
 
-		this.add(pwdLabel);
+		this.add(topLabel);
+		this.add(listLabel);
 		this.add(pwdTf);
-		this.add(pwdConfirmLabel);
 		this.add(pwdConfirmTf);
-		this.add(pnLabel);
 		this.add(pnTf);
-		this.add(addrLabel);
 		this.add(addrTf);
 		this.add(btn);
 		this.add(textArea);
@@ -99,13 +104,15 @@ public class UpdateProfilePage extends JPanel {
 
 					while (true) {
 						MemberDTO dto = (MemberDTO) objIn.readObject();
-						if (pwdTf.getText().equals(pwdConfirmTf.getText()) && pnTf.getText() != null
-								&& addrTf.getText() != null) {
+						if (pwdTf.getText().equals(pwdConfirmTf.getText()) && !(pnTf.getText().isEmpty())
+								&& !(addrTf.getText().isEmpty())) {
 							dto.setPwd(pwdTf.getText());
 							dto.setPhoneNum(pnTf.getText());
 							dto.setAddr(addrTf.getText());
+							textArea.setText("");
 							String text = "회원정보 수정이 완료되었습니다.";
 							textArea.append(text);
+							
 							return;
 						}
 					}
@@ -113,8 +120,10 @@ public class UpdateProfilePage extends JPanel {
 
 					e1.printStackTrace();
 				} catch (IOException e1) {
+					textArea.setText("");
 					String text = "정보를 다시 입력해주세요.";
 					textArea.append(text);
+					
 					return;
 				} catch (ClassNotFoundException e1) {
 
@@ -126,9 +135,9 @@ public class UpdateProfilePage extends JPanel {
 		});
 	}
 
-//	public void updateProfile() {
-//		new UpdateProfilePage(mf);
-//	}
+	public void updateProfile() {
+		new UpdateProfilePage(mf);
+	}
 }
 
 //		Scanner sc = new Scanner(System.in);
