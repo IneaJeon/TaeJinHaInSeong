@@ -19,7 +19,7 @@ public class MainPage extends JPanel {
 		this.mp = this;
 
 		this.setLayout(null);
-		this.setSize(1440/2, 830/2);
+		this.setBounds(0, 0, 1440/2, 1176/2);
 		this.setBackground(new Color(0, 122, 251));
 		
 		JButton goSignUpPage = new JButton("sign up"); // sign up 버튼
@@ -52,7 +52,7 @@ public class MainPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-//				ChangePage.changePanel(mf, mp, new SignInPage(mf));
+				ChangePage.changePanel(mf, mp, new LoginPage(mf));
 				
 			}
 			
