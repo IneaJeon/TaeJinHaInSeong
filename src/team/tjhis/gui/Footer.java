@@ -17,7 +17,7 @@ public class Footer extends JPanel {
 		this.mf = mf;
 		this.footer = this;
 		
-		Image footerImage = new ImageIcon("images/footer.PNG").getImage().getScaledInstance(1440, 110, 0);
+		Image footerImage = new ImageIcon("images/footer.PNG").getImage().getScaledInstance(1440, 90, 0);
 		
 		JLabel flabel = new JLabel(new ImageIcon(footerImage));
 		flabel.setBounds(0, 910, 1440, 90);

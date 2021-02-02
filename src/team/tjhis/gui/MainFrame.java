@@ -8,17 +8,19 @@ public class MainFrame extends JFrame{
 
 	public MainFrame() {
 		
-		this.setBounds(0, 0, 1440, 1035);
+		this.setBounds(0, 0, 1440, 1029);
 		this.setLayout(null);
 		this.setTitle("저기요!");
 		
+
 		new Header(this);
 		new Footer(this);
 //		this.add(new MainPage(this)); // 첫 화면(메인 페이지)를 붙인다
+
 //		new SignUpPage(this);
 //		new LoginPage(this);		
 //		new FindIdPage(this);
-//		new FindPwdPage(this);
+//		new FindPwdPage(this); 
 //		new MyPage(this);
 		new KoreanFoodPage(this); 
 //		new ChineseFoodPage(this);
