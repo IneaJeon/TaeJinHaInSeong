@@ -28,22 +28,36 @@ public class MainPage extends JPanel {
 		mlabel.setBounds(0, 0, 1440, 800);
 		this.setBackground(Color.WHITE);
 		
-		JButton goSchoolFood = new JButton(); // sign up 버튼
-		JButton goFastFood = new JButton(); // sign in 버튼
-		JButton goJapaneseFood = new JButton(); // myPage 버튼
-		JButton goKoreanFood = new JButton(); // order 버튼
-		JButton goChineseFood = new JButton(); // order 버튼
+		JButton goSchoolFood = new JButton(); // 분식 버튼
+		JButton goFastFood = new JButton(); // 패스트푸드 버튼
+		JButton goJapaneseFood = new JButton(); // 일식 버튼
+		JButton goKoreanFood = new JButton(); // 한식 버튼
+		JButton goChineseFood = new JButton(); // 중식 버튼
+		
+		JButton goSignIn = new JButton(); // 로그인 버튼
+		JButton goSignUp = new JButton(); // 회원가입 버튼
+		JButton goMyPage = new JButton(); // 마이페이지 버튼
+		
+		goSignIn.setBounds(0, 0, 0, 0);
+		goSignUp.setBounds(0, 0, 0, 0);
+		goMyPage.setBounds(0, 0, 0, 0);
+		
+		goSignIn.setOpaque(false);
+		goSignUp.setOpaque(false);
+		goMyPage.setOpaque(false);
 		
 		goSchoolFood.setBounds(221, 463, 150, 150);
 		goFastFood.setBounds(429, 463, 150, 150);
 		goJapaneseFood.setBounds(639, 463, 150, 150);
 		goKoreanFood.setBounds(851, 463, 150, 150);
 		goChineseFood.setBounds(1061, 463, 150, 150);
+		
 		goSchoolFood.setOpaque(false);
 		goFastFood.setOpaque(false);
 		goJapaneseFood.setOpaque(false);
 		goKoreanFood.setOpaque(false);
 		goChineseFood.setOpaque(false);
+		
 		this.add(mlabel);
 		this.add(goSchoolFood);
 		this.add(goFastFood);
@@ -51,45 +65,56 @@ public class MainPage extends JPanel {
 		this.add(goKoreanFood);
 		this.add(goChineseFood);
 		
-		goSchoolFood.addActionListener(new ActionListener() { // sign up 버튼 누를시
+		goSchoolFood.addActionListener(new ActionListener() { // 분식 버튼 누를시
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-//				ChangePage.changePanel(mf, mp, new SignUpPage(mf));
+//				ChangePage.changePanel(mf, mp, new SchoolFoodPage(mf));
 						
 			}
 			
 		});
 		
-		goFastFood.addActionListener(new ActionListener() { // sign in 버튼 누를시
+		goFastFood.addActionListener(new ActionListener() { // 패스트푸드 버튼 누를시
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				ChangePage.changePanel(mf, mp, new LoginPage(mf));
+//				ChangePage.changePanel(mf, mp, new FastFoodPage(mf));
 				
 			}
 			
 		});
 		
-		goJapaneseFood.addActionListener(new ActionListener() { // myPage 버튼 누를시
+		goJapaneseFood.addActionListener(new ActionListener() { // 일식 버튼 누를시
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-//				ChangePage.changePanel(mf, mp, new MyPageMenuPage(mf));
+				ChangePage.changePanel(mf, mp, new JapaneseFoodPage(mf));
 				
 			}
 			
 		});
 		
-		goKoreanFood.addActionListener(new ActionListener() { // order 버튼 누를시
+		goKoreanFood.addActionListener(new ActionListener() { // 한식 버튼 누를시
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-//				ChangePage.changePanel(mf, mp, new OrderPage(mf));
+				ChangePage.changePanel(mf, mp, new KoreanFoodPage(mf));
+				
+			}
+			
+		});
+		
+		goChineseFood.addActionListener(new ActionListener() { // 중식 버튼 누를시
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+//				ChangePage.changePanel(mf, mp, new ChineseFoodPage(mf));
 				
 			}
 			
