@@ -19,7 +19,7 @@ public class MainPage extends JPanel {
 		this.mp = this;
 
 		this.setLayout(null);
-		this.setBounds(0, 0, 1440/2, 1176/2);
+		this.setBounds(0, 120, 1440, 790);
 		this.setBackground(new Color(0, 122, 251));
 		
 		JButton goSignUpPage = new JButton("sign up"); // sign up 버튼

@@ -23,26 +23,26 @@ public class KoreanFoodPage extends JPanel{
 		this.koreanFoodPage = this;
 		
 		/* y는 160 추가로 빼줄 것 */ 
-		this.setBounds(0, 160/2, 1440/2, 830/2);
+		this.setBounds(0, 120, 1440, 790);
 		this.setLayout(null);
 		this.setBackground(Color.WHITE);
 		
 		Image restaurant = new ImageIcon("images/koreanFood.PNG").getImage().getScaledInstance(1274/2, 634/2, 0);
 		
 		JLabel label = new JLabel(new ImageIcon(restaurant));
-		label.setBounds(82/2, (210-160)/2, 1274/2, 634/2);
+		label.setBounds(82, (210-120), 1274, 634);
 		
 		JButton choice1 = new JButton("담기");
-		choice1.setBounds((508-82)/2, (493-50)/2, 249/2, 50/2);
+		choice1.setBounds((508-82), (493-50), 249, 50);
 
 		JButton choice2 = new JButton("담기");
-		choice2.setBounds((790-82)/2, (493-50)/2, 249/2, 50/2);
+		choice2.setBounds((790-82), (493-50), 249, 50);
 		
 		JButton choice3 = new JButton("담기");
-		choice3.setBounds((1084-82)/2, (493-50)/2, 249/2, 50/2);
+		choice3.setBounds((1084-82), (493-50), 249, 50);
 
 		JButton goCart = new JButton("장바구니로 이동");
-			goCart.setBounds(590/2, (894-160)/2, 249/2, 50/2);
+			goCart.setBounds(590, (894-160), 249, 50);
 
 			
 			this.addMouseListener(new MyMouseAdapter());

@@ -33,14 +33,14 @@ public class FindIdPage extends JPanel {
 		this.op = this;
 
 		this.setLayout(null);
-		this.setBounds(0,160/2,1440 / 2, 830 / 2);
+		this.setBounds(0, 120, 1440, 790);
 		this.setBackground(Color.white);
 		
 		Image top = new ImageIcon("images/topid.PNG").getImage();
 		Image list = new ImageIcon("images/idlist.PNG").getImage();
 		
 		JLabel topLabel = new JLabel(new ImageIcon(top));
-		topLabel.setSize(1400/2,100);
+		topLabel.setSize(1400,100);
 		topLabel.setLocation(0, 0);
 		
 		JLabel listLabel = new JLabel(new ImageIcon(list));
@@ -62,7 +62,7 @@ public class FindIdPage extends JPanel {
 		btn.setForeground(Color.white);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setSize(1440 / 2, 20);
+		textArea.setSize(1440, 20);
 		textArea.setLocation(0, 394);
 		textArea.setBackground(new Color(0, 122, 251));
 		textArea.setEditable(false);

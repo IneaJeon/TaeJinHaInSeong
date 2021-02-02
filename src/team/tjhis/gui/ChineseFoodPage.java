@@ -16,7 +16,7 @@ public class ChineseFoodPage extends JPanel {
 		this.mf = mf;
 		this.cfPage = this;
 		
-		this.setBounds(0, 160/2, 1440/2, 830/2);
+		this.setBounds(0, 120, 1440, 790);
 		this.setLayout(null);
 		this.setBackground(Color.WHITE);
 		

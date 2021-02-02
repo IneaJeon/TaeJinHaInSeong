@@ -34,7 +34,7 @@ public class CartPage extends JPanel implements ActionListener {
 		this.mf = mf;
 		this.cartPage = this;
 		
-		this.setBounds(0, 160/2, 1440/2, 830/2);
+		this.setBounds(0, 120, 1440, 790);
 		this.setLayout(null);
 		this.setBackground(Color.WHITE);
 		
@@ -49,6 +49,7 @@ public class CartPage extends JPanel implements ActionListener {
 //		cartPage.add(layout);
 		
 /* 라벨 */
+		
 		JLabel cartList = new JLabel();
 		cartList.setBounds(265/2, (361-160)/2, 910/2, 415/2);
 		cartList.setBackground(Color.BLACK);

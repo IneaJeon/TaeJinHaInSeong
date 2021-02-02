@@ -8,7 +8,7 @@ public class MainFrame extends JFrame{
 
 	public MainFrame() {
 		
-		this.setBounds(0, 0, 1440/2, 1176/2);
+		this.setBounds(0, 0, 1440, 1035);
 		this.setLayout(null);
 		this.setTitle("저기요!");
 		

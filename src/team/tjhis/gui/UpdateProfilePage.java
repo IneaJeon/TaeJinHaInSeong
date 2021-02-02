@@ -34,14 +34,14 @@ public class UpdateProfilePage extends JPanel {
 		this.op = this;
 
 		this.setLayout(null);
-		this.setBounds(0,160/2,1440 / 2, 830 / 2);
+		this.setBounds(0, 120, 1440, 790);
 		this.setBackground(Color.white);
 		
 		Image top = new ImageIcon("images/top.PNG").getImage();
 		Image list = new ImageIcon("images/list.PNG").getImage();
 		
 		JLabel topLabel = new JLabel(new ImageIcon(top));
-		topLabel.setSize(1400/2,100);
+		topLabel.setSize(1400,100);
 		topLabel.setLocation(0, 0);
 		
 		JLabel listLabel = new JLabel(new ImageIcon(list));

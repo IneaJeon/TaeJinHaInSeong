@@ -21,7 +21,7 @@ public class JapaneseFoodPage extends JPanel {
 		this.op = this;
 
 		this.setLayout(null);
-		this.setBounds(0, 160 / 2, 1440 / 2, 830 / 2);
+		this.setBounds(0, 120, 1440, 790);
 		this.setBackground(Color.white);
 
 		Image logo = new ImageIcon("images/logo.PNG").getImage();

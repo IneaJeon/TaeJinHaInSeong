@@ -31,7 +31,7 @@ public class FindPwdPage extends JPanel {
 //		this.np = sip;
 		
 		this.setLayout(null);
-		this.setSize(1440/2, 830/2);
+		this.setSize(1440, 790);
 		this.setBackground(new Color(0, 122, 251));
 		
 		JTextField idField = new JTextField(20);

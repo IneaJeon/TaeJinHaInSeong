@@ -29,7 +29,7 @@ public class LoginPage extends JPanel {
 		this.loginPage = this;
 
 		/* 패널 레이아웃 */
-		this.setBounds(250, 160 / 2, 1440 / 2, 830 / 2);
+		this.setBounds(250, 120, 1440, 790);
 		this.setLayout(null);
 		this.setSize(400 / 2, 550 / 2);
 		this.setBackground(Color.WHITE);

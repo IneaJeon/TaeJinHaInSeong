@@ -20,9 +20,9 @@ public class Footer extends JPanel {
 		Image footerImage = new ImageIcon("images/footer.PNG").getImage().getScaledInstance(1440/2, 110/2, 0);
 		
 		JLabel flabel = new JLabel(new ImageIcon(footerImage));
-		flabel.setBounds(0, 990/2, 1440/2, 110/2);
+		flabel.setBounds(0, 910, 1440, 90);
 		
-		this.setBounds(0, 990/2, 1440/2, 110/2);
+		this.setBounds(0, 910, 1440, 90);
 		this.setBackground(Color.WHITE);
 		
 		footer.add(flabel);
