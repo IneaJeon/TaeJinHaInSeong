@@ -17,7 +17,7 @@ public class Header extends JPanel {
 		this.mf = mf;
 		this.header = this;
 		
-		Image headerImage = new ImageIcon("images/header.PNG").getImage().getScaledInstance(1440, 120, 0);
+		Image headerImage = new ImageIcon("images/loginHeader.PNG").getImage().getScaledInstance(1440, 120, 0);
 		
 		JLabel hlabel = new JLabel(new ImageIcon(headerImage));
 		hlabel.setBounds(0, 0, 1440, 120);

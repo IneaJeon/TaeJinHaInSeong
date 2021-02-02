@@ -2,6 +2,8 @@ package team.tjhis.gui;
 	
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -14,72 +16,100 @@ public class KoreanFoodPage extends JPanel{
 		
 	private MainFrame mf;
 	private JPanel koreanFoodPage;
+	private int count;
 	
 	public KoreanFoodPage() {}
 	
 	public KoreanFoodPage(MainFrame mf) { 
 		
 		this.mf = mf;
-		this.koreanFoodPage = this;
-		
-		/* y는 120 추가로 빼줄 것 */ 
-		this.setBounds(0, 120, 1440, 790);
+		this.koreanFoodPage = this;		// this 대신에 koreanFoodPage로 부를 수 있도록 써준 것.
+
 		this.setLayout(null);
+		this.setBounds(0, 120, 1440, 790);
 		this.setBackground(Color.WHITE);
 		
-		Image restaurant = new ImageIcon("images/koreanFood.PNG").getImage().getScaledInstance(1274, 634, 0);
+		Image restaurant = new ImageIcon("images/koreanFood.png").getImage().getScaledInstance(1440, 790, 0);
 		
 		JLabel label = new JLabel(new ImageIcon(restaurant));
-		label.setBounds(82, 54, 1274, 634);
+		label.setBounds(0, 0, 1440, 790);
 		
-		JButton btn1 = new JButton("담기");
-		btn1.setSize(150, 50);
-		btn1.setLocation(559-82, 380);
-		btn1.setBackground(new Color(0, 122, 251));
-		btn1.setForeground(Color.white);
+		JButton btn1 = new JButton("돼지 김치찌개 담기");
+		btn1.setSize(140, 50);
+		btn1.setLocation(575, 464);
+		btn1.setOpaque(false);
 
-		JButton btn2 = new JButton("담기");
-		btn2.setSize(150, 50);
-		btn2.setLocation(841, 571);
-		btn2.setBackground(new Color(0, 122, 251));
-		btn2.setForeground(Color.white);
+		JButton btn2 = new JButton("해물 된장찌개 담기");
+		btn2.setSize(140, 50);
+		btn2.setLocation(855, 464);
+		btn2.setOpaque(false);
 
-		JButton btn3 = new JButton("담기");
-		btn3.setSize(150, 50);
-		btn3.setLocation(1135, 571);
-		btn3.setBackground(new Color(0, 122, 251));
-		btn3.setForeground(Color.white);
+		JButton btn3 = new JButton("해물 순두부찌개 담기");
+		btn3.setSize(140, 50);
+		btn3.setLocation(1150, 464);
+		btn3.setOpaque(false);
 
-		JButton cartListButton = new JButton("장바구니로 이동");
-		cartListButton.setSize(200, 50);
-		cartListButton.setLocation(815, 781);
-		cartListButton.setBackground(new Color(0, 122, 251));
-		cartListButton.setForeground(Color.white);
+		JButton cartListButton = new JButton("장바구니 가기");
+		cartListButton.setSize(190, 50);
+		cartListButton.setLocation(840, 674);
+		cartListButton.setOpaque(false);
+		
+		
+
+		koreanFoodPage.add(label);
+		koreanFoodPage.add(cartListButton);
+		
+		koreanFoodPage.add(btn1);
+		koreanFoodPage.add(btn2);
+		koreanFoodPage.add(btn3);
+
+		mf.add(koreanFoodPage);
+	
+		btn1.addActionListener(new ActionListener() {
+	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+	
+			}
+	
+		});
+	
+		btn2.addActionListener(new ActionListener() {
+	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				PopUpPage popUppage = new PopUpPage();
+				PopUpPage.successPopUp(mf, "해물 된장찌개를 장바구니에 담았습니다.");
+				count++;
+			}
+	
+		});
+	
+		btn3.addActionListener(new ActionListener() {
+	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+	
+			}
+	
+		});
+	
+		cartListButton.addActionListener(new ActionListener() {
+	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				ChangePage changePanel = new ChangePage();
+				changePanel.changePanel(mf, koreanFoodPage, new CartPage(mf, count));
+	
+				
+			}
+	
+		});
+	
 			
-			this.addMouseListener(new MyMouseAdapter());
-
-			koreanFoodPage.add(label);
-			
-			koreanFoodPage.add(cartListButton);
-			label.add(btn1);
-			label.add(btn2);
-			label.add(btn3);
-
-			mf.add(koreanFoodPage);
+	
 		}
-		
-	private class MyMouseAdapter extends MouseAdapter{
-		
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			
-//			ChangePage.changePage(mf, koreanFoodPage, new CartPage(mf));
-//		}
-		
+	
+	
 	}
-		
-
-	}
-
-
-}
