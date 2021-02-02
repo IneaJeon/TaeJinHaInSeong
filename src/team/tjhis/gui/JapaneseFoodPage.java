@@ -24,53 +24,49 @@ public class JapaneseFoodPage extends JPanel {
 		this.setBounds(0, 120, 1440, 790);
 		this.setBackground(Color.white);
 
-		Image logo = new ImageIcon("images/logo.PNG").getImage();
-		Image menu = new ImageIcon("images/menu.PNG").getImage();
-		Image calorie = new ImageIcon("images/calorie.PNG").getImage();
+		Image image = new ImageIcon("images/panel.PNG").getImage().getScaledInstance(1440, 790, 0);
+		
 
-		JLabel logoLabel = new JLabel(new ImageIcon(logo));
-		logoLabel.setSize(300, 350);
-		logoLabel.setLocation(0, 35);
+		JLabel logoLabel = new JLabel(new ImageIcon(image));
+		logoLabel.setBounds(0, 120, 1440, 790);
+		logoLabel.setLocation(0, 0);
+		
 
-		JLabel menuLabel = new JLabel(new ImageIcon(menu));
-		menuLabel.setSize(480, 250);
-		menuLabel.setLocation(230, 0);
-
-		JLabel calorieLabel = new JLabel(new ImageIcon(calorie));
-		calorieLabel.setSize(360, 100);
-		calorieLabel.setLocation(290, 250);
-
-		JButton btn1 = new JButton("담기");
-		btn1.setSize(80, 30);
-		btn1.setLocation(290, 225);
+		JButton btn1 = new JButton();
+		btn1.setSize(140, 50);
+		btn1.setLocation(575, 464);
 		btn1.setBackground(new Color(0, 122, 251));
 		btn1.setForeground(Color.white);
+		btn1.setOpaque(false);
 
-		JButton btn2 = new JButton("담기");
-		btn2.setSize(80, 30);
-		btn2.setLocation(430, 225);
+		JButton btn2 = new JButton();
+		btn2.setSize(140, 50);
+		btn2.setLocation(855, 464);
 		btn2.setBackground(new Color(0, 122, 251));
 		btn2.setForeground(Color.white);
+		btn2.setOpaque(false);
 
 		JButton btn3 = new JButton("담기");
-		btn3.setSize(80, 30);
-		btn3.setLocation(570, 225);
+		btn3.setSize(140, 50);
+		btn3.setLocation(1150, 464);
 		btn3.setBackground(new Color(0, 122, 251));
 		btn3.setForeground(Color.white);
+		btn3.setOpaque(false);
 
 		JButton cartListButton = new JButton("장바구니로 이동");
-		cartListButton.setSize(130, 30);
-		cartListButton.setLocation(410, 348);
+		cartListButton.setSize(190, 50);
+		cartListButton.setLocation(830, 674);
 		cartListButton.setBackground(new Color(0, 122, 251));
 		cartListButton.setForeground(Color.white);
+		cartListButton.setOpaque(false);
 
 		this.add(logoLabel);
-		this.add(menuLabel);
-		this.add(calorieLabel);
 		this.add(btn1);
 		this.add(btn2);
 		this.add(btn3);
 		this.add(cartListButton);
+		
+		mf.add(this);
 
 		btn1.addActionListener(new ActionListener() {
 
