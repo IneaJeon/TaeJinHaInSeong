@@ -22,37 +22,48 @@ public class KoreanFoodPage extends JPanel{
 		this.mf = mf;
 		this.koreanFoodPage = this;
 		
-		/* y는 160 추가로 빼줄 것 */ 
+		/* y는 120 추가로 빼줄 것 */ 
 		this.setBounds(0, 120, 1440, 790);
 		this.setLayout(null);
 		this.setBackground(Color.WHITE);
 		
-		Image restaurant = new ImageIcon("images/koreanFood.PNG").getImage().getScaledInstance(1274/2, 634/2, 0);
+		Image restaurant = new ImageIcon("images/koreanFood.PNG").getImage().getScaledInstance(1274, 634, 0);
 		
 		JLabel label = new JLabel(new ImageIcon(restaurant));
-		label.setBounds(82, (210-120), 1274, 634);
+		label.setBounds(82, 54, 1274, 634);
 		
-		JButton choice1 = new JButton("담기");
-		choice1.setBounds((508-82), (493-50), 249, 50);
+		JButton btn1 = new JButton("담기");
+		btn1.setSize(150, 50);
+		btn1.setLocation(559-82, 380);
+		btn1.setBackground(new Color(0, 122, 251));
+		btn1.setForeground(Color.white);
 
-		JButton choice2 = new JButton("담기");
-		choice2.setBounds((790-82), (493-50), 249, 50);
-		
-		JButton choice3 = new JButton("담기");
-		choice3.setBounds((1084-82), (493-50), 249, 50);
+		JButton btn2 = new JButton("담기");
+		btn2.setSize(150, 50);
+		btn2.setLocation(841, 571);
+		btn2.setBackground(new Color(0, 122, 251));
+		btn2.setForeground(Color.white);
 
-		JButton goCart = new JButton("장바구니로 이동");
-			goCart.setBounds(590, (894-160), 249, 50);
+		JButton btn3 = new JButton("담기");
+		btn3.setSize(150, 50);
+		btn3.setLocation(1135, 571);
+		btn3.setBackground(new Color(0, 122, 251));
+		btn3.setForeground(Color.white);
 
+		JButton cartListButton = new JButton("장바구니로 이동");
+		cartListButton.setSize(200, 50);
+		cartListButton.setLocation(815, 781);
+		cartListButton.setBackground(new Color(0, 122, 251));
+		cartListButton.setForeground(Color.white);
 			
 			this.addMouseListener(new MyMouseAdapter());
 
 			koreanFoodPage.add(label);
 			
-			koreanFoodPage.add(goCart);
-			label.add(choice1);
-			label.add(choice2);
-			label.add(choice3);
+			koreanFoodPage.add(cartListButton);
+			label.add(btn1);
+			label.add(btn2);
+			label.add(btn3);
 
 			mf.add(koreanFoodPage);
 		}
