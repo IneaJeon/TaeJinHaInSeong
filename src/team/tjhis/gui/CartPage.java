@@ -27,7 +27,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 	public CartPage() {}
 
 	/* MainFrame 인스턴스를 매개변수로 가지는 생성자 */
-	public CartPage(MainFrame mf) {
+	public CartPage(MainFrame mf, int count) {
 
 		this.mf = mf;
 		this.cartPage = this;
@@ -42,13 +42,16 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 		JLabel cartList = new JLabel(new ImageIcon(cart));
 		cartList.setBounds(0, 0, 1440, 790);
 		
-		Image minus = new ImageIcon("images/cart-gray.PNG").getImage().getScaledInstance(20, 22, 0);
-		JLabel grayMinus = new JLabel(new ImageIcon(minus));
-		grayMinus.setBounds(973, 286, 20, 22);
-		cartList.add(grayMinus);
-		
-		JButton minusBtn1 = new JButton("-");
-		minusBtn1.setBounds(973, 286, 20, 22);
+		if(count == 1) {
+			
+			Image minus = new ImageIcon("images/cart-gray.PNG").getImage().getScaledInstance(20, 22, 0);
+			JLabel grayMinus = new JLabel(new ImageIcon(minus));
+			grayMinus.setBounds(973, 286, 20, 22);
+			cartList.add(grayMinus);
+			
+			JButton minusBtn1 = new JButton("-");
+			minusBtn1.setBounds(973, 286, 20, 22);
+		}
 
 		
 /* 버튼 */		
