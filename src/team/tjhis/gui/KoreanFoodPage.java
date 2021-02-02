@@ -61,7 +61,7 @@ public class KoreanFoodPage extends JPanel{
 		
 		koreanFoodPage.add(btn1);
 		koreanFoodPage.add(btn2);
-		koreanFoodPage.add(btn3);
+		koreanFoodPage.add(btn3); 
 
 		mf.add(koreanFoodPage);
 	
