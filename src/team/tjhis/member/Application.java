@@ -2,14 +2,11 @@ package team.tjhis.member;
 
 import java.util.Scanner;
 
-import team.tjhis.gui.MainFrame;
 import team.tjhis.order.OrderManager;
 
 public class Application {
 
 	public static void main(String[] args) {
-		
-		new MainFrame();
 		
 		Scanner sc = new Scanner(System.in);
 		// MemberDB 인스턴스
