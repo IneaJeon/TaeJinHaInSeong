@@ -12,9 +12,9 @@ public class MainFrame extends JFrame{
 		this.setLayout(null);
 		this.setTitle("저기요!");
 		
-		new Header(this);
 		new Footer(this);
 		this.add(new MainPage(this)); // 첫 화면(메인 페이지)를 붙인다
+		new Header(this);
 //		new SignUpPage(this);
 //		new LoginPage(this);		
 //		new FindIdPage(this);
