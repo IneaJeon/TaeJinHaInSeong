@@ -46,11 +46,11 @@ public class MainPage extends JPanel {
 		goSignUp.setOpaque(false);
 		goMyPage.setOpaque(false);
 		
-		goSchoolFood.setBounds(221, 463, 150, 150);
-		goFastFood.setBounds(429, 463, 150, 150);
-		goJapaneseFood.setBounds(639, 463, 150, 150);
-		goKoreanFood.setBounds(851, 463, 150, 150);
-		goChineseFood.setBounds(1061, 463, 150, 150);
+		goSchoolFood.setBounds(221, 522, 150, 150);
+		goFastFood.setBounds(429, 522, 150, 150);
+		goJapaneseFood.setBounds(639, 522, 150, 150);
+		goKoreanFood.setBounds(851, 522, 150, 150);
+		goChineseFood.setBounds(1061, 522, 150, 150);
 		
 		goSchoolFood.setOpaque(false);
 		goFastFood.setOpaque(false);
