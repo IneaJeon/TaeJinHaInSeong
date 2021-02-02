@@ -45,13 +45,13 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 		
 /* 라벨 */
 		JLabel cntLabel = new JLabel(count + "");
-		cntLabel.setBounds(1000, 286, 29, 22);
+		cntLabel.setBounds(1010, 286, 29, 22);
 
 		JLabel priceLabel = new JLabel(count*8000 + "");
-		priceLabel.setBounds(1000, 246, 50, 22);
+		priceLabel.setBounds(1005, 246, 50, 22);
 		
 		JLabel totalPriceLabel = new JLabel(count*8000 + "");
-		totalPriceLabel.setBounds(1065, 630, 50, 22);
+		totalPriceLabel.setBounds(1070, 630, 50, 22);
 		
 		
 /* 주문수량이 1인 경우 [-]버튼 색상 변경 및 이벤트 처리 */
@@ -64,7 +64,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 			
 			JButton minusBtn1 = new JButton("[-]");
 			minusBtn1.setBounds(973, 286, 20, 22);
-			
+			cartLabel.add(minusBtn1);
 			minusBtn1.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
@@ -111,9 +111,10 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 		});
 		
 		cartPage.add(cartLabel);
-		cartPage.add(cntLabel);
-		cartPage.add(priceLabel);
-		cartPage.add(totalPriceLabel);
+		
+		cartLabel.add(cntLabel);
+		cartLabel.add(priceLabel);
+		cartLabel.add(totalPriceLabel);
 		
 		cartPage.add(minusBtn);
 		cartPage.add(plusBtn);
