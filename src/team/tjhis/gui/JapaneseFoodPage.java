@@ -28,7 +28,7 @@ public class JapaneseFoodPage extends JPanel {
 		
 
 		JLabel logoLabel = new JLabel(new ImageIcon(image));
-		logoLabel.setBounds(82, 54, 1440, 790);
+		logoLabel.setBounds(0, 0, 1440, 790);
 		
 		
 
@@ -55,7 +55,7 @@ public class JapaneseFoodPage extends JPanel {
 
 		JButton cartListButton = new JButton("장바구니로 이동");
 		cartListButton.setSize(190, 50);
-		cartListButton.setLocation(830, 674);
+		cartListButton.setLocation(840, 674);
 		cartListButton.setBackground(new Color(0, 122, 251));
 		cartListButton.setForeground(Color.white);
 		cartListButton.setOpaque(false);
