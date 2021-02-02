@@ -78,7 +78,6 @@ public class KoreanFoodPage extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage popUppage = new PopUpPage();
 				PopUpPage.successPopUp(mf, "해물 된장찌개를 장바구니에 담았습니다.");
 				count++;
 			}
