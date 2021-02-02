@@ -24,12 +24,12 @@ public class JapaneseFoodPage extends JPanel {
 		this.setBounds(0, 120, 1440, 790);
 		this.setBackground(Color.white);
 
-		Image image = new ImageIcon("images/panel.PNG").getImage().getScaledInstance(1440, 790, 0);
+		Image image = new ImageIcon("images/JapaneseFood.PNG").getImage().getScaledInstance(1440, 790, 0);
 		
 
 		JLabel logoLabel = new JLabel(new ImageIcon(image));
-		logoLabel.setBounds(0, 120, 1440, 790);
-		logoLabel.setLocation(0, 0);
+		logoLabel.setBounds(82, 54, 1440, 790);
+		
 		
 
 		JButton btn1 = new JButton();
