@@ -37,56 +37,89 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 		this.setBackground(Color.WHITE);
 
 
-/* 라벨 */
+/* 레이아웃 */
 		Image cart = new ImageIcon("images/cart.PNG").getImage().getScaledInstance(1440, 790, 0);
-		JLabel cartList = new JLabel(new ImageIcon(cart));
-		cartList.setBounds(0, 0, 1440, 790);
+		JLabel cartLabel = new JLabel(new ImageIcon(cart));
+		cartLabel.setBounds(0, 0, 1440, 790);
+
 		
+/* 라벨 */
+		JLabel cntLabel = new JLabel(count + "");
+		cntLabel.setBounds(1000, 286, 29, 22);
+
+		JLabel priceLabel = new JLabel(count*8000 + "");
+		priceLabel.setBounds(1000, 246, 50, 22);
+		
+		JLabel totalPriceLabel = new JLabel(count*8000 + "");
+		totalPriceLabel.setBounds(1065, 630, 50, 22);
+		
+		
+/* 주문수량이 1인 경우 [-]버튼 색상 변경 및 이벤트 처리 */
 		if(count == 1) {
 			
 			Image minus = new ImageIcon("images/cart-gray.PNG").getImage().getScaledInstance(20, 22, 0);
 			JLabel grayMinus = new JLabel(new ImageIcon(minus));
 			grayMinus.setBounds(973, 286, 20, 22);
-			cartList.add(grayMinus);
+			cartLabel.add(grayMinus);
 			
-			JButton minusBtn1 = new JButton("-");
+			JButton minusBtn1 = new JButton("[-]");
 			minusBtn1.setBounds(973, 286, 20, 22);
+			
+			minusBtn1.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					PopUpPage.failPopUp(mf, "최소 주문 수량은 1개입니다.");
+				}
+			});
 		}
-
 		
+
 /* 버튼 */		
-		JButton minusBtn = new JButton("-");
+		JButton minusBtn = new JButton("[-]");
 		minusBtn.setBounds(973, 286, 20, 22);
 		minusBtn.setOpaque(false);
 
-		JButton plusBtn = new JButton("+");
+		JButton plusBtn = new JButton("[+]");
 		plusBtn.setBounds(1056, 286, 20, 22);
 		plusBtn.setOpaque(false);
 
-		JButton orderBtn = new JButton("주문하기");
-		orderBtn.setBounds(620, 690, 200, 50);
-		orderBtn.setOpaque(false);
-		
-		JButton deleteBtn = new JButton("X");
+		JButton deleteBtn = new JButton("[X]");
 		deleteBtn.setBounds(1145, 263, 30, 30);
 		deleteBtn.setOpaque(false);
 
+		JButton orderBtn = new JButton("[주문하기]");
+		orderBtn.setBounds(620, 690, 200, 50);
+		orderBtn.setOpaque(false);
+		
+
 /* 버튼 이벤트 처리 */
 		
+		/* [X] 버튼 누른 경우 */
+		deleteBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				PopUpPage.successPopUp(mf, "장바구니에 담긴 음식이 없습니다. 메인페이지로 돌아갑니다.");
+				ChangePage.returnMainPage(mf, cartPage);				
+			}
+		});
 		/* [주문하기] 버튼 누른 경우 */
 		orderBtn.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				
+			public void actionPerformed(ActionEvent e) {				
 				PopUpPage.successPopUp(mf, "주문이 완료되었습니다.");	
 			}			
 		});
 		
-		cartPage.add(cartList);
+		cartPage.add(cartLabel);
+		cartPage.add(cntLabel);
+		cartPage.add(priceLabel);
+		cartPage.add(totalPriceLabel);
+		
 		cartPage.add(minusBtn);
 		cartPage.add(plusBtn);
 		cartPage.add(deleteBtn);
 		cartPage.add(orderBtn);
+		
 		mf.add(cartPage);
 
 		
