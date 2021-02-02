@@ -17,7 +17,7 @@ public class KoreanFoodPage extends JPanel{
 	
 	public KoreanFoodPage() {}
 	
-	public KoreanFoodPage(MainFrame mf) {
+	public KoreanFoodPage(MainFrame mf) { 
 		
 		this.mf = mf;
 		this.koreanFoodPage = this;
