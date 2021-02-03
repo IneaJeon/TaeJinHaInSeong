@@ -105,14 +105,14 @@ public class UpdateProfilePage extends JPanel {
 //							System.out.println(dto.getPwd());
 //							System.out.println(dto.getPhoneNum());
 //							System.out.println(dto.getAddr());
-							PopUpPage.successPopUp(mf, "정보 수정이 완료되었습니다.");
+							PopUpPage.popUp(mf, "정보 수정이 완료되었습니다.");
 							return;
 						}
 					}
 				} catch (FileNotFoundException v) {
 					v.printStackTrace();
 				} catch (IOException v) {
-					PopUpPage.failPopUp(mf, "정보를 다시 입력해주세요.");
+					PopUpPage.popUp(mf, "정보를 다시 입력해주세요.");
 				} catch (ClassNotFoundException v) {
 					v.printStackTrace();
 				}

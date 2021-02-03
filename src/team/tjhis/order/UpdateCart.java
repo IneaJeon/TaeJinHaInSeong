@@ -5,9 +5,11 @@ import javax.swing.JPanel;
 import team.tjhis.gui.CartPage;
 import team.tjhis.gui.ChangePage;
 import team.tjhis.gui.MainFrame;
+import team.tjhis.gui.PopUpPage;
 
 public class UpdateCart {
 	
+	/* 수량 추가 */
 	public void plusMenu(MainFrame mf, JPanel cartPage, int count){
 		count++;
 		ChangePage.changePanel(mf, cartPage, new CartPage(mf, count));
@@ -15,6 +17,7 @@ public class UpdateCart {
 		
 	}
 	
+	/* 수량 감소 */
 	public void minusMenu(MainFrame mf, JPanel cartPage, int count){
 		count--;
 		ChangePage.changePanel(mf, cartPage, new CartPage(mf, count));
@@ -22,7 +25,9 @@ public class UpdateCart {
 		
 	}
 	
+	/* 장바구니에서 삭제 */
 	public void deleteMenu(MainFrame mf, JPanel cartPage){
+		PopUpPage.popUp(mf, "images/UpdateCart.png");
 		
 		
 	}

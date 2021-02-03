@@ -57,7 +57,7 @@ public class SchoolFoodPage extends JPanel{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					PopUpPage.successPopUp(mf, buttons[index].getText() + "을(를) 장바구니에 담았습니다");
+					PopUpPage.popUp(mf, buttons[index].getText() + "을(를) 장바구니에 담았습니다");
 					
 					
 				}

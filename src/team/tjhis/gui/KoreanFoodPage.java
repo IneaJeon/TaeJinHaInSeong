@@ -34,27 +34,29 @@ public class KoreanFoodPage extends JPanel{
 		JLabel label = new JLabel(new ImageIcon(restaurant));
 		label.setBounds(0, 0, 1440, 790);
 		
-		JButton btn1 = new JButton("돼지 김치찌개 담기");
+		/* 돼지 김치찌개에 담기 버튼(투명으로 처리) */
+		JButton btn1 = new JButton();
 		btn1.setSize(140, 50);
 		btn1.setLocation(575, 464);
 		btn1.setOpaque(false);
 
-		JButton btn2 = new JButton("해물 된장찌개 담기");
+		/* 해물 된장찌개 담기 버튼(투명으로 처리) */
+		JButton btn2 = new JButton();
 		btn2.setSize(140, 50);
 		btn2.setLocation(855, 464);
 		btn2.setOpaque(false);
 
-		JButton btn3 = new JButton("해물 순두부찌개 담기");
+		/* 해물 순두부찌개 담기 버튼(투명으로 처리) */
+		JButton btn3 = new JButton();
 		btn3.setSize(140, 50);
 		btn3.setLocation(1150, 464);
 		btn3.setOpaque(false);
 
-		JButton cartListButton = new JButton("장바구니 가기");
+		/* 장바구니 가기 버튼(투명으로 처리) */
+		JButton cartListButton = new JButton();
 		cartListButton.setSize(190, 50);
 		cartListButton.setLocation(840, 674);
 		cartListButton.setOpaque(false);
-		
-		
 
 		koreanFoodPage.add(label);
 		koreanFoodPage.add(cartListButton);
@@ -69,7 +71,7 @@ public class KoreanFoodPage extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.failPopUp(mf, "재료가 소진되어 주문이 불가능합니다.");
+				PopUpPage.popUp(mf, "images/KoreanFoodbtn13.png");
 	
 			}
 	
@@ -79,7 +81,7 @@ public class KoreanFoodPage extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.successPopUp(mf, "해물 된장찌개를 장바구니에 담았습니다.");
+				PopUpPage.popUp(mf, "images/KoreanFoodbtn2.png");
 				count++;
 			}
 	
@@ -89,7 +91,7 @@ public class KoreanFoodPage extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.failPopUp(mf, "재료가 소진되어 주문이 불가능합니다.");
+				PopUpPage.popUp(mf, "images/KoreanFoodbtn13.png");
 	
 			}
 	
