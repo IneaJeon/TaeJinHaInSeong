@@ -26,7 +26,7 @@ public class PopUpPage {
 		panel.add(button);
 		button.setOpaque(false);
 		
-		sd.setVisible(true);
+		sd.setVisible(true); 
 		
 		button.addActionListener(new ActionListener() {
 			
