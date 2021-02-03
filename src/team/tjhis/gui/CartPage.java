@@ -48,10 +48,10 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 		cntLabel.setBounds(1010, 286, 29, 22);
 
 		JLabel priceLabel = new JLabel(count*8000 + "");
-		priceLabel.setBounds(1005, 246, 50, 22);
+		priceLabel.setBounds(1010, 246, 50, 22);
 		
 		JLabel totalPriceLabel = new JLabel(count*8000 + "");
-		totalPriceLabel.setBounds(1070, 630, 50, 22);
+		totalPriceLabel.setBounds(1100, 630, 50, 22);
 		
 		
 /* 주문수량이 1인 경우 [-]버튼 색상 변경 및 이벤트 처리 */
@@ -102,11 +102,13 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 				ChangePage.returnMainPage(mf, cartPage);				
 			}
 		});
+		
 		/* [주문하기] 버튼 누른 경우 */
 		orderBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {				
 				PopUpPage.successPopUp(mf, "주문이 완료되었습니다.");	
+				ChangePage.returnMainPage(mf, cartPage);				
 			}			
 		});
 		
