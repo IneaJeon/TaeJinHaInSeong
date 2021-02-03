@@ -43,12 +43,12 @@ public class MyPageManager {
 					continue;
 					
 				case 2 :
-					boolean isComplete = withdraw.withdraw(db); 
-					if(isComplete) {
-						return;
-					}else {
-						continue;
-					}
+//					boolean isComplete = withdraw.withdraw(db); 
+//					if(isComplete) {
+//						return;
+//					}else {
+//						continue;
+//					}
 					
 				case 9 :
 					return;

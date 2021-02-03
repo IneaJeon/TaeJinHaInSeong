@@ -32,10 +32,10 @@ public class ChineseFoodPage extends JPanel {
 		JLabel chineseFood = new JLabel(new ImageIcon(restaurant));
 		chineseFood.setBounds(0, 0, 1440, 790);
 		
-		JButton btn1 = new JButton();
-		btn1.setSize(140, 50);
-		btn1.setLocation(575, 464);
-		btn1.setOpaque(false);
+		JButton menuBtn1 = new JButton();
+		menuBtn1.setSize(140, 50);
+		menuBtn1.setLocation(575, 464);
+		menuBtn1.setOpaque(false);
 
 		JButton btn2 = new JButton();
 		btn2.setSize(140, 50);
@@ -47,22 +47,22 @@ public class ChineseFoodPage extends JPanel {
 		btn3.setLocation(1150, 464);
 		btn3.setOpaque(false);
 
-		JButton cartListButton = new JButton();
-		cartListButton.setSize(190, 50);
-		cartListButton.setLocation(840, 674);
-		cartListButton.setOpaque(false);		
+		JButton goCart = new JButton();
+		goCart.setSize(190, 50);
+		goCart.setLocation(840, 674);
+		goCart.setOpaque(false);		
 		
 
 		cfPage.add(chineseFood);
-		cfPage.add(cartListButton);
+		cfPage.add(goCart);
 		
-		cfPage.add(btn1);
+		cfPage.add(menuBtn1);
 		cfPage.add(btn2);
 		cfPage.add(btn3); 
 
 		mf.add(cfPage);
 	
-		btn1.addActionListener(new ActionListener() {
+		menuBtn1.addActionListener(new ActionListener() {
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -91,12 +91,17 @@ public class ChineseFoodPage extends JPanel {
 	
 		});
 	
-		cartListButton.addActionListener(new ActionListener() {
+		goCart.addActionListener(new ActionListener() {
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				ChangePage.changePanel(mf, cfPage, new CartPage(mf, count));
+				if(count == 0) {
+					PopUpPage.popUp(mf, "images/emptyCart.png");
+					
+				}else {					
+					ChangePage.changePanel(mf, cfPage, new CartPage(mf, count));
+				}
 				
 			}
 	
