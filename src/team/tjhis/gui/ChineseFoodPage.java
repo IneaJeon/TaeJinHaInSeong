@@ -68,7 +68,6 @@ public class ChineseFoodPage extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				PopUpPage.popUp(mf, "images/addCart.png");
 				count++;
-	
 			}
 	
 		});
