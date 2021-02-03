@@ -33,15 +33,18 @@ public class LogoutHeader extends JPanel {
 		JButton goSignUp = new JButton(); // 회원가입 버튼
 		JButton goMainPage = new JButton(); // 로고 버튼
 		
-		goSignIn.setBounds(1147, 30, 55, 25);
-		goSignUp.setBounds(1224, 30, 74, 25);
-		goMainPage.setBounds(656, 23, 107, 37);
+		goSignIn.setBounds(1147, 65, 55, 25);
+		goSignUp.setBounds(1224, 65, 74, 25);
+		goMainPage.setBounds(656, 58, 107, 37);
 		
 		goSignIn.setOpaque(false);
 		goSignUp.setOpaque(false);
 		goMainPage.setOpaque(false);
 		
 		header.add(hlabel);
+		header.add(goSignIn);
+		header.add(goSignUp);
+		header.add(goMainPage);
 		mf.add(header);
 		
 		goSignIn.addActionListener(new ActionListener() {

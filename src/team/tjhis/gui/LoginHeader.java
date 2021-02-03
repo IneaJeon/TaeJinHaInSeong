@@ -32,13 +32,15 @@ public class LoginHeader extends JPanel{
 		JButton goMainPage = new JButton(); // 로고 버튼
 		JButton goMyPage = new JButton(); // 마이페이지 버튼
 		
-		goMainPage.setBounds(656, 23, 107, 37);
-		goMyPage.setBounds(1314, 30, 91, 25);
+		goMainPage.setBounds(656, 58, 107, 37);
+		goMyPage.setBounds(1314, 65, 91, 25);
 		
 		goMainPage.setOpaque(false);
 		goMyPage.setOpaque(false);
 		
 		header.add(hlabel);
+		header.add(goMyPage);
+		header.add(goMainPage);
 		mf.add(header);
 		
 		goMainPage.addActionListener(new ActionListener() {

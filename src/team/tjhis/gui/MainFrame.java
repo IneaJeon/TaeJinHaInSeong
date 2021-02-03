@@ -21,8 +21,7 @@ public class MainFrame extends JFrame{
 
 		header = new LogoutHeader(this);
 		footer = new Footer(this);
-		body = new UpdateProfilePage(this);
-//		body = new MainPage(this);
+		body = new MainPage(this);
 		this.add(body); // 첫 화면(메인 페이지)를 붙인다
 		
 //		new SignUpPage(this);
