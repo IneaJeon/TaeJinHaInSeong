@@ -70,7 +70,8 @@ public class MainPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-//				ChangePage.changePanel(mf, mp, new FastFoodPage(mf));
+				ChangePage.changePanel(mf, mp, new FastFoodPage(mf));
+				PopUpPage.returnPopUp(mf, "images/UnableToOrder.PNG");
 				
 			}
 			
@@ -82,6 +83,7 @@ public class MainPage extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				
 				ChangePage.changePanel(mf, mp, new JapaneseFoodPage(mf));
+				PopUpPage.returnPopUp(mf, "images/UnableToOrder.PNG");
 				
 			}
 			
@@ -93,6 +95,7 @@ public class MainPage extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				
 				ChangePage.changePanel(mf, mp, new KoreanFoodPage(mf));
+				PopUpPage.returnPopUp(mf, "images/UnableToOrder.PNG");
 				
 			}
 			
