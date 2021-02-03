@@ -163,7 +163,8 @@ public class PopUpPage {
 			public void actionPerformed(ActionEvent e) {
 
 				sd.dispose();
-				new MemberWithdraw().withdraw();
+
+				new MemberWithdraw().withdraw();				
 				returnPopUp(mf, "images/popUpWithdrawalCompleted.png");
 				ChangePage.changeHeader(mf, new LogoutHeader(mf));
 			}
