@@ -83,7 +83,7 @@ public class MemberDB {
 			}
 		
 		} catch (EOFException e) {
-			System.out.println("파일 읽기 완료!");
+//			System.out.println("파일 읽기 완료!");
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
