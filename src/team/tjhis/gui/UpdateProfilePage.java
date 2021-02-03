@@ -64,42 +64,42 @@ public class UpdateProfilePage extends JPanel {
 		lb.setSize(1440, 790);
 
 		JPasswordField pwdTf = new JPasswordField(20);
-		pwdTf.setSize(250, 30);
-		pwdTf.setLocation(642, 332);
+		pwdTf.setSize(336, 40);
+		pwdTf.setLocation(554, 342);
 		pwdTf.setBorder(null);
 
 		JPasswordField pwdConfirmTf = new JPasswordField(20);
-		pwdConfirmTf.setSize(250, 30);
-		pwdConfirmTf.setLocation(642, 400);
+		pwdConfirmTf.setSize(336, 40);
+		pwdConfirmTf.setLocation(554, 403);
 		pwdConfirmTf.setBorder(null);
 
 		JTextField phoneNumTf = new JTextField(20);
-		phoneNumTf.setSize(250, 30);
-		phoneNumTf.setLocation(640, 470);
+		phoneNumTf.setSize(336, 40);
+		phoneNumTf.setLocation(554, 462);
 		phoneNumTf.setBorder(null);
 
 		JTextField addrTf = new JTextField(20);
-		addrTf.setSize(250, 30);
-		addrTf.setLocation(640, 540);
+		addrTf.setSize(336, 40);
+		addrTf.setLocation(554, 525);
 		addrTf.setBorder(null);
 		
 		JTextArea nameArea = new JTextArea();
-		nameArea.setSize(250,27);
-		nameArea.setLocation(643, 200);
+		nameArea.setSize(336,30);
+		nameArea.setLocation(554, 230);
 		String nameText = "" + md.getName();
 		nameArea.append(nameText);
 		nameArea.setEditable(false);
 		
 		JTextArea IdArea = new JTextArea();
-		IdArea.setSize(250,27);
-		IdArea.setLocation(643, 268);
-		String idText = "" + md.getId();
-		IdArea.append(idText);
+		IdArea.setSize(336,30);
+		IdArea.setLocation(554, 292);
+		String IdText = "" + md.getId();
+		IdArea.append(IdText);
 		IdArea.setEditable(false);
 		
-		JButton btn = new JButton("회원정보 수정");
-		btn.setSize(200, 50);
-		btn.setLocation(620, 631);
+		JButton btn = new JButton();
+		btn.setSize(208, 50);
+		btn.setLocation(619, 645);
 		btn.setOpaque(false);
 
 		this.add(lb);
@@ -125,8 +125,7 @@ public class UpdateProfilePage extends JPanel {
 							md.setPwd(pwdTf.getText());
 							md.setPhoneNum(phoneNumTf.getText());
 							md.setAddr(addrTf.getText());
-							PopUpPage.popUp(mf, "회원정보 수정이 완료되었습니다.");
-
+							PopUpPage.popUp(mf, "images/updateComplete.png");
 							return;
 						}
 					}
@@ -134,7 +133,7 @@ public class UpdateProfilePage extends JPanel {
 				} catch (FileNotFoundException e1) {
 					e1.printStackTrace();
 				} catch (IOException e1) {
-					PopUpPage.popUp(mf, "회원정보를 다시 입력해주세요.");
+					PopUpPage.popUp(mf, "images/updateIncomplete.png");
 				} catch (ClassNotFoundException e1) {
 					e1.printStackTrace();
 				} finally {
