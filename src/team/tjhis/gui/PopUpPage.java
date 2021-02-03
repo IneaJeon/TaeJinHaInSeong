@@ -139,12 +139,13 @@ public class PopUpPage {
 		JLabel label = new JLabel(new ImageIcon(image));
 		label.setBounds(0, 15, 350, 350);
 
-/* 버튼 */
+		/* 확인 버튼 */
 		JButton okBtn = new JButton("확인");
 		okBtn.setBounds(50, 275, 118, 35);
 		okBtn.setBackground(new Color(0,122,251));
 		okBtn.setOpaque(false);
 
+		/* 취소 버튼 */
 		JButton cancelBtn = new JButton("취소");
 		cancelBtn.setBounds(182, 275, 118, 35);
 		cancelBtn.setBackground(new Color(0,122,251));
@@ -156,6 +157,7 @@ public class PopUpPage {
 
 		sd.setVisible(true);
 
+		
 		/* 확인 버튼 누른 경우 */
 		okBtn.addActionListener(new ActionListener() {
 
@@ -164,11 +166,14 @@ public class PopUpPage {
 
 				sd.dispose();
 
-				new MemberWithdraw().withdraw();				
-				returnPopUp(mf, "images/popUpWithdrawalCompleted.png");
-				ChangePage.changeHeader(mf, new LogoutHeader(mf));
+				/* 회원 탈퇴 절차 진행 */
+				new MemberWithdraw().withdraw();
+				
+				/* 탈퇴 완료 안내 팝업창 */
+				returnPopUp(mf, "images/popUpWithdrawalCompleted.png", false);	
 			}
 		});
+		
 		
 		/* 취소 버튼 누른 경우 */
 		cancelBtn.addActionListener(new ActionListener() {
@@ -181,5 +186,50 @@ public class PopUpPage {
 		});
 
 	}
+	
+	
+	public static void returnPopUp(MainFrame mf, String str, boolean isLoggedIn) {
+		// 원하는 곳에서 원하는 문자열에 대해서 팝업창을 띄워주는 메소드
+		// 성공시 출력(아이콘, 이미지 구분할 예정)
+		Dialog sd = new Dialog(mf);
+		sd.setLayout(null);
+		sd.setBounds(563, 292, 350, 350);
+		
+		Image image = new ImageIcon(str).getImage().getScaledInstance(350, 350, 0);
+		
+		JLabel label = new JLabel(new ImageIcon(image));
+		label.setBounds(0, 15, 350, 350);
+		
+		JButton button = new JButton("확인");
+		button.setBounds(100, 275, 150, 35);
+		button.setBackground(new Color(0,122,251));
+		button.setOpaque(false);
 
-}
+		sd.add(label);
+		sd.add(button);
+		
+		sd.setVisible(true); 
+		
+		button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				sd.dispose();
+				ChangePage.returnMainPage(mf, MainFrame.body);
+				
+				/* 로그인이 된 상태의 헤더로 변경된 메인페이지로 돌아감 */
+				if(isLoggedIn) {
+					ChangePage.changeHeader(mf, new LoginHeader(mf));					
+
+				/* 로그인되지 않은 상태의 헤더로 변경된 메인페이지로 돌아감 */
+				}else {
+					ChangePage.changeHeader(mf, new LogoutHeader(mf));						
+				}
+			}
+			
+		});
+		
+	}
+
+}//class
