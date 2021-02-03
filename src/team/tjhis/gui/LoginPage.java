@@ -2,6 +2,8 @@ package team.tjhis.gui;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -31,7 +33,6 @@ public class LoginPage extends JPanel {
 		/* 패널 레이아웃 */
 		this.setBounds(500, 120, 400, 495); 
 		this.setLayout(null);
-		this.setBackground(Color.white);
 		
 		
 		/*폰트 컬러기본설정*/
@@ -58,6 +59,7 @@ public class LoginPage extends JPanel {
 		idField.setBounds(0, 80, 400, 64);
 		idField.setBorder(BorderFactory.createLineBorder(Color.decode("#CCCCCC")));
 		add(idField);
+		
 
 		/* 비밀번호 필드 */
 		JTextField pwdField = new JTextField("비밀번호");
@@ -67,15 +69,17 @@ public class LoginPage extends JPanel {
 		pwdField.setBorder(BorderFactory.createLineBorder(Color.decode("#CCCCCC")));
 		add(pwdField);
 
+		
 		/* 로그인 버튼 */
-		JButton btn = new JButton("Login");
-		btn.setFont(font3);
-		btn.setBorderPainted(false);
-		btn.setBounds(0, 290, 400, 64);
-		btn.setBackground(new Color(0, 122, 251));
-		btn.setBorder(BorderFactory.createLineBorder(Color.decode("#CCCCCC")));
-		btn.setForeground(Color.WHITE);
-		this.add(btn);
+		JButton loginbtn = new JButton("Login");
+		loginbtn.setFont(font3);
+		loginbtn.setBorderPainted(false);
+		loginbtn.setBounds(0, 290, 400, 64);
+		loginbtn.setBackground(new Color(0, 122, 251));
+		loginbtn.setBorder(BorderFactory.createLineBorder(Color.decode("#CCCCCC")));
+		loginbtn.setForeground(Color.WHITE);
+		
+		add(loginbtn);
 
 		/* 아이디찾기 버튼 */
 		JButton idBtn = new JButton("아이디 찾기");
@@ -95,26 +99,34 @@ public class LoginPage extends JPanel {
 		idBtn.setForeground(c1);
 		add(pwdBtn);
 
-		/* 클릭 시 mainPage로 이동 */
-		this.addMouseListener(new MyMouseAdapter());
-
-		/* MainFrame에 loginPage 붙이기 */
 		mf.add(loginPage);
-
-		mf.setVisible(true);
-		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+		
+		/* 클릭 시 mainPage로 이동 */
+		loginbtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				ChangePage.changePanel(mf, loginPage, new MainPage());
+			}
+		});
+		
+		idBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ChangePage.changePanel(mf, loginPage, new FindIdPage());				
+			}
+		});
+		
+		pwdBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ChangePage.changePanel(mf, loginPage, new FindPwdPage(mf));				
+			}
+		});
+		
 	}
-
-	/* Listener 대신 Adapter 상속받아 모든 기능 구현할 필요없이 MouseAdapter만 구현 */
-	private class MyMouseAdapter extends MouseAdapter {
-
-		@Override
-		public void mouseClicked(MouseEvent e) {
-
-			ChangePage.changePanel(mf, loginPage, new MainPage()); // 로그인페이지에서 메인페이지로 이동
-		}
-
-	}
-
+	
 }
