@@ -34,18 +34,6 @@ public class MainPage extends JPanel {
 		JButton goKoreanFood = new JButton(); // 한식 버튼
 		JButton goChineseFood = new JButton(); // 중식 버튼
 		
-		JButton goSignIn = new JButton(); // 로그인 버튼
-		JButton goSignUp = new JButton(); // 회원가입 버튼
-		JButton goMyPage = new JButton(); // 마이페이지 버튼
-		
-		goSignIn.setBounds(0, 0, 0, 0);
-		goSignUp.setBounds(0, 0, 0, 0);
-		goMyPage.setBounds(0, 0, 0, 0);
-		
-		goSignIn.setOpaque(false);
-		goSignUp.setOpaque(false);
-		goMyPage.setOpaque(false);
-		
 		goSchoolFood.setBounds(221, 522, 150, 150);
 		goFastFood.setBounds(429, 522, 150, 150);
 		goJapaneseFood.setBounds(639, 522, 150, 150);
@@ -70,7 +58,7 @@ public class MainPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-//				ChangePage.changePanel(mf, mp, new SchoolFoodPage(mf));
+				ChangePage.changePanel(mf, mp, new SchoolFoodPage(mf));
 						
 			}
 			
@@ -114,7 +102,7 @@ public class MainPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-//				ChangePage.changePanel(mf, mp, new ChineseFoodPage(mf));
+				ChangePage.changePanel(mf, mp, new ChineseFoodPage(mf));
 				
 			}
 			
