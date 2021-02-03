@@ -29,39 +29,49 @@ public class LoginPage extends JPanel {
 		this.loginPage = this;
 
 		/* 패널 레이아웃 */
-		this.setBounds(250, 120, 1440, 790);
+		this.setBounds(500, 120, 400, 495); 
 		this.setLayout(null);
-		this.setSize(400 / 2, 550 / 2);
-		this.setBackground(Color.WHITE);
+		this.setBackground(Color.white);
+		
 		
 		/*폰트 컬러기본설정*/
 		Color c1 = new Color(51, 51, 51);
-		Font font1 = new Font("font-family", Font.PLAIN, 12);
-		Font font2 = new Font("font-family", Font.BOLD, 17);
+		Color c2=new Color(255,1,1);
+		Font font1 = new Font("나눔고딕", Font.PLAIN, 15);
+		Font font2 = new Font("나눔고딕", Font.BOLD, 17);
+		Font font3 = new Font("나눔고딕", Font.BOLD, 20);
+		
 
 		/* 로그인 필드 */
 		JLabel label = new JLabel("로그인");
-		label.setFont(font2);
-		label.setBounds(80, 20, 67, 15);
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setFont(font3);
+		label.setForeground(new Color(51, 51, 51));
+		label.setBounds(160, 30, 67, 15);
 		add(label);
 
 		/* 아이디 필드 */
 		JTextField idField = new JTextField("아이디");
+		idField.setFont(font1);
+		idField.setForeground(new Color(204, 204, 204));
 		idField.setColumns(10);
-		idField.setBounds(0, 60, 200, 32);
+		idField.setBounds(0, 80, 400, 64);
 		idField.setBorder(BorderFactory.createLineBorder(Color.decode("#CCCCCC")));
 		add(idField);
 
 		/* 비밀번호 필드 */
 		JTextField pwdField = new JTextField("비밀번호");
-		pwdField.setBounds(0, 100, 200, 32);
+		pwdField.setFont(font1);
+		pwdField.setForeground(new Color(204, 204, 204));
+		pwdField.setBounds(0, 150, 400, 64);
 		pwdField.setBorder(BorderFactory.createLineBorder(Color.decode("#CCCCCC")));
 		add(pwdField);
 
 		/* 로그인 버튼 */
 		JButton btn = new JButton("Login");
+		btn.setFont(font3);
 		btn.setBorderPainted(false);
-		btn.setBounds(0, 160, 200, 32);
+		btn.setBounds(0, 290, 400, 64);
 		btn.setBackground(new Color(0, 122, 251));
 		btn.setBorder(BorderFactory.createLineBorder(Color.decode("#CCCCCC")));
 		btn.setForeground(Color.WHITE);
@@ -69,8 +79,8 @@ public class LoginPage extends JPanel {
 
 		/* 아이디찾기 버튼 */
 		JButton idBtn = new JButton("아이디 찾기");
-		idBtn.setFont(font1);
-		idBtn.setBounds(0, 200, 200, 32);
+		idBtn.setFont(font2);
+		idBtn.setBounds(0, 360, 400, 64);
 		idBtn.setBackground(new Color(255, 255, 255));
 		idBtn.setBorder(BorderFactory.createLineBorder(Color.decode("#CCCCCC")));
 		idBtn.setForeground(c1);
@@ -78,8 +88,8 @@ public class LoginPage extends JPanel {
 
 		/* 비밀번호찾기 버튼 */
 		JButton pwdBtn = new JButton("비밀번호 찾기");
-		pwdBtn.setFont(font1);
-		pwdBtn.setBounds(0, 240, 200, 32);
+		pwdBtn.setFont(font2);
+		pwdBtn.setBounds(0, 430, 400, 64);
 		pwdBtn.setBackground(new Color(255, 255, 255));
 		pwdBtn.setBorder(BorderFactory.createLineBorder(Color.decode("#CCCCCC")));
 		idBtn.setForeground(c1);

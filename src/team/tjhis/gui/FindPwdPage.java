@@ -37,6 +37,7 @@ public class FindPwdPage extends JPanel {
 		JTextField idField = new JTextField(20);
 		JTextField nameField = new JTextField(20);
 		JTextField phoneNumField = new JTextField(20);
+		idField.setOpaque(false);
 		
 		JLabel idLabel = new JLabel("아이디 : ");
 		JLabel nameLabel = new JLabel("이름 : ");
@@ -49,7 +50,7 @@ public class FindPwdPage extends JPanel {
 		idLabel.setBounds(50, 65, 300, 20);
 		phoneNumLabel.setBounds(50, 110, 300, 20);
 		
-		JButton signInbtn = new JButton("아이디 찾기");
+		JButton signInbtn = new JButton();
 		signInbtn.setBounds(290, 230, 90, 30);
 		
 		signInbtn.addActionListener(new ActionListener() { // 아이디 찾기 버튼을 누를시
