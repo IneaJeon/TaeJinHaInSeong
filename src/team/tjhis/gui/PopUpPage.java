@@ -18,23 +18,19 @@ public class PopUpPage {
 		// 원하는 곳에서 원하는 문자열에 대해서 팝업창을 띄워주는 메소드
 		// 성공시 출력(아이콘, 이미지 구분할 예정)
 		Dialog sd = new Dialog(mf);
+		sd.setLayout(null);
 		sd.setBounds(563, 292, 350, 350);
 
 		Image image = new ImageIcon(str).getImage().getScaledInstance(350, 350, 0);
-
-		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 350, 350);
 		
 		JLabel label = new JLabel(new ImageIcon(image));
-		label.setBounds(0, 0, 350, 350);
+		label.setBounds(0, 15, 350, 350);
 
 		JButton button = new JButton("확인");
-		button.setBounds(94, 239, 143, 35);
-		button.setOpaque(false);
+		button.setBounds(100, 275, 150, 35);
 
-		sd.add(panel);
 		sd.add(label);
-		panel.add(button);
+		sd.add(button);
 
 		sd.setVisible(true);
 
@@ -54,12 +50,13 @@ public class PopUpPage {
 	public static void successPopUp(MainFrame mf, String str, String text) {
 
 		Dialog sd = new Dialog(mf);
+		sd.setLayout(null);
 		sd.setBounds(563, 292, 350, 350);
 
 		Image image = new ImageIcon(str).getImage().getScaledInstance(350, 350, 0);
 
 		JLabel label = new JLabel(new ImageIcon(image));
-		label.setSize(350, 350);
+		label.setBounds(0, 15, 350, 350);
 
 		JTextArea textArea = new JTextArea(text);
 		textArea.setSize(150, 20);
@@ -68,11 +65,11 @@ public class PopUpPage {
 		textArea.setBackground(new Color(245, 246, 247));
 
 		JButton button = new JButton("확인");
-		button.setBounds(94, 239, 143, 35);
+		button.setBounds(100, 275, 150, 35);
 		button.setOpaque(true);
 
 		label.add(textArea);
-		label.add(button);
+		sd.add(button);
 		sd.add(label);
 
 		sd.setVisible(true);
