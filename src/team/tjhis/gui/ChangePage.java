@@ -21,5 +21,13 @@ public class ChangePage {
 		mf.repaint(); // 새로고침
 		
 	}
+	
+	public static void changeHeader(MainFrame mf, JPanel np) {
+	
+		mf.remove(MainFrame.header);	// 현재 헤더 지우기
+		MainFrame.header = np;			// 바꿀 헤더를 header에 저장
+		mf.add(MainFrame.header);		// 바꾼 헤더를 메인프레임에 추가
+		mf.repaint();
+	}
 
 }
