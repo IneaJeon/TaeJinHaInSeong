@@ -100,7 +100,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				UpdateCart.minusMenu(mf, cartPage, count);
+				updateCart.minusMenu(mf, cartPage, count);
 			}
 		});
 		
@@ -110,7 +110,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				UpdateCart.plusMenu(mf, cartPage, count);
+				updateCart.plusMenu(mf, cartPage, count);
 			}
 		});
 		
