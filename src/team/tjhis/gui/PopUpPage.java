@@ -125,5 +125,40 @@ public class PopUpPage {
 		});
 
 	}
+	
+	/* 회원탈퇴 버튼 누른 경우 확인 절차 위한 팝업창 */
+	public static void withdrawPopUp(MainFrame mf, String str) {
+
+		Dialog sd = new Dialog(mf);
+		sd.setLayout(null);
+		sd.setBounds(563, 292, 350, 350);
+
+		Image image = new ImageIcon(str).getImage().getScaledInstance(350, 350, 0);
+		
+		JLabel label = new JLabel(new ImageIcon(image));
+		label.setBounds(0, 15, 350, 350);
+
+		JButton button = new JButton("확인");
+		button.setBounds(100, 275, 150, 35);
+		button.setBackground(new Color(0,122,251));
+		button.setOpaque(false);
+
+		sd.add(label);
+		sd.add(button);
+
+		sd.setVisible(true);
+
+		button.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				sd.dispose();
+
+			}
+
+		});
+		
+	}
 
 }
