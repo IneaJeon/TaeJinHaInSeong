@@ -134,7 +134,7 @@ public class FindPwdPage extends JPanel {
 								&& temp.getName().equals(nameField.getText())
 								&& temp.getPhoneNum().equals(phoneNumField.getText())) {
 							// 성공 팝업을 띄워주고 메세지로 비밀번호를 알려줌
-							PopUpPage.successPopUp(mf, "회원님의 비밀번호는 [" + temp.getPwd() + "] 입니다.");
+							PopUpPage.popUp(mf, "회원님의 비밀번호는 [" + temp.getPwd() + "] 입니다.");
 							// 성공 여부 변경
 							isSuccess = true;
 							break;
@@ -142,7 +142,7 @@ public class FindPwdPage extends JPanel {
 					}
 				} catch (EOFException e1) {
 					// 일치하는 데이터를 찾지 못하고 파일의 끝을 만나면 실패 팝업 뛰워줌
-					PopUpPage.failPopUp(mf, "입력하신 정보와 일치하는 회원이 존재하지 않습니다.");
+					PopUpPage.popUp(mf, "입력하신 정보와 일치하는 회원이 존재하지 않습니다.");
 					
 				} catch (FileNotFoundException e1) {
 					

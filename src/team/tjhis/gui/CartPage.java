@@ -68,7 +68,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 			minusBtn1.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					PopUpPage.failPopUp(mf, "최소 주문 수량은 1개입니다.");
+					PopUpPage.popUp(mf, "최소 주문 수량은 1개입니다.");
 				}
 			});
 		}
@@ -130,7 +130,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 		orderBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {				
-				PopUpPage.successPopUp(mf, "주문이 완료되었습니다.");	
+				PopUpPage.popUp(mf, "주문이 완료되었습니다.");	
 				ChangePage.returnMainPage(mf, cartPage);				
 			}			
 		});

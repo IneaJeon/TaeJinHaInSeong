@@ -70,12 +70,13 @@ public class FindIdPage extends JPanel {
 					while (true) {
 						MemberDTO dto = (MemberDTO) objIn.readObject();
 						if (nameTf.getText().equals(dto.getName()) && phoneNumTf.getText().equals(dto.getPhoneNum())) {
-							PopUpPage.successPopUp(mf, nameTf.getText() + "회원님의 ID는 " + dto.getId() + "입니다.");
+							PopUpPage.popUp(mf, nameTf.getText() + "회원님의 ID는 " + dto.getId() + "입니다.");
 							return;
 						}
 					}
+
 				} catch (EOFException e1) {
-					PopUpPage.failPopUp(mf, "일치하는 회원의 정보가 없습니다. 다시 입력해주세요.");
+					PopUpPage.popUp(mf, "일치하는 회원의 정보가 없습니다. 다시 입력해주세요.");
 				} catch (FileNotFoundException e1) {
 					e1.printStackTrace();
 				} catch (IOException e1) {

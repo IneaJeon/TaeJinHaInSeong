@@ -93,8 +93,8 @@ public class UpdateProfilePage extends JPanel {
 		JTextArea IdArea = new JTextArea();
 		IdArea.setSize(250,27);
 		IdArea.setLocation(643, 268);
-		String IdText = "" + md.getId();
-		IdArea.append(nameText);
+		String idText = "" + md.getId();
+		IdArea.append(idText);
 		IdArea.setEditable(false);
 		
 		JButton btn = new JButton("회원정보 수정");
@@ -121,17 +121,20 @@ public class UpdateProfilePage extends JPanel {
 						MemberDTO md = (MemberDTO) objIn.readObject();
 						if (pwdTf.getText().equals(pwdConfirmTf.getText()) && !(phoneNumTf.getText().isEmpty())
 								&& !(addrTf.getText().isEmpty())) {
+
 							md.setPwd(pwdTf.getText());
 							md.setPhoneNum(phoneNumTf.getText());
 							md.setAddr(addrTf.getText());
-							PopUpPage.successPopUp(mf, "회원정보 수정이 완료되었습니다.");
+							PopUpPage.popUp(mf, "회원정보 수정이 완료되었습니다.");
+
 							return;
 						}
 					}
+
 				} catch (FileNotFoundException e1) {
 					e1.printStackTrace();
 				} catch (IOException e1) {
-					PopUpPage.failPopUp(mf, "회원정보를 다시 입력해주세요.");
+					PopUpPage.popUp(mf, "회원정보를 다시 입력해주세요.");
 				} catch (ClassNotFoundException e1) {
 					e1.printStackTrace();
 				} finally {
@@ -142,6 +145,7 @@ public class UpdateProfilePage extends JPanel {
 							e1.printStackTrace();
 						}
 					}
+
 				}
 
 			}

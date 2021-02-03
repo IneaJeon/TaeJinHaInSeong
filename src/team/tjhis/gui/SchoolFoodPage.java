@@ -54,7 +54,7 @@ public class SchoolFoodPage extends JPanel{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					PopUpPage.successPopUp(mf, "");
+					PopUpPage.popUp(mf, "");
 					
 					
 				}
