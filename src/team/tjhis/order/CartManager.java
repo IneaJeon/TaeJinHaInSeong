@@ -73,9 +73,9 @@ public class CartManager {
 				index = foodNo[(choice-2) / 3] - 1;
 				
 				switch(choice % 3) {			
-					case 0 : updateCart.plusMenu(cartList, index); break;
-					case 1 : updateCart.deleteMenu(cartList, index); break;
-					case 2 : updateCart.minusMenu(cartList, index);
+//					case 0 : updateCart.plusMenu(cartList, index); break;
+//					case 1 : updateCart.deleteMenu(cartList, index); break;
+//					case 2 : updateCart.minusMenu(cartList, index);
 				}
 			}else {
 				

@@ -69,6 +69,7 @@ public class KoreanFoodPage extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				PopUpPage.failPopUp(mf, "재료가 소진되어 주문이 불가능합니다.");
 	
 			}
 	
@@ -88,6 +89,7 @@ public class KoreanFoodPage extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				PopUpPage.failPopUp(mf, "재료가 소진되어 주문이 불가능합니다.");
 	
 			}
 	
