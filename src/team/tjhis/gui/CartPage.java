@@ -94,12 +94,34 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 
 /* 버튼 이벤트 처리 */
 		
-		/* [X] 버튼 누른 경우 */
-		deleteBtn.addActionListener(new ActionListener() {
+		/* [-] 버튼 누른 경우 */
+		minusBtn.addActionListener(new ActionListener() {
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.successPopUp(mf, "장바구니에 담긴 음식이 없습니다. 메인페이지로 돌아갑니다.");
-				ChangePage.returnMainPage(mf, cartPage);				
+				
+				UpdateCart.minusMenu(mf, cartPage, count);
+			}
+		});
+		
+		/* [+] 버튼 누른 경우 */
+		plusBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				UpdateCart.plusMenu(mf, cartPage, count);
+			}
+		});
+		
+		
+		/* [X] 버튼 누른 경우 */
+		deleteBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			
+				updateCart.deleteMenu(mf, cartPage);
 			}
 		});
 		
