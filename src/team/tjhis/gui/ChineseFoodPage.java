@@ -49,8 +49,7 @@ public class ChineseFoodPage extends JPanel {
 		JButton cartListButton = new JButton();
 		cartListButton.setSize(190, 50);
 		cartListButton.setLocation(840, 674);
-		cartListButton.setOpaque(false);
-		
+		cartListButton.setOpaque(false);		
 		
 
 		cfPage.add(chineseFood);
