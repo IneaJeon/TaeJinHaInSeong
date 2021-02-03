@@ -130,7 +130,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 		orderBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {				
-				PopUpPage.popUp(mf, "주문이 완료되었습니다.");	
+				PopUpPage.popUp(mf, "images/popUpOrderCompleted.png");	
 				ChangePage.returnMainPage(mf, cartPage);				
 			}			
 		});

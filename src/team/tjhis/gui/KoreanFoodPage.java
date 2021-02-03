@@ -16,7 +16,6 @@ public class KoreanFoodPage extends JPanel{
 		
 	private MainFrame mf;
 	private JPanel koreanFoodPage;
-	private int count;
 	
 	public KoreanFoodPage() {}
 	
@@ -71,7 +70,7 @@ public class KoreanFoodPage extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "images/KoreanFoodbtn13.png");
+				PopUpPage.popUp(mf, "");
 	
 			}
 	
@@ -81,8 +80,8 @@ public class KoreanFoodPage extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "images/KoreanFoodbtn2.png");
-				count++;
+				PopUpPage.popUp(mf, "");
+
 			}
 	
 		});
@@ -91,7 +90,7 @@ public class KoreanFoodPage extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "images/KoreanFoodbtn13.png");
+				PopUpPage.popUp(mf, "");
 	
 			}
 	
@@ -102,8 +101,7 @@ public class KoreanFoodPage extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				ChangePage changePanel = new ChangePage();
-				changePanel.changePanel(mf, koreanFoodPage, new CartPage(mf, count));
+				PopUpPage.popUp(mf, "");
 	
 				
 			}

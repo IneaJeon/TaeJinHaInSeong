@@ -14,6 +14,7 @@ public class ChineseFoodPage extends JPanel {
 
 	private MainFrame mf;
 	private JPanel cfPage;
+	private int count;
 	
 	public ChineseFoodPage(){}
 	
@@ -65,7 +66,8 @@ public class ChineseFoodPage extends JPanel {
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "재료가 소진되어 주문이 불가능합니다.");
+				PopUpPage.popUp(mf, "images/addCart.png");
+				count++;
 	
 			}
 	
@@ -75,7 +77,7 @@ public class ChineseFoodPage extends JPanel {
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "재료가 소진되어 주문이 불가능합니다.");
+				PopUpPage.popUp(mf, "images/unableToOrder.png");
 			}
 	
 		});
@@ -84,7 +86,7 @@ public class ChineseFoodPage extends JPanel {
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "재료가 소진되어 주문이 불가능합니다.");
+				PopUpPage.popUp(mf, "images/unableToOrder.png");
 	
 			}
 	
@@ -95,7 +97,7 @@ public class ChineseFoodPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				PopUpPage.popUp(mf, "장바구니가 비어 있습니다.");
+				ChangePage.changePanel(mf, cfPage, new CartPage(mf, count));
 				
 			}
 	
