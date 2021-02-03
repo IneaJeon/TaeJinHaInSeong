@@ -43,7 +43,11 @@ public class UpdateProfilePage extends JPanel {
 	MainFrame mf;
 	JPanel op;
 
+	public UpdateProfilePage() {}
+	
 	public UpdateProfilePage(MainFrame mf) {
+		
+		MemberDTO md = new MemberDTO();
 
 		String dbFile = "src/team/tjhis/memberDB.txt";
 
@@ -60,21 +64,39 @@ public class UpdateProfilePage extends JPanel {
 		lb.setSize(1440, 790);
 
 		JPasswordField pwdTf = new JPasswordField(20);
-		pwdTf.setSize(250, 40);
-		pwdTf.setLocation(650, 224);
+		pwdTf.setSize(250, 30);
+		pwdTf.setLocation(642, 332);
+		pwdTf.setBorder(null);
 
 		JPasswordField pwdConfirmTf = new JPasswordField(20);
-		pwdConfirmTf.setSize(250, 40);
-		pwdConfirmTf.setLocation(650, 325);
+		pwdConfirmTf.setSize(250, 30);
+		pwdConfirmTf.setLocation(642, 400);
+		pwdConfirmTf.setBorder(null);
 
 		JTextField phoneNumTf = new JTextField(20);
-		phoneNumTf.setSize(250, 40);
-		phoneNumTf.setLocation(650, 425);
+		phoneNumTf.setSize(250, 30);
+		phoneNumTf.setLocation(640, 470);
+		phoneNumTf.setBorder(null);
 
 		JTextField addrTf = new JTextField(20);
-		addrTf.setSize(250, 40);
-		addrTf.setLocation(650, 524);
-
+		addrTf.setSize(250, 30);
+		addrTf.setLocation(640, 540);
+		addrTf.setBorder(null);
+		
+		JTextArea nameArea = new JTextArea();
+		nameArea.setSize(250,27);
+		nameArea.setLocation(643, 200);
+		String nameText = "" + md.getName();
+		nameArea.append(nameText);
+		nameArea.setEditable(false);
+		
+		JTextArea IdArea = new JTextArea();
+		IdArea.setSize(250,27);
+		IdArea.setLocation(643, 268);
+		String idText = "" + md.getId();
+		IdArea.append(idText);
+		IdArea.setEditable(false);
+		
 		JButton btn = new JButton("회원정보 수정");
 		btn.setSize(200, 50);
 		btn.setLocation(620, 631);
@@ -96,25 +118,34 @@ public class UpdateProfilePage extends JPanel {
 					objIn = new ObjectInputStream(new BufferedInputStream(new FileInputStream(dbFile)));
 
 					while (true) {
-						MemberDTO dto = (MemberDTO) objIn.readObject();
+						MemberDTO md = (MemberDTO) objIn.readObject();
 						if (pwdTf.getText().equals(pwdConfirmTf.getText()) && !(phoneNumTf.getText().isEmpty())
 								&& !(addrTf.getText().isEmpty())) {
-							dto.setPwd(pwdTf.getText());
-							dto.setPhoneNum(phoneNumTf.getText());
-							dto.setAddr(addrTf.getText());
-//							System.out.println(dto.getPwd());
-//							System.out.println(dto.getPhoneNum());
-//							System.out.println(dto.getAddr());
-							PopUpPage.popUp(mf, "정보 수정이 완료되었습니다.");
+
+							md.setPwd(pwdTf.getText());
+							md.setPhoneNum(phoneNumTf.getText());
+							md.setAddr(addrTf.getText());
+							PopUpPage.popUp(mf, "회원정보 수정이 완료되었습니다.");
+
 							return;
 						}
 					}
-				} catch (FileNotFoundException v) {
-					v.printStackTrace();
-				} catch (IOException v) {
-					PopUpPage.popUp(mf, "정보를 다시 입력해주세요.");
-				} catch (ClassNotFoundException v) {
-					v.printStackTrace();
+
+				} catch (FileNotFoundException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					PopUpPage.popUp(mf, "회원정보를 다시 입력해주세요.");
+				} catch (ClassNotFoundException e1) {
+					e1.printStackTrace();
+				} finally {
+					if(objIn != null) {
+						try {
+							objIn.close();
+						} catch (IOException e1) {
+							e1.printStackTrace();
+						}
+					}
+
 				}
 
 			}

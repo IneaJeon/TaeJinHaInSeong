@@ -14,6 +14,8 @@ public class JapaneseFoodPage extends JPanel {
 
 	MainFrame mf;
 	JPanel op;
+	
+	public JapaneseFoodPage() {}
 
 	public JapaneseFoodPage(MainFrame mf) {
 
@@ -26,12 +28,9 @@ public class JapaneseFoodPage extends JPanel {
 
 		Image image = new ImageIcon("images/JapaneseFood.PNG").getImage().getScaledInstance(1440, 790, 0);
 		
-
 		JLabel logoLabel = new JLabel(new ImageIcon(image));
 		logoLabel.setBounds(0, 0, 1440, 790);
 		
-		
-
 		JButton btn1 = new JButton();
 		btn1.setSize(140, 50);
 		btn1.setLocation(575, 464);
@@ -72,7 +71,8 @@ public class JapaneseFoodPage extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				PopUpPage.popUp(mf, "영업이 종료되었습니다.");
+				
 			}
 
 		});
@@ -81,7 +81,7 @@ public class JapaneseFoodPage extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				PopUpPage.popUp(mf, "영업이 종료되었습니다.");
 			}
 
 		});
@@ -90,7 +90,7 @@ public class JapaneseFoodPage extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				PopUpPage.popUp(mf, "영업이 종료되었습니다.");
 			}
 
 		});
@@ -99,7 +99,7 @@ public class JapaneseFoodPage extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				PopUpPage.popUp(mf, "영업이 종료되었습니다.");
 			}
 
 		});

@@ -23,6 +23,8 @@ public class FindIdPage extends JPanel {
 
 	MainFrame mf;
 	JPanel op;
+	
+	public FindIdPage() {}
 
 	public FindIdPage(MainFrame mf) {
 
@@ -72,20 +74,21 @@ public class FindIdPage extends JPanel {
 							return;
 						}
 					}
-				} catch (EOFException v) {
+
+				} catch (EOFException e1) {
 					PopUpPage.popUp(mf, "일치하는 회원의 정보가 없습니다. 다시 입력해주세요.");
-				} catch (FileNotFoundException v) {
-					v.printStackTrace();
-				} catch (IOException v) {
-					v.printStackTrace();
-				} catch (ClassNotFoundException v) {
-					v.printStackTrace();
+				} catch (FileNotFoundException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				} catch (ClassNotFoundException e1) {
+					e1.printStackTrace();
 				} finally {
 					if (objIn != null) {
 						try {
 							objIn.close();
-						} catch (IOException v) {
-							v.printStackTrace();
+						} catch (IOException e1) {
+							e1.printStackTrace();
 						}
 					}
 				}

@@ -14,7 +14,6 @@ public class SchoolFoodPage extends JPanel{
 
 	private MainFrame mf;
 	private JPanel sfp;
-	private int index = 0;
 	
 	public SchoolFoodPage() {}
 	public SchoolFoodPage(MainFrame mf) {
@@ -50,21 +49,19 @@ public class SchoolFoodPage extends JPanel{
 		
 		for(int i = 0 ; i < buttons.length - 1 ; i++) {
 			
-			index = i;
-			
 			buttons[i].addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					PopUpPage.popUp(mf, buttons[index].getText() + "을(를) 장바구니에 담았습니다");
+					PopUpPage.popUp(mf, "");
 					
 					
 				}
 				
 			});
 			
-		}		
+		}
 		
 	}
 	
