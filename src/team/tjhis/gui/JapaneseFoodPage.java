@@ -71,7 +71,7 @@ public class JapaneseFoodPage extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "영업이 종료되었습니다.");
+				PopUpPage.popUp(mf, "images/UnableToOrder.png");
 				
 			}
 
@@ -81,7 +81,7 @@ public class JapaneseFoodPage extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "영업이 종료되었습니다.");
+				PopUpPage.popUp(mf, "images/UnableToOrder.png");
 			}
 
 		});
@@ -90,7 +90,7 @@ public class JapaneseFoodPage extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "영업이 종료되었습니다.");
+				PopUpPage.popUp(mf, "images/UnableToOrder.png");
 			}
 
 		});
@@ -99,7 +99,7 @@ public class JapaneseFoodPage extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "영업이 종료되었습니다.");
+				PopUpPage.popUp(mf, "images/emptyCart.png");
 			}
 
 		});

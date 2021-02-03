@@ -70,7 +70,7 @@ public class KoreanFoodPage extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "");
+				PopUpPage.popUp(mf, "images/UnableToOrder.png");
 	
 			}
 	
@@ -80,7 +80,7 @@ public class KoreanFoodPage extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "");
+				PopUpPage.popUp(mf, "images/UnableToOrder.png");
 
 			}
 	
@@ -90,7 +90,7 @@ public class KoreanFoodPage extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "");
+				PopUpPage.popUp(mf, "images/UnableToOrder.png");
 	
 			}
 	
@@ -101,7 +101,7 @@ public class KoreanFoodPage extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				PopUpPage.popUp(mf, "");
+				PopUpPage.popUp(mf, "images/emptyCart.png");
 	
 				
 			}
