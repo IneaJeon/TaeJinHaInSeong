@@ -163,6 +163,7 @@ public class MyPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
+				PopUpPage.withdrawPopUp(mf, "images/popUpWithdraw.png");
 			}
 
 		});

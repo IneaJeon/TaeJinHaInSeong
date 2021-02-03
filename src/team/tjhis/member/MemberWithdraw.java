@@ -6,21 +6,22 @@ public class MemberWithdraw {
 
 	// 회원탈퇴 메소드
 
-	public void withdraw(MemberDB db) {
+	public void withdraw() {
+
+		MemberDB.input();		// 파일에서 회원정보 읽어 오기
 		
-//		db.input();		// 파일에서 회원정보 읽어 오기
-//		
-//		for(int i = 0 ; i < db.memberDB.size(); i++) {	// 회원번호 저장된 인덱스 찾기 위한 반복문
-//			if(db.memberDB.get(i).getNo() == db.getLogNo()) {	// 회원번호와 일치하는 회원번호 가진 인덱스인 경우
-//				db.memberDB.remove(i);	// 해당 인덱스에 저장된 인스턴스 삭제
-//				break;
-//			}
-//		}
-//		
-//		db.output();	// 파일로 회원정보 내보내기
-//
-//		db.setLogNo(0);		// 로그아웃 처리
-//		
+		for(int i = 0 ; i < MemberDB.memberDB.size(); i++) {	// 회원번호 저장된 인덱스 찾기 위한 반복문
+			if(MemberDB.memberDB.get(i).getNo() == MemberDB.logNo) {	// 회원번호와 일치하는 회원번호 가진 인덱스인 경우
+				MemberDB.memberDB.remove(i);	// 해당 인덱스에 저장된 인스턴스 삭제
+				break;
+			}
+		}
+		
+		MemberDB.output();	// 파일로 회원정보 내보내기
+
+		MemberDB.logNo = 0;		// 로그아웃 처리
+		
+
 //		Scanner sc = new Scanner(System.in);
 //		
 //		while(true) {
