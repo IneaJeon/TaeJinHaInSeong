@@ -23,10 +23,10 @@ public class PopUpPage {
 		Image image = new ImageIcon(str).getImage().getScaledInstance(350, 350, 0);
 
 		JPanel panel = new JPanel();
-		panel.setSize(350, 350);
+		panel.setBounds(0, 0, 350, 350);
 		
 		JLabel label = new JLabel(new ImageIcon(image));
-		label.setSize(350, 350);
+		label.setBounds(0, 0, 350, 350);
 
 		JButton button = new JButton("확인");
 		button.setBounds(94, 239, 143, 35);
