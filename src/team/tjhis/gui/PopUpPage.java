@@ -31,8 +31,8 @@ public class PopUpPage {
 		button.setBackground(new Color(0,122,251));
 		button.setOpaque(false);
 
-		sd.add(button);
 		sd.add(label);
+		sd.add(button);
 
 		sd.setVisible(true);
 
@@ -66,8 +66,8 @@ public class PopUpPage {
 		button.setBackground(new Color(0,122,251));
 		button.setOpaque(false);
 
-		sd.add(button);
 		sd.add(label);
+		sd.add(button);
 		
 		sd.setVisible(true); 
 		
