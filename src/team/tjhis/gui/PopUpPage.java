@@ -141,12 +141,12 @@ public class PopUpPage {
 
 /* 버튼 */
 		JButton okBtn = new JButton("확인");
-		okBtn.setBounds(100, 275, 150, 35);
+		okBtn.setBounds(50, 275, 118, 35);
 		okBtn.setBackground(new Color(0,122,251));
 		okBtn.setOpaque(false);
 
 		JButton cancelBtn = new JButton("취소");
-		cancelBtn.setBounds(100, 275, 150, 35);
+		cancelBtn.setBounds(182, 275, 118, 35);
 		cancelBtn.setBackground(new Color(0,122,251));
 		cancelBtn.setOpaque(false);
 
