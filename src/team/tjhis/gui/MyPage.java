@@ -38,15 +38,16 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class UpdateProfilePage extends JPanel {
+public class MyPage extends JPanel {
 
 	MainFrame mf;
 	JPanel op;
 
-	public UpdateProfilePage() {}
-	
-	public UpdateProfilePage(MainFrame mf) {
-		
+	public MyPage() {
+	}
+
+	public MyPage(MainFrame mf) {
+
 		MemberDTO md = new MemberDTO();
 
 		String dbFile = "src/team/tjhis/memberDB.txt";
@@ -82,34 +83,40 @@ public class UpdateProfilePage extends JPanel {
 		addrTf.setSize(336, 40);
 		addrTf.setLocation(554, 525);
 		addrTf.setBorder(null);
-		
+
 		JTextArea nameArea = new JTextArea();
-		nameArea.setSize(336,30);
+		nameArea.setSize(336, 30);
 		nameArea.setLocation(554, 230);
 		String nameText = "" + md.getName();
 		nameArea.append(nameText);
 		nameArea.setEditable(false);
-		
+
 		JTextArea IdArea = new JTextArea();
-		IdArea.setSize(336,30);
+		IdArea.setSize(336, 30);
 		IdArea.setLocation(554, 292);
 		String IdText = "" + md.getId();
 		IdArea.append(IdText);
 		IdArea.setEditable(false);
-		
-		JButton btn = new JButton();
-		btn.setSize(208, 50);
-		btn.setLocation(619, 645);
-		btn.setOpaque(false);
+
+		JButton updateButton = new JButton();
+		updateButton.setSize(150, 50);
+		updateButton.setLocation(736, 645);
+		updateButton.setOpaque(false);
+
+		JButton withdrawButton = new JButton();
+		withdrawButton.setSize(150, 50);
+		withdrawButton.setLocation(552, 645);
+		withdrawButton.setOpaque(false);
 
 		this.add(lb);
 		this.add(pwdTf);
 		this.add(pwdConfirmTf);
 		this.add(phoneNumTf);
 		this.add(addrTf);
-		this.add(btn);
+		this.add(updateButton);
+		this.add(withdrawButton);
 
-		btn.addActionListener(new ActionListener() {
+		updateButton.addActionListener(new ActionListener() {
 			ObjectInputStream objIn = null;
 
 			@Override
@@ -125,7 +132,7 @@ public class UpdateProfilePage extends JPanel {
 							md.setPwd(pwdTf.getText());
 							md.setPhoneNum(phoneNumTf.getText());
 							md.setAddr(addrTf.getText());
-							PopUpPage.popUp(mf, "images/updateComplete.png");
+							PopUpPage.returnPopUp(mf, "images/updateComplete.png");
 							return;
 						}
 					}
@@ -137,7 +144,7 @@ public class UpdateProfilePage extends JPanel {
 				} catch (ClassNotFoundException e1) {
 					e1.printStackTrace();
 				} finally {
-					if(objIn != null) {
+					if (objIn != null) {
 						try {
 							objIn.close();
 						} catch (IOException e1) {
@@ -146,6 +153,15 @@ public class UpdateProfilePage extends JPanel {
 					}
 
 				}
+
+			}
+
+		});
+
+		withdrawButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
 
 			}
 
