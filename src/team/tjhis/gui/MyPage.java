@@ -59,7 +59,7 @@ public class MyPage extends JPanel {
 		this.setBounds(0, 120, 1440, 790);
 		this.setBackground(Color.white);
 
-		Image update = new ImageIcon("images/updateProfile.PNG").getImage().getScaledInstance(1440, 790, 0);
+		Image update = new ImageIcon("images/myPage.PNG").getImage().getScaledInstance(1440, 790, 0);
 
 		JLabel lb = new JLabel(new ImageIcon(update));
 		lb.setSize(1440, 790);
@@ -163,6 +163,7 @@ public class MyPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
+				PopUpPage.withdrawPopUp(mf, "images/popUpWithdraw.png");
 			}
 
 		});
