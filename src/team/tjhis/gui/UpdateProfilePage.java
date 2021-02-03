@@ -93,8 +93,8 @@ public class UpdateProfilePage extends JPanel {
 		JTextArea IdArea = new JTextArea();
 		IdArea.setSize(250,27);
 		IdArea.setLocation(643, 268);
-		String IdText = "" + md.getId();
-		IdArea.append(nameText);
+		String idText = "" + md.getId();
+		IdArea.append(idText);
 		IdArea.setEditable(false);
 		
 		JButton btn = new JButton("회원정보 수정");

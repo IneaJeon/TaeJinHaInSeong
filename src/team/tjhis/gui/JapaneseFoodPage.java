@@ -28,7 +28,6 @@ public class JapaneseFoodPage extends JPanel {
 
 		Image image = new ImageIcon("images/JapaneseFood.PNG").getImage().getScaledInstance(1440, 790, 0);
 		
-
 		JLabel logoLabel = new JLabel(new ImageIcon(image));
 		logoLabel.setBounds(0, 0, 1440, 790);
 		
