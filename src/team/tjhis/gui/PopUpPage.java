@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 public class PopUpPage {
@@ -21,15 +22,19 @@ public class PopUpPage {
 
 		Image image = new ImageIcon(str).getImage().getScaledInstance(350, 350, 0);
 
+		JPanel panel = new JPanel();
+		panel.setSize(350, 350);
+		
 		JLabel label = new JLabel(new ImageIcon(image));
 		label.setSize(350, 350);
 
 		JButton button = new JButton("확인");
 		button.setBounds(94, 239, 143, 35);
-
 		button.setOpaque(false);
-		label.add(button);
+
+		sd.add(panel);
 		sd.add(label);
+		panel.add(button);
 
 		sd.setVisible(true);
 
