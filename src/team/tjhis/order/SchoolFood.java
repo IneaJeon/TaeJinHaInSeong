@@ -14,8 +14,8 @@ public class SchoolFood {
 		List<Food> sf = new ArrayList<>();
 		
 		sf.add(new Food(1, "떡볶이", 3500, 352, "호주산"));
-		sf.add(new Food(2, "찰순대", 4000, 513, "국내산"));
-		sf.add(new Food(3, "모듬튀김", 4500, 380, "중국산"));
+		sf.add(new Food(2, "모듬튀김", 4500, 380, "중국산"));
+		sf.add(new Food(3, "찰순대", 4000, 513, "국내산"));
 		
 		System.out.println("_______________________________");
 		System.out.println("[ MENU ]");
