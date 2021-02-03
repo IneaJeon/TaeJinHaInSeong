@@ -99,7 +99,7 @@ public class JapaneseFoodPage extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "images/UnableToOrder.png");
+				PopUpPage.popUp(mf, "images/emptyCart.png");
 			}
 
 		});

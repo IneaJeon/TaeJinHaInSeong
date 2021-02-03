@@ -74,9 +74,9 @@ public class FindIdPage extends JPanel {
 					while (true) {
 						MemberDTO dto = (MemberDTO) objIn.readObject();
 						if (nameTf.getText().equals(dto.getName()) && phoneNumTf.getText().equals(dto.getPhoneNum())) {
-							String text = "회원님의 ID는" + dto.getId() + "입니다.";
-							PopUpPage.successPopUp(mf, "images/information.png", text);
-							ChangePage.changePanel(mf, np, np);
+							String text = "    " + dto.getId() + "    ";
+							PopUpPage.findIdSuccessPopUp(mf, "images/IdInformation.png", text);
+							ChangePage.changePanel(mf, op, np);
 							break;
 						}
 					}

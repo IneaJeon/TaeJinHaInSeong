@@ -28,6 +28,8 @@ public class PopUpPage {
 
 		JButton button = new JButton("확인");
 		button.setBounds(100, 275, 150, 35);
+		button.setBackground(new Color(0,122,251));
+		button.setOpaque(false);
 
 		sd.add(label);
 		sd.add(button);
@@ -47,7 +49,7 @@ public class PopUpPage {
 
 	}
 
-	public static void successPopUp(MainFrame mf, String str, String text) {
+	public static void findIdSuccessPopUp(MainFrame mf, String str, String text) {
 
 		Dialog sd = new Dialog(mf);
 		sd.setLayout(null);
@@ -66,7 +68,8 @@ public class PopUpPage {
 
 		JButton button = new JButton("확인");
 		button.setBounds(100, 275, 150, 35);
-		button.setOpaque(true);
+		button.setBackground(new Color(0,122,251));
+		button.setOpaque(false);
 
 		label.add(textArea);
 		sd.add(button);
