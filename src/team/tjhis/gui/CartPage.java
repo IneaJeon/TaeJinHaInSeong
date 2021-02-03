@@ -47,10 +47,10 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 		JLabel cntLabel = new JLabel(count + "");
 		cntLabel.setBounds(1010, 286, 29, 22);
 
-		JLabel priceLabel = new JLabel(count*8000 + "");
+		JLabel priceLabel = new JLabel(count*6000 + "");
 		priceLabel.setBounds(1010, 246, 50, 22);
 		
-		JLabel totalPriceLabel = new JLabel(count*8000 + "");
+		JLabel totalPriceLabel = new JLabel(count*6000 + "");
 		totalPriceLabel.setBounds(1100, 630, 50, 22);
 		
 		
@@ -68,7 +68,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 			minusBtn1.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					PopUpPage.popUp(mf, "최소 주문 수량은 1개입니다.");
+					PopUpPage.popUp(mf, "images/minimumCount.png");
 				}
 			});
 		}
@@ -114,26 +114,26 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 			}
 		});
 		
-		
 		/* [X] 버튼 누른 경우 */
 		deleteBtn.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			
-				
+
 				updateCart.deleteMenu(mf, cartPage);
 			}
 		});
 		
 		/* [주문하기] 버튼 누른 경우 */
 		orderBtn.addActionListener(new ActionListener() {
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {				
-				PopUpPage.popUp(mf, "images/popUpOrderCompleted.png");	
-				ChangePage.returnMainPage(mf, cartPage);				
+			
+				PopUpPage.returnPopUp(mf, "images/popUpOrderCompleted.png");			
 			}			
 		});
+		
 		
 		cartPage.add(cartLabel);
 		

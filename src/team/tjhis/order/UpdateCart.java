@@ -11,24 +11,27 @@ public class UpdateCart {
 	
 	/* 수량 추가 */
 	public void plusMenu(MainFrame mf, JPanel cartPage, int count){
+		
 		count++;
 		ChangePage.changePanel(mf, cartPage, new CartPage(mf, count));
-		
-		
+	
 	}
+	
 	
 	/* 수량 감소 */
 	public void minusMenu(MainFrame mf, JPanel cartPage, int count){
+		
 		count--;
 		ChangePage.changePanel(mf, cartPage, new CartPage(mf, count));
 		
-		
 	}
+	
 	
 	/* 장바구니에서 삭제 */
 	public void deleteMenu(MainFrame mf, JPanel cartPage){
-		PopUpPage.popUp(mf, "images/UpdateCart.png");
 		
+		PopUpPage.popUp(mf, "images/UpdateCart.png");
+		ChangePage.returnMainPage(mf, cartPage);
 		
 	}
 	

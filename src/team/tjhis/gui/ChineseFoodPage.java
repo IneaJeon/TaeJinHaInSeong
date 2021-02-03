@@ -76,7 +76,7 @@ public class ChineseFoodPage extends JPanel {
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "images/unableToOrder.png");
+				PopUpPage.popUp(mf, "images/onlyJjajang.png");
 			}
 	
 		});
@@ -85,7 +85,7 @@ public class ChineseFoodPage extends JPanel {
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PopUpPage.popUp(mf, "images/unableToOrder.png");
+				PopUpPage.popUp(mf, "images/onlyJjajang.png");
 	
 			}
 	
