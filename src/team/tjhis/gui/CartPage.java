@@ -45,13 +45,13 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 		
 /* 라벨 */
 		JLabel cntLabel = new JLabel(count + "");
-		cntLabel.setBounds(1010, 286, 29, 22);
+		cntLabel.setBounds(1030, 286, 29, 22);
 
 		JLabel priceLabel = new JLabel(count*6000 + "");
 		priceLabel.setBounds(1010, 246, 50, 22);
 		
 		JLabel totalPriceLabel = new JLabel(count*6000 + "");
-		totalPriceLabel.setBounds(1100, 630, 50, 22);
+		totalPriceLabel.setBounds(1110, 630, 50, 22);
 		
 		
 /* 주문수량이 1인 경우 [-]버튼 색상 변경 및 이벤트 처리 */
