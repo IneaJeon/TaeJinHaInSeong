@@ -121,6 +121,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			
+				
 				updateCart.deleteMenu(mf, cartPage);
 			}
 		});
