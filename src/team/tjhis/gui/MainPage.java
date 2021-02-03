@@ -59,6 +59,7 @@ public class MainPage extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				
 				ChangePage.changePanel(mf, mp, new SchoolFoodPage(mf));
+				PopUpPage.returnPopUp(mf, "images/UnableToOrder.PNG");
 						
 			}
 			

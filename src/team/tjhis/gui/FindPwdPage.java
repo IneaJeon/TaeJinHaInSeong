@@ -41,27 +41,27 @@ public class FindPwdPage extends JPanel {
 		Image findPwdPageImage = new ImageIcon("images/findPwdPage_panel.PNG").getImage().getScaledInstance(1440, 790, 0);
 		JLabel pwdLabel = new JLabel(new ImageIcon(findPwdPageImage));
 		pwdLabel.setBounds(0, 0, 1440, 790);
-		JTextField idField = new JTextField(20);
 		JTextField nameField = new JTextField(20);
+		JTextField idField = new JTextField(20);
 		JTextField phoneNumField = new JTextField(20);
-		idField.setOpaque(false);
 		nameField.setOpaque(false);
+		idField.setOpaque(false);
 		phoneNumField.setOpaque(false);
-		idField.setBorder(null);
 		nameField.setBorder(null);
+		idField.setBorder(null);
 		phoneNumField.setBorder(null);
-		idField.setFont(font);
 		nameField.setFont(font);
+		idField.setFont(font);
 		phoneNumField.setFont(font);
-		idField.setText("아이디");
 		nameField.setText("이름");
+		idField.setText("아이디");
 		phoneNumField.setText("핸드폰 번호");
-		idField.setBounds(540, 242, 360, 64);
-		nameField.setBounds(540, 315, 360, 64);
-		phoneNumField.setBounds(540, 389, 360, 64);
+		nameField.setBounds(583, 190, 274, 39);
+		idField.setBounds(583, 258, 274, 39);
+		phoneNumField.setBounds(583, 326, 274, 39);
 		
 		JButton signInbtn = new JButton();
-		signInbtn.setBounds(520, 524, 400, 64);
+		signInbtn.setBounds(621, 430, 200, 50);
 		signInbtn.setOpaque(false);
 		
 		this.add(idField);
