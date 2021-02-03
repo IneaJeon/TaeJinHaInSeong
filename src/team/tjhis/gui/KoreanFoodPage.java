@@ -101,7 +101,7 @@ public class KoreanFoodPage extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				PopUpPage.popUp(mf, "images/.png");
+				PopUpPage.popUp(mf, "images/emptyCart.png");
 	
 				
 			}
