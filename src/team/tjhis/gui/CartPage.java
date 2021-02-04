@@ -51,7 +51,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 		JLabel priceLabel = new JLabel(count*6000 + "");
 		priceLabel.setBounds(1010, 246, 50, 22);
 		
-		JLabel totalPriceLabel = new JLabel(count*6000 + "");
+		JLabel totalPriceLabel = new JLabel(count*6000 + 2500 + "");
 		totalPriceLabel.setBounds(1110, 630, 50, 22);
 		
 		
