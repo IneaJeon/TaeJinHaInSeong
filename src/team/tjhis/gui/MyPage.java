@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -63,8 +65,6 @@ public class MyPage extends JPanel {
 			
 		}
 
-		String dbFile = "src/team/tjhis/member/members.txt";
-
 		this.mf = mf;
 		this.op = this;
 
@@ -88,11 +88,13 @@ public class MyPage extends JPanel {
 		pwdConfirmTf.setBorder(null);
 
 		JTextField phoneNumTf = new JTextField(20);
+		phoneNumTf.setText(MemberDB.memberDB.get(index).getPhoneNum());
 		phoneNumTf.setSize(336, 40);
 		phoneNumTf.setLocation(554, 462);
 		phoneNumTf.setBorder(null);
 
 		JTextField addrTf = new JTextField(20);
+		addrTf.setText(MemberDB.memberDB.get(index).getAddr());
 		addrTf.setSize(336, 40);
 		addrTf.setLocation(554, 525);
 		addrTf.setBorder(null);
@@ -107,10 +109,10 @@ public class MyPage extends JPanel {
 		JTextArea IdArea = new JTextArea();
 		IdArea.setSize(336, 30);
 		IdArea.setLocation(554, 292);
-		String IdText = "" + MemberDB.memberDB.get(index).getId();
+		String IdText = "" + MemberDB.memberDB.get(index).getId(); 
 		IdArea.append(IdText);
 		IdArea.setEditable(false);
-
+		
 		JButton updateButton = new JButton();
 		updateButton.setSize(150, 50);
 		updateButton.setLocation(736, 645);
@@ -123,10 +125,10 @@ public class MyPage extends JPanel {
 
 		this.add(pwdTf);
 		this.add(pwdConfirmTf);
-		this.add(phoneNumTf);
-		this.add(addrTf);
 		this.add(IdArea);
 		this.add(nameArea);
+		this.add(phoneNumTf);
+		this.add(addrTf);
 		this.add(lb);
 		this.add(updateButton);
 		this.add(withdrawButton);
@@ -151,6 +153,36 @@ public class MyPage extends JPanel {
 					
 				}
 				
+			}
+
+		});
+		
+		phoneNumTf.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				if(phoneNumTf.getText().equals(MemberDB.memberDB.get(index).getPhoneNum())) {
+					
+					phoneNumTf.setText("");
+					
+				}
+				
+			}
+			
+		});
+		
+		addrTf.addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+
+				if (addrTf.getText().equals(MemberDB.memberDB.get(index).getAddr())) {
+
+					addrTf.setText("");
+
+				}
+
 			}
 
 		});
