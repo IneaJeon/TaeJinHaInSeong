@@ -35,7 +35,7 @@ public class PopUpPage {
 		sd.add(label);
 		sd.add(button);
 
-		sd.setVisible(true);
+		sd.setVisible(true); 
 
 		button.addActionListener(new ActionListener() {
 
