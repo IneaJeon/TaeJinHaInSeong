@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import team.tjhis.member.MemberDB;
+
 public class MainPage extends JPanel {
 
 	private MainFrame mf; // 메인프레임 저장 변수
@@ -58,8 +60,16 @@ public class MainPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				ChangePage.changePanel(mf, mp, new SchoolFoodPage(mf));
-				PopUpPage.returnPopUp(mf, "images/UnableToOrder.PNG");
+				if(MemberDB.logNo == 0) {
+					
+					PopUpPage.popUp(mf, "images/fId.PNG");
+					
+				} else {
+					
+					ChangePage.changePanel(mf, mp, new SchoolFoodPage(mf));
+					PopUpPage.returnPopUp(mf, "images/UnableToOrder.PNG");
+					
+				}
 						
 			}
 			
@@ -70,8 +80,16 @@ public class MainPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				if(MemberDB.logNo == 0) {
+					
+					PopUpPage.popUp(mf, "images/fId.PNG");
+					
+				} else {
+				
 				ChangePage.changePanel(mf, mp, new FastFoodPage(mf));
 				PopUpPage.returnPopUp(mf, "images/UnableToOrder.PNG");
+				
+				}
 				
 			}
 			
@@ -82,8 +100,16 @@ public class MainPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				if(MemberDB.logNo == 0) {
+					
+					PopUpPage.popUp(mf, "images/fId.PNG");
+					
+				} else {
+				
 				ChangePage.changePanel(mf, mp, new JapaneseFoodPage(mf));
 				PopUpPage.returnPopUp(mf, "images/UnableToOrder.PNG");
+				
+				}
 				
 			}
 			
@@ -94,8 +120,16 @@ public class MainPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				if(MemberDB.logNo == 0) {
+					
+					PopUpPage.popUp(mf, "images/fId.PNG");
+					
+				} else {
+				
 				ChangePage.changePanel(mf, mp, new KoreanFoodPage(mf));
 				PopUpPage.returnPopUp(mf, "images/UnableToOrder.PNG");
+				
+				}
 				
 			}
 			
@@ -106,7 +140,15 @@ public class MainPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				if(MemberDB.logNo == 0) {
+					
+					PopUpPage.popUp(mf, "images/fId.PNG");
+					
+				} else {
+				
 				ChangePage.changePanel(mf, mp, new ChineseFoodPage(mf));
+				
+				}
 				
 			}
 			
