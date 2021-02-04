@@ -28,13 +28,15 @@ public class FindIdPage extends JPanel {
 	MainFrame mf;
 	JPanel op;
 	JPanel np;
-	
-	public FindIdPage() {}
+	boolean isSuccess;
+
+	public FindIdPage() {
+	}
 
 	public FindIdPage(MainFrame mf, JPanel np) {
 
 		MemberDB.input();
-		
+
 		this.mf = mf;
 		this.op = this;
 		this.np = np;
@@ -47,23 +49,23 @@ public class FindIdPage extends JPanel {
 
 		JLabel lb = new JLabel(new ImageIcon(id));
 		lb.setSize(1440, 790);
-		
+
 		Font font = new Font("돋움", Font.PLAIN, 17);
 
 		JTextField nameTf = new JTextField(20);
-		nameTf.setSize(336,40);
+		nameTf.setSize(336, 40);
 		nameTf.setLocation(554, 324);
 		nameTf.setFont(font);
 		nameTf.setText("이름");
 		nameTf.setBorder(null);
-		
+
 		JTextField phoneNumTf = new JTextField(20);
-		phoneNumTf.setSize(336,40);
+		phoneNumTf.setSize(336, 40);
 		phoneNumTf.setLocation(554, 403);
 		phoneNumTf.setFont(font);
 		phoneNumTf.setText("휴대폰");
 		phoneNumTf.setBorder(null);
-		
+
 		JButton btn = new JButton("확인");
 		btn.setSize(350, 50);
 		btn.setLocation(545, 575);
@@ -73,7 +75,7 @@ public class FindIdPage extends JPanel {
 		this.add(phoneNumTf);
 		this.add(lb);
 		this.add(btn);
-		
+
 		nameTf.addMouseListener(new MouseAdapter() {
 
 			@Override
@@ -103,29 +105,32 @@ public class FindIdPage extends JPanel {
 			}
 
 		});
-		
+
 		btn.addActionListener(new ActionListener() {
-			
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-						for(int i = 0 ; i < MemberDB.memberDB.size(); i++) {
-							
-							if (nameTf.getText().equals(MemberDB.memberDB.get(i).getName()) && phoneNumTf.getText().equals(MemberDB.memberDB.get(i).getPhoneNum())) {
-								String text = "    " + MemberDB.memberDB.get(i).getId() + "    ";
-								PopUpPage.findIdSuccessPopUp(mf, "images/idFind.png", text);
-								ChangePage.changePanel(mf, op, np);
-								break;
-							} else {
-								PopUpPage.popUp(mf, "images/updateIncomplete.png");
-								break;
-							}
-						}
+
+				for (int i = 0; i < MemberDB.memberDB.size(); i++) {
+
+					if (nameTf.getText().equals(MemberDB.memberDB.get(i).getName())
+							&& phoneNumTf.getText().equals(MemberDB.memberDB.get(i).getPhoneNum())) {
+						String text = "    " + MemberDB.memberDB.get(i).getId() + "    ";
+						PopUpPage.findIdSuccessPopUp(mf, "images/idFind.png", text);
+
+						isSuccess = true;
+						break;
 					}
- 
-				
-			
+				}
+
+				if (isSuccess = true) {
+					ChangePage.changePanel(mf, op, np);
+
+				} else {
+					PopUpPage.popUp(mf, "images/updateIncomplete.png");
+				}
+			}
+
 		});
 	}
 }
