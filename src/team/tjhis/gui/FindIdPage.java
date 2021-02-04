@@ -69,9 +69,9 @@ public class FindIdPage extends JPanel {
 		btn.setLocation(545, 575);
 		btn.setOpaque(false);
 
-		this.add(lb);
 		this.add(nameTf);
 		this.add(phoneNumTf);
+		this.add(lb);
 		this.add(btn);
 		
 		nameTf.addMouseListener(new MouseAdapter() {

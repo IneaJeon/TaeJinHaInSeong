@@ -98,8 +98,8 @@ public class PopUpPage {
 		label.setBounds(0, 15, 350, 350);
 
 		JTextArea textArea = new JTextArea(text);
-		textArea.setSize(150, 20);
-		textArea.setLocation(100, 170);
+		textArea.setSize(100, 20);
+		textArea.setLocation(130, 210);
 		textArea.setEditable(false);
 		textArea.setBackground(new Color(245, 246, 247));
 
@@ -109,8 +109,8 @@ public class PopUpPage {
 		button.setOpaque(false);
 
 		label.add(textArea);
-		sd.add(button);
 		sd.add(label);
+		sd.add(button);
 
 		sd.setVisible(true);
 
