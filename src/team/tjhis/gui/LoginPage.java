@@ -88,9 +88,9 @@ public class LoginPage extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				isSuccess = login.login(idF.getText(), pwdF.getText());
 				if(isSuccess) {
-					PopUpPage.returnPopUp(mf, "", isSuccess);
+					PopUpPage.returnPopUp(mf, "images/loginY.png", isSuccess);
 				} else {
-					PopUpPage.popUp(mf, "");
+					PopUpPage.popUp(mf, "images/loginN.png");
 				}
 				
 			}

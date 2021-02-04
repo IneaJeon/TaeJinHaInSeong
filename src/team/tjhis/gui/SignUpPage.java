@@ -32,11 +32,13 @@ public class SignUpPage extends JPanel {
 		this.mf = mf;
 		this.signUpPage = this;
 		SignUp su = new SignUp();
+		
+		MemberDB.input();
 
 		this.setLayout(null);
 		this.setBounds(0, 120, 1440, 790);
 		/* 회원가입 */
-		Image signUpImg = new ImageIcon("images/signUp.PNG").getImage().getScaledInstance(1440, 790, 0);
+		Image signUpImg = new ImageIcon("images/signUpPage.PNG").getImage().getScaledInstance(1440, 790, 0);
 
 		JLabel logoLabel = new JLabel(new ImageIcon(signUpImg));
 		logoLabel.setBounds(0, 0, 1440, 790);
@@ -88,7 +90,7 @@ public class SignUpPage extends JPanel {
 
 		JButton sbtn = new JButton("확인");
 		sbtn.setSize(100, 45);
-		sbtn.setLocation(915, 195);
+		sbtn.setLocation(915, 255);
 		sbtn.setOpaque(false);
 
 		this.add(nameF);
@@ -126,7 +128,7 @@ public class SignUpPage extends JPanel {
 
 					} else {
 
-						isFailed = true;
+						isFailed = false;
 
 					}
 
