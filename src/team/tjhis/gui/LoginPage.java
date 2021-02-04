@@ -59,7 +59,7 @@ public class LoginPage extends JPanel {
 		/* 로그인 버튼 */
 		JButton loginbtn = new JButton();
 		loginbtn.setSize(400, 64);
-		loginbtn.setLocation(525, 357);
+		loginbtn.setLocation(525, 390);
 		loginbtn.setOpaque(false);
 		
 		/* 아이디찾기 버튼 */

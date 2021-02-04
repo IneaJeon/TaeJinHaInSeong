@@ -16,7 +16,7 @@ import java.util.List;
 
 public class MemberDB {
 	
-	public static int logNo;
+	public static int logNo;	// 현재 로그
 	
 	public static List <MemberDTO> memberDB = new ArrayList<>();
 
@@ -71,6 +71,8 @@ public class MemberDB {
 	
 	/* 회원 정보를 파일로부터 읽어오기 위한 입력 */
 	public static void input() {
+		
+		memberDB.clear();
 		
 		ObjectInputStream objIn = null;
 		

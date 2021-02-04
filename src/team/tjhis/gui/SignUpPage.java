@@ -85,7 +85,7 @@ public class SignUpPage extends JPanel {
 		/* 확인 필드 */
 		JButton signUpBtn = new JButton("확인");
 		signUpBtn.setSize(205, 50);
-		signUpBtn.setLocation(620, 595);
+		signUpBtn.setLocation(620, 620);
 		signUpBtn.setOpaque(false);
 
 		JButton sbtn = new JButton("확인");
