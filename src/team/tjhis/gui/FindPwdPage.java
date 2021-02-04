@@ -29,7 +29,6 @@ public class FindPwdPage extends JPanel {
 	JPanel op;
 	JPanel np;
 	boolean isSuccess;
-	int index = 0;
 	
 	public FindPwdPage(MainFrame mf, JPanel sip) {
 		
@@ -130,7 +129,7 @@ public class FindPwdPage extends JPanel {
 							&& MemberDB.memberDB.get(i).getName().equals(nameField.getText())
 							&& MemberDB.memberDB.get(i).getPhoneNum().equals(phoneNumField.getText())) {
 						// 성공 팝업을 띄워주고 메세지로 비밀번호를 알려줌
-						PopUpPage.findIdSuccessPopUp(mf, "images/pwdFind.PNG", MemberDB.memberDB.get(index).getPwd());
+						PopUpPage.findIdSuccessPopUp(mf, "images/pwdFind.PNG", MemberDB.memberDB.get(i).getPwd());
 						// 성공 여부 변경
 						isSuccess = true;
 						break;
