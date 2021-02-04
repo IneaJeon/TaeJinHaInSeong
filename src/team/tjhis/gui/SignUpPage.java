@@ -10,8 +10,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import team.tjhis.member.Login;
 import team.tjhis.member.MemberDB;
 import team.tjhis.member.SignUp;
 
@@ -19,6 +21,7 @@ public class SignUpPage extends JPanel {
 
 	private MainFrame mf;
 	private JPanel signUpPage;
+	boolean isFailed;
 
 	/* 기본생성자 */
 	public SignUpPage() {
@@ -52,15 +55,13 @@ public class SignUpPage extends JPanel {
 		idF.setBorder(null);
 
 		/* 비번 필드 */
-		JTextField pwdF = new JTextField(20);
-		pwdF.setText("비밀번호");
+		JPasswordField pwdF = new JPasswordField(20);
 		pwdF.setSize(336, 40);
 		pwdF.setLocation(554, 320);
 		pwdF.setBorder(null);
 
 		/* 비번확인 필드 */
-		JTextField pwdDF = new JTextField(20);
-		pwdDF.setText("비밀번호 확인");
+		JPasswordField pwdDF = new JPasswordField(20);
 		pwdDF.setSize(336, 40);
 		pwdDF.setLocation(554, 380);
 		pwdDF.setBorder(null);
@@ -84,7 +85,7 @@ public class SignUpPage extends JPanel {
 		signUpBtn.setSize(205, 50);
 		signUpBtn.setLocation(620, 595);
 		signUpBtn.setOpaque(false);
-		
+
 		JButton sbtn = new JButton("확인");
 		sbtn.setSize(100, 45);
 		sbtn.setLocation(915, 195);
@@ -104,33 +105,48 @@ public class SignUpPage extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+
 				su.signUpStart(idF.getText(), pwdF.getText(), nameF.getText(), phonF.getText(), adrF.getText());
 				ChangePage.changePanel(mf, signUpPage, new MainPage(mf));
 				PopUpPage.popUp(mf, "images/welcome.png");
 			}
 		});
-		
+
 		sbtn.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				for(int i = 0 ; i < MemberDB.memberDB.size() ; i++) {
-					
-					if(MemberDB.memberDB.get(i).getId().equals(idF.getText())) {
-						
-						PopUpPage.popUp(mf, ""); // 중복 경고 메세지
-						
+				for (int i = 0; i < MemberDB.memberDB.size(); i++) {
+
+					if (MemberDB.memberDB.get(i).getId().equals(idF.getText())) {
+
+						isFailed = true;
+						break;
+
+					} else {
+
+						isFailed = true;
+
 					}
-					
+
 				}
-				
+
+				if (isFailed) {
+
+					PopUpPage.popUp(mf, "");
+
+				} else {
+
+					// 사용할 수 있는 아이디입니다 안내 팝업창
+
+				}
+
 			}
 		});
-		
+
 		nameF.addMouseListener(new MouseAdapter() {
-			
+
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (nameF.getText().equals("이름")) {
@@ -168,7 +184,7 @@ public class SignUpPage extends JPanel {
 				}
 			}
 		});
-		
+
 		phonF.addMouseListener(new MouseAdapter() {
 
 			@Override
@@ -178,7 +194,7 @@ public class SignUpPage extends JPanel {
 				}
 			}
 		});
-		
+
 		adrF.addMouseListener(new MouseAdapter() {
 
 			@Override
