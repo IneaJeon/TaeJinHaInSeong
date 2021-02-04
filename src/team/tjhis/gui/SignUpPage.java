@@ -134,11 +134,11 @@ public class SignUpPage extends JPanel {
 
 				if (isFailed) {
 
-					PopUpPage.popUp(mf, "");
+					PopUpPage.popUp(mf, "images/noUseId.png"); 
 
 				} else {
 
-					// 사용할 수 있는 아이디입니다 안내 팝업창
+					PopUpPage.popUp(mf, "images/useId.png");// 사용할 수 있는 아이디입니다 안내 팝업창ㄴ
 
 				}
 
