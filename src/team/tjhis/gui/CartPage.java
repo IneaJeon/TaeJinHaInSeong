@@ -63,9 +63,11 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 			grayMinus.setBounds(973, 286, 20, 22);
 			cartLabel.add(grayMinus);
 			
-			JButton minusBtn1 = new JButton("[-]");
+			// 회색 [-] 버튼
+			JButton minusBtn1 = new JButton();
 			minusBtn1.setBounds(973, 286, 20, 22);
 			minusBtn1.setBackground(new Color(204, 204, 204));
+			minusBtn1.setOpaque(false);
 			cartLabel.add(minusBtn1);
 			minusBtn1.addActionListener(new ActionListener() {
 				@Override
@@ -77,19 +79,23 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 		
 
 /* 버튼 */		
-		JButton minusBtn = new JButton("[-]");
+		/* [-] 버튼 */
+		JButton minusBtn = new JButton();
 		minusBtn.setBounds(973, 286, 20, 22);
 		minusBtn.setOpaque(false);
 
-		JButton plusBtn = new JButton("[+]");
+		/* [+] 버튼 */
+		JButton plusBtn = new JButton();
 		plusBtn.setBounds(1056, 286, 20, 22);
 		plusBtn.setOpaque(false);
 
-		JButton deleteBtn = new JButton("[X]");
+		/* [X] 버튼 */
+		JButton deleteBtn = new JButton();
 		deleteBtn.setBounds(1145, 263, 30, 30);
 		deleteBtn.setOpaque(false);
 
-		JButton orderBtn = new JButton("[주문하기]");
+		/* [주문하기] 버튼 */
+		JButton orderBtn = new JButton();
 		orderBtn.setBounds(620, 690, 200, 50);
 		orderBtn.setOpaque(false);
 		
