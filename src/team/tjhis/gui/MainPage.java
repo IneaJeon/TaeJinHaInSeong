@@ -62,7 +62,7 @@ public class MainPage extends JPanel {
 				
 				if(MemberDB.logNo == 0) {
 					
-					PopUpPage.popUp(mf, "images/fId.PNG");
+					PopUpPage.popUp(mf, "images/fLogin.PNG");
 					
 				} else {
 					
@@ -82,7 +82,7 @@ public class MainPage extends JPanel {
 				
 				if(MemberDB.logNo == 0) {
 					
-					PopUpPage.popUp(mf, "images/fId.PNG");
+					PopUpPage.popUp(mf, "images/fLogin.PNG");
 					
 				} else {
 				
@@ -102,7 +102,7 @@ public class MainPage extends JPanel {
 				
 				if(MemberDB.logNo == 0) {
 					
-					PopUpPage.popUp(mf, "images/fId.PNG");
+					PopUpPage.popUp(mf, "images/fLogin.PNG");
 					
 				} else {
 				
@@ -122,7 +122,7 @@ public class MainPage extends JPanel {
 				
 				if(MemberDB.logNo == 0) {
 					
-					PopUpPage.popUp(mf, "images/fId.PNG");
+					PopUpPage.popUp(mf, "images/fLogin.PNG");
 					
 				} else {
 				
@@ -142,7 +142,7 @@ public class MainPage extends JPanel {
 				
 				if(MemberDB.logNo == 0) {
 					
-					PopUpPage.popUp(mf, "images/fId.PNG");
+					PopUpPage.popUp(mf, "images/fLogin.PNG");
 					
 				} else {
 				

@@ -27,15 +27,15 @@ public class PopUpPage {
 		JLabel label = new JLabel(new ImageIcon(image));
 		label.setBounds(0, 15, 350, 350);
 
-		JButton button = new JButton("확인");
+		JButton button = new JButton();
 		button.setBounds(100, 275, 150, 35);
-		button.setBackground(new Color(0,122,251));
+		button.setBackground(new Color(0,97,200));
 		button.setOpaque(false);
 
 		sd.add(label);
 		sd.add(button);
 
-		sd.setVisible(true);
+		sd.setVisible(true); 
 
 		button.addActionListener(new ActionListener() {
 
@@ -62,9 +62,9 @@ public class PopUpPage {
 		JLabel label = new JLabel(new ImageIcon(image));
 		label.setBounds(0, 15, 350, 350);
 		
-		JButton button = new JButton("확인");
+		JButton button = new JButton();
 		button.setBounds(100, 275, 150, 35);
-		button.setBackground(new Color(0,122,251));
+		button.setBackground(new Color(0,97,200));
 		button.setOpaque(false);
 
 		sd.add(label);
@@ -104,9 +104,9 @@ public class PopUpPage {
 		textArea.setEditable(false);
 		textArea.setBackground(new Color(245, 246, 247));
 
-		JButton button = new JButton("확인");
+		JButton button = new JButton();
 		button.setBounds(100, 275, 150, 35);
-		button.setBackground(new Color(0,122,251));
+		button.setBackground(new Color(0,97,200));
 		button.setOpaque(false);
 
 		label.add(textArea);
@@ -141,15 +141,15 @@ public class PopUpPage {
 		label.setBounds(0, 15, 350, 350);
 
 		/* 확인 버튼 */
-		JButton okBtn = new JButton("확인");
+		JButton okBtn = new JButton();
 		okBtn.setBounds(50, 275, 118, 35);
-		okBtn.setBackground(new Color(0,122,251));
+		okBtn.setBackground(new Color(54,142,235));
 		okBtn.setOpaque(false);
 
 		/* 취소 버튼 */
-		JButton cancelBtn = new JButton("취소");
+		JButton cancelBtn = new JButton();
 		cancelBtn.setBounds(182, 275, 118, 35);
-		cancelBtn.setBackground(new Color(0,122,251));
+		cancelBtn.setBackground(new Color(0,97,200));
 		cancelBtn.setOpaque(false);
 
 		sd.add(label);
@@ -201,9 +201,9 @@ public class PopUpPage {
 		JLabel label = new JLabel(new ImageIcon(image));
 		label.setBounds(0, 15, 350, 350);
 		
-		JButton button = new JButton("확인");
+		JButton button = new JButton();
 		button.setBounds(100, 275, 150, 35);
-		button.setBackground(new Color(0,122,251));
+		button.setBackground(new Color(0,97,200));
 		button.setOpaque(false);
 
 		sd.add(label);
@@ -246,15 +246,15 @@ public class PopUpPage {
 		label.setBounds(0, 15, 350, 350);
 
 		/* 확인 버튼 */
-		JButton okBtn = new JButton("확인");
+		JButton okBtn = new JButton();
 		okBtn.setBounds(50, 275, 118, 35);
-		okBtn.setBackground(new Color(0,122,251));
+		okBtn.setBackground(new Color(54,142,235));
 		okBtn.setOpaque(false);
 
 		/* 취소 버튼 */
-		JButton cancelBtn = new JButton("취소");
+		JButton cancelBtn = new JButton();
 		cancelBtn.setBounds(182, 275, 118, 35);
-		cancelBtn.setBackground(new Color(0,122,251));
+		cancelBtn.setBackground(new Color(0,97,200));
 		cancelBtn.setOpaque(false);
 
 		sd.add(label);
