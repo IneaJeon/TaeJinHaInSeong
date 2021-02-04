@@ -49,8 +49,7 @@ public class LoginHeader extends JPanel{
 			public void actionPerformed(ActionEvent e) {
 				
 				if(CartPage.count != 0 && (MainFrame.body instanceof ChineseFoodPage || MainFrame.body instanceof CartPage)) {
-					System.out.println("확인");
-					PopUpPage.selectPopUp(mf, "images/popUpWithdraw.png");
+					PopUpPage.selectPopUp(mf, "images/popUpDeleteCart.png");
 					return;
 				}
 				
