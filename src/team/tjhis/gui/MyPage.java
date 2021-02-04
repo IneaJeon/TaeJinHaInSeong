@@ -109,7 +109,7 @@ public class MyPage extends JPanel {
 		JTextArea IdArea = new JTextArea();
 		IdArea.setSize(336, 30);
 		IdArea.setLocation(554, 292);
-		String IdText = "" + MemberDB.memberDB.get(index).getId();
+		String IdText = "" + MemberDB.memberDB.get(index).getId(); 
 		IdArea.append(IdText);
 		IdArea.setEditable(false);
 		
