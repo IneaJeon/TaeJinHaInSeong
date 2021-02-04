@@ -14,7 +14,6 @@ public class ChineseFoodPage extends JPanel {
 
 	private MainFrame mf;
 	private JPanel cfPage;
-	private int count;
 	
 	public ChineseFoodPage(){}
 	
@@ -67,7 +66,7 @@ public class ChineseFoodPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				PopUpPage.popUp(mf, "images/addCart.png");
-				count++;
+				CartPage.count++;
 			}
 	
 		});
@@ -96,11 +95,11 @@ public class ChineseFoodPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if(count == 0) {
+				if(CartPage.count == 0) {
 					PopUpPage.popUp(mf, "images/emptyCart.png");
 					
 				}else {					
-					ChangePage.changePanel(mf, cfPage, new CartPage(mf, count));
+					ChangePage.changePanel(mf, cfPage, new CartPage(mf));
 				}
 				
 			}

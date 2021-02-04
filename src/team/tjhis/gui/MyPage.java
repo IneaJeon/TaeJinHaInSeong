@@ -113,7 +113,6 @@ public class MyPage extends JPanel {
 		IdArea.append(IdText);
 		IdArea.setEditable(false);
 		
-
 		JButton updateButton = new JButton();
 		updateButton.setSize(150, 50);
 		updateButton.setLocation(736, 645);

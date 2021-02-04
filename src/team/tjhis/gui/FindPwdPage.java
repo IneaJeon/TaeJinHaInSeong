@@ -66,7 +66,7 @@ public class FindPwdPage extends JPanel {
 		
 		JButton signInbtn = new JButton();
 		signInbtn.setBounds(621, 430, 200, 50);
-		signInbtn.setOpaque(true);
+		signInbtn.setOpaque(false);
 		
 		this.add(idField);
 		this.add(nameField);
@@ -135,13 +135,17 @@ public class FindPwdPage extends JPanel {
 						isSuccess = true;
 						break;
 						
-						}
+					}
 					
 				}
 				
 				if(isSuccess) {
 					
 					ChangePage.changePanel(mf, op, np);
+					
+				} else {
+					
+					PopUpPage.popUp(mf, "images/updateIncomplete.PNG");
 					
 				}
 				

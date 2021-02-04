@@ -18,6 +18,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 	private MainFrame mf;
 	private JPanel cartPage;
 	
+	public static int count;
 	private int totalPrice;		// 총 주문금액 넣을 변수
 
 	UpdateCart updateCart = new UpdateCart();
@@ -27,7 +28,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 	public CartPage() {}
 
 	/* MainFrame 인스턴스를 매개변수로 가지는 생성자 */
-	public CartPage(MainFrame mf, int count) {
+	public CartPage(MainFrame mf) {
 
 		this.mf = mf;
 		this.cartPage = this;
@@ -64,6 +65,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 			
 			JButton minusBtn1 = new JButton("[-]");
 			minusBtn1.setBounds(973, 286, 20, 22);
+			minusBtn1.setBackground(new Color(204, 204, 204));
 			cartLabel.add(minusBtn1);
 			minusBtn1.addActionListener(new ActionListener() {
 				@Override
@@ -100,7 +102,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				updateCart.minusMenu(mf, cartPage, count);
+				updateCart.minusMenu(mf, cartPage);
 			}
 		});
 		
@@ -110,7 +112,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				updateCart.plusMenu(mf, cartPage, count);
+				updateCart.plusMenu(mf, cartPage);
 			}
 		});
 		
@@ -130,6 +132,7 @@ public class CartPage extends JPanel /* implements ActionListener */ {
 			@Override
 			public void actionPerformed(ActionEvent e) {				
 			
+				CartPage.count = 0;
 				PopUpPage.returnPopUp(mf, "images/popUpOrderCompleted.png");			
 			}			
 		});

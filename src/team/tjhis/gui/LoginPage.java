@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import team.tjhis.member.Login;
@@ -50,8 +51,7 @@ public class LoginPage extends JPanel {
 		idF.setBorder(null);
 
 		/* 비밀번호 필드 */
-		JTextField pwdF= new JTextField(10);
-		pwdF.setText("비밀번호");
+		JPasswordField pwdF= new JPasswordField(10);
 		pwdF.setSize(336,40);
 		pwdF.setLocation(525, 270);
 		pwdF.setBorder(null);

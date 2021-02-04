@@ -98,8 +98,9 @@ public class PopUpPage {
 		label.setBounds(0, 15, 350, 350);
 
 		JTextArea textArea = new JTextArea(text);
-		textArea.setSize(100, 20);
-		textArea.setLocation(130, 210);
+
+		textArea.setSize(150, 20);
+		textArea.setLocation(100, 200);
 		textArea.setEditable(false);
 		textArea.setBackground(new Color(245, 246, 247));
 
@@ -231,5 +232,62 @@ public class PopUpPage {
 		});
 		
 	}
+
+	
+	public static void selectPopUp(MainFrame mf, String str) {
+
+		Dialog sd = new Dialog(mf);
+		sd.setLayout(null);
+		sd.setBounds(563, 292, 350, 350);
+
+		Image image = new ImageIcon(str).getImage().getScaledInstance(350, 350, 0);
+		
+		JLabel label = new JLabel(new ImageIcon(image));
+		label.setBounds(0, 15, 350, 350);
+
+		/* 확인 버튼 */
+		JButton okBtn = new JButton("확인");
+		okBtn.setBounds(50, 275, 118, 35);
+		okBtn.setBackground(new Color(0,122,251));
+		okBtn.setOpaque(false);
+
+		/* 취소 버튼 */
+		JButton cancelBtn = new JButton("취소");
+		cancelBtn.setBounds(182, 275, 118, 35);
+		cancelBtn.setBackground(new Color(0,122,251));
+		cancelBtn.setOpaque(false);
+
+		sd.add(label);
+		sd.add(okBtn);
+		sd.add(cancelBtn);
+
+		sd.setVisible(true);
+
+		
+		/* 확인 버튼 누른 경우 */
+		okBtn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				sd.dispose();
+				CartPage.count = 0;
+				ChangePage.returnMainPage(mf, MainFrame.body);
+			}
+		});
+		
+		
+		/* 취소 버튼 누른 경우 */
+		cancelBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				sd.dispose();
+			}
+		});
+
+	}
+
 
 }//class
