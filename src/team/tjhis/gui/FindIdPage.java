@@ -20,6 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import team.tjhis.member.MemberDB;
 import team.tjhis.member.MemberDTO;
 
 public class FindIdPage extends JPanel {
@@ -32,7 +33,8 @@ public class FindIdPage extends JPanel {
 
 	public FindIdPage(MainFrame mf, JPanel np) {
 
-		String dbFile = "src/team/tjhis/memberDB.txt";
+		MemberDB.input();
+		
 		this.mf = mf;
 		this.op = this;
 		this.np = np;
@@ -103,41 +105,27 @@ public class FindIdPage extends JPanel {
 		});
 		
 		btn.addActionListener(new ActionListener() {
-			ObjectInputStream objIn = null;
+			
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				try {
-					objIn = new ObjectInputStream(new BufferedInputStream(new FileInputStream(dbFile)));
-
-					while (true) {
-						MemberDTO dto = (MemberDTO) objIn.readObject();
-						if (nameTf.getText().equals(dto.getName()) && phoneNumTf.getText().equals(dto.getPhoneNum())) {
-							String text = "    " + dto.getId() + "    ";
-							PopUpPage.findIdSuccessPopUp(mf, "images/IdInformation.png", text);
-							ChangePage.changePanel(mf, op, np);
-							break;
+				
+						for(int i = 0 ; i < MemberDB.memberDB.size(); i++) {
+							
+							if (nameTf.getText().equals(MemberDB.memberDB.get(i).getName()) && phoneNumTf.getText().equals(MemberDB.memberDB.get(i).getPhoneNum())) {
+								String text = "    " + MemberDB.memberDB.get(i).getId() + "    ";
+								PopUpPage.findIdSuccessPopUp(mf, "images/idFind.png", text);
+								ChangePage.changePanel(mf, op, np);
+								break;
+							} else {
+								PopUpPage.popUp(mf, "images/updateIncomplete.png");
+								break;
+							}
 						}
 					}
  
-				} catch (EOFException e1) {
-					PopUpPage.popUp(mf, "images/updateIncomplete.png");
-				} catch (FileNotFoundException e1) {
-					e1.printStackTrace();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				} catch (ClassNotFoundException e1) {
-					e1.printStackTrace();
-				} finally {
-					if (objIn != null) {
-						try {
-							objIn.close();
-						} catch (IOException e1) {
-							e1.printStackTrace();
-						}
-					}
-				}
-			}
+				
+			
 		});
 	}
 }
