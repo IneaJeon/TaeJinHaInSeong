@@ -98,6 +98,7 @@ public class PopUpPage {
 		label.setBounds(0, 15, 350, 350);
 
 		JTextArea textArea = new JTextArea(text);
+
 		textArea.setSize(150, 20);
 		textArea.setLocation(100, 200);
 		textArea.setEditable(false);
@@ -231,6 +232,7 @@ public class PopUpPage {
 		});
 		
 	}
+
 	
 	public static void selectPopUp(MainFrame mf, String str) {
 
@@ -286,5 +288,6 @@ public class PopUpPage {
 		});
 
 	}
+
 
 }//class
