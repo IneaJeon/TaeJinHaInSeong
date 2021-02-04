@@ -6,17 +6,7 @@ import team.tjhis.order.OrderManager;
 
 public class Application {
 
-	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		// MemberDB 인스턴스
-		MemberDB db = new MemberDB();
-		// Manager 인스턴스들
-		SignInManager signInManager = new SignInManager();
-		SignUpManager signUpManager = new SignUpManager();
-		MyPageManager myPageManager = new MyPageManager();
-		OrderManager orderManager = new OrderManager();
-		
+//	public static void main(String[] args) {
 		
 		// 반복문으로 프로그램 종료 될때까지 어떤 함수를 실행 해야할지 선택하는 알고리즘 설계
 		// 입력하면 해당하는 메소드를 MemberManager 인스턴스에서 골라 작성
@@ -72,6 +62,6 @@ public class Application {
 //		}
 //		
 
-	}
+//	}
 
 }

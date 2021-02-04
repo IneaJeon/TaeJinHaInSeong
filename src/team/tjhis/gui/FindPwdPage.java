@@ -20,6 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import team.tjhis.member.MemberDB;
 import team.tjhis.member.MemberDTO;
 
 public class FindPwdPage extends JPanel {
@@ -28,12 +29,15 @@ public class FindPwdPage extends JPanel {
 	JPanel op;
 	JPanel np;
 	boolean isSuccess;
+	int index = 0;
 	
-	public FindPwdPage(MainFrame mf/*, SignInPage sip*/) {
+	public FindPwdPage(MainFrame mf, JPanel sip) {
 		
 		this.mf = mf;
 		this.op = this;
-//		this.np = sip;
+		this.np = sip;
+		
+		MemberDB.input();		
 		
 		this.setLayout(null);
 		this.setBounds(0, 120, 1440, 790);
@@ -62,7 +66,7 @@ public class FindPwdPage extends JPanel {
 		
 		JButton signInbtn = new JButton();
 		signInbtn.setBounds(621, 430, 200, 50);
-		signInbtn.setOpaque(false);
+		signInbtn.setOpaque(true);
 		
 		this.add(idField);
 		this.add(nameField);
@@ -120,64 +124,28 @@ public class FindPwdPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				ObjectInputStream objIn = null;
-				try {
+				for(int i = 0 ; i < MemberDB.memberDB.size() ; i++) {
 					
-					MemberDTO temp = new MemberDTO();
-					objIn = new ObjectInputStream(new BufferedInputStream(new FileInputStream(MainFrame.PATH)));
-					
-					while(true) {
-						// 파일에서 회원 데이터를 객채 하나단위로 읽어와서 temp에 저장
-						temp = (MemberDTO)objIn.readObject();
-						// GUI에서 입력한 아이디, 이름, 폰번호가 회원 데이터랑 모두 일치할 시
-						if(temp.getId().equals(idField.getText())
-								&& temp.getName().equals(nameField.getText())
-								&& temp.getPhoneNum().equals(phoneNumField.getText())) {
-							// 성공 팝업을 띄워주고 메세지로 비밀번호를 알려줌
-							PopUpPage.popUp(mf, "회원님의 비밀번호는 [" + temp.getPwd() + "] 입니다.");
-							// 성공 여부 변경
-							isSuccess = true;
-							break;
-						}
-					}
-				} catch (EOFException e1) {
-					// 일치하는 데이터를 찾지 못하고 파일의 끝을 만나면 실패 팝업 뛰워줌
-					PopUpPage.popUp(mf, "입력하신 정보와 일치하는 회원이 존재하지 않습니다.");
-					
-				} catch (FileNotFoundException e1) {
-					
-					e1.printStackTrace();
-					
-				} catch (IOException e1) {
-					
-					e1.printStackTrace();
-					
-				} catch (ClassNotFoundException e1) {
-					
-					e1.printStackTrace();
-					
-				} finally { // 자원반납
-					
-					if(objIn != null) {
+					if(MemberDB.memberDB.get(i).getId().equals(idField.getText())
+							&& MemberDB.memberDB.get(i).getName().equals(nameField.getText())
+							&& MemberDB.memberDB.get(i).getPhoneNum().equals(phoneNumField.getText())) {
+						// 성공 팝업을 띄워주고 메세지로 비밀번호를 알려줌
+						PopUpPage.findIdSuccessPopUp(mf, "images/pwdFind.PNG", MemberDB.memberDB.get(index).getPwd());
+						// 성공 여부 변경
+						isSuccess = true;
+						break;
 						
-						try {
-							
-							objIn.close();
-							
-						} catch (IOException e1) {
-							
-							e1.printStackTrace();
-							
 						}
-						
-					}
 					
-				} // 성공했으면 매개변수로 넘겨받은 로그인페이지로 이동
-				if(isSuccess) {
-					ChangePage.changePanel(mf, op, np);
 				}
 				
-			}
+				if(isSuccess) {
+					
+					ChangePage.changePanel(mf, op, np);
+					
+				}
+				
+			}	
 			
 		});
 		

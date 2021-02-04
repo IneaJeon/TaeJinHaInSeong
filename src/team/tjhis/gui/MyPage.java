@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import team.tjhis.member.MemberDB;
 import team.tjhis.member.MemberDTO;
 import team.tjhis.member.UpdateProfile;
 
@@ -42,15 +43,27 @@ public class MyPage extends JPanel {
 
 	MainFrame mf;
 	JPanel op;
+	int index = 0;
 
 	public MyPage() {
 	}
 
 	public MyPage(MainFrame mf) {
 
-		MemberDTO md = new MemberDTO();
+		MemberDB.input();
+		
+		for(int i = 0 ; i < MemberDB.memberDB.size() ; i++) {
+			
+			if(MemberDB.memberDB.get(i).getNo() == MemberDB.logNo) {
+				
+				index = i;
+				break;
+				
+			}
+			
+		}
 
-		String dbFile = "src/team/tjhis/memberDB.txt";
+		String dbFile = "src/team/tjhis/member/members.txt";
 
 		this.mf = mf;
 		this.op = this;
@@ -87,14 +100,14 @@ public class MyPage extends JPanel {
 		JTextArea nameArea = new JTextArea();
 		nameArea.setSize(336, 30);
 		nameArea.setLocation(554, 230);
-		String nameText = "" + md.getName();
+		String nameText = "" + MemberDB.memberDB.get(index).getName();
 		nameArea.append(nameText);
 		nameArea.setEditable(false);
 
 		JTextArea IdArea = new JTextArea();
 		IdArea.setSize(336, 30);
 		IdArea.setLocation(554, 292);
-		String IdText = "" + md.getId();
+		String IdText = "" + MemberDB.memberDB.get(index).getId();
 		IdArea.append(IdText);
 		IdArea.setEditable(false);
 
@@ -108,52 +121,36 @@ public class MyPage extends JPanel {
 		withdrawButton.setLocation(552, 645);
 		withdrawButton.setOpaque(false);
 
-		this.add(lb);
 		this.add(pwdTf);
 		this.add(pwdConfirmTf);
 		this.add(phoneNumTf);
 		this.add(addrTf);
+		this.add(IdArea);
+		this.add(nameArea);
+		this.add(lb);
 		this.add(updateButton);
 		this.add(withdrawButton);
+		
 
 		updateButton.addActionListener(new ActionListener() {
-			ObjectInputStream objIn = null;
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				try {
-					objIn = new ObjectInputStream(new BufferedInputStream(new FileInputStream(dbFile)));
+				
+				if (pwdTf.getText().equals(pwdConfirmTf.getText()) && !(phoneNumTf.getText().isEmpty())
+						&& !(addrTf.getText().isEmpty())) {
 
-					while (true) {
-						MemberDTO md = (MemberDTO) objIn.readObject();
-						if (pwdTf.getText().equals(pwdConfirmTf.getText()) && !(phoneNumTf.getText().isEmpty())
-								&& !(addrTf.getText().isEmpty())) {
-
-							md.setPwd(pwdTf.getText());
-							md.setPhoneNum(phoneNumTf.getText());
-							md.setAddr(addrTf.getText());
-							PopUpPage.returnPopUp(mf, "images/updateComplete.png");
-							return;
-						}
-					}
-
-				} catch (FileNotFoundException e1) {
-					e1.printStackTrace();
-				} catch (IOException e1) {
+					MemberDB.memberDB.get(index).setPwd(pwdTf.getText());
+					MemberDB.memberDB.get(index).setPhoneNum(phoneNumTf.getText());
+					MemberDB.memberDB.get(index).setAddr(addrTf.getText());
+					PopUpPage.returnPopUp(mf, "images/updateComplete.png");
+					
+				} else {
+					
 					PopUpPage.popUp(mf, "images/updateIncomplete.png");
-				} catch (ClassNotFoundException e1) {
-					e1.printStackTrace();
-				} finally {
-					if (objIn != null) {
-						try {
-							objIn.close();
-						} catch (IOException e1) {
-							e1.printStackTrace();
-						}
-					}
-
+					
 				}
-
+				
 			}
 
 		});

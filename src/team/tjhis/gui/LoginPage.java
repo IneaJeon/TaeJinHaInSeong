@@ -1,19 +1,19 @@
 package team.tjhis.gui;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import team.tjhis.member.Login;
 
 
 public class LoginPage extends JPanel {
@@ -21,6 +21,8 @@ public class LoginPage extends JPanel {
 	private MainFrame mf;
 	private JPanel loginPage;
 	private int count;
+	Login login = new Login();
+	boolean isSuccess = false;
 
 	public LoginPage() {}
 
@@ -84,15 +86,22 @@ public class LoginPage extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ChangePage.changePanel(mf, loginPage, new MainPage(mf));
+				isSuccess = login.login(idF.getText(), pwdF.getText());
+				if(isSuccess) {
+					PopUpPage.returnPopUp(mf, "", isSuccess);
+				} else {
+					PopUpPage.popUp(mf, "");
+				}
+				
 			}
+			
 		});
 		
 		idBtn.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ChangePage.changePanel(mf, loginPage, new FindIdPage(mf, null));				
+				ChangePage.changePanel(mf, loginPage, new FindIdPage(mf, loginPage));				
 			}
 		});
 		
@@ -100,7 +109,7 @@ public class LoginPage extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ChangePage.changePanel(mf, loginPage, new FindPwdPage(mf));				
+				ChangePage.changePanel(mf, loginPage, new FindPwdPage(mf, loginPage));				
 			}
 		});
 		

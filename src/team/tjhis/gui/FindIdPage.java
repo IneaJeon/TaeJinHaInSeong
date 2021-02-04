@@ -30,7 +30,7 @@ public class FindIdPage extends JPanel {
 	
 	public FindIdPage() {}
 
-	public FindIdPage(MainFrame mf, LoginPage np) {
+	public FindIdPage(MainFrame mf, JPanel np) {
 
 		String dbFile = "src/team/tjhis/memberDB.txt";
 		this.mf = mf;

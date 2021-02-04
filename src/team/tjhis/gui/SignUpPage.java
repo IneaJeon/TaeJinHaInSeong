@@ -1,23 +1,19 @@
 package team.tjhis.gui;
 
-import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.BufferedInputStream;
-import java.io.EOFException;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import team.tjhis.member.MemberDB;
+import team.tjhis.member.SignUp;
 
 public class SignUpPage extends JPanel {
 
@@ -32,6 +28,7 @@ public class SignUpPage extends JPanel {
 
 		this.mf = mf;
 		this.signUpPage = this;
+		SignUp su = new SignUp();
 
 		this.setLayout(null);
 		this.setBounds(0, 120, 1440, 790);
@@ -87,6 +84,11 @@ public class SignUpPage extends JPanel {
 		signUpBtn.setSize(205, 50);
 		signUpBtn.setLocation(620, 595);
 		signUpBtn.setOpaque(false);
+		
+		JButton sbtn = new JButton("확인");
+		sbtn.setSize(100, 45);
+		sbtn.setLocation(915, 195);
+		sbtn.setOpaque(false);
 
 		this.add(nameF);
 		this.add(idF);
@@ -96,15 +98,37 @@ public class SignUpPage extends JPanel {
 		this.add(adrF);
 		this.add(logoLabel);
 		this.add(signUpBtn);
+		this.add(sbtn);
 
 		signUpBtn.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				su.signUpStart(idF.getText(), pwdF.getText(), nameF.getText(), phonF.getText(), adrF.getText());
 				ChangePage.changePanel(mf, signUpPage, new MainPage(mf));
 				PopUpPage.popUp(mf, "images/welcome.png");
 			}
 		});
+		
+		sbtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				for(int i = 0 ; i < MemberDB.memberDB.size() ; i++) {
+					
+					if(MemberDB.memberDB.get(i).getId().equals(idF.getText())) {
+						
+						PopUpPage.popUp(mf, ""); // 중복 경고 메세지
+						
+					}
+					
+				}
+				
+			}
+		});
+		
 		nameF.addMouseListener(new MouseAdapter() {
 			
 			@Override
@@ -134,7 +158,6 @@ public class SignUpPage extends JPanel {
 				}
 			}
 		});
-
 
 		pwdDF.addMouseListener(new MouseAdapter() {
 

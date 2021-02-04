@@ -15,6 +15,9 @@ public class ChangePage {
 	
 	public static void returnMainPage(MainFrame mf, JPanel op) {
 		// 메인프레임, 현재 페이지 2개를 입력받아
+		if(op instanceof ChineseFoodPage) {
+			
+		}
 		mf.remove(MainFrame.body); // 현재 페이지를 메인프레임에서 지우고
 		MainFrame.body = new MainPage(mf);
 		mf.add(MainFrame.body); // 메인페이지를 메인프레임에 붙인 뒤

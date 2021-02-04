@@ -31,52 +31,33 @@ public class Login {
 //		return false;
 //	}// login
 
-	public void login(MemberDB db) {
-
-		Scanner sc = new Scanner(System.in);
-
-		System.out.print("아이디 입력: ");
-		String id = sc.nextLine();
-		System.out.print("비밀번호 입력 : ");
-		String pwd = sc.nextLine();
+	public boolean login(String id, String pwd) {
+		
+		boolean isSuccess = false;
+		
+		MemberDB.input();
 
 		/* 회원 정보를 파일로 저장하기 위한 출력 */
-		ObjectInputStream objIn = null;
-		MemberDTO mb = null;
-		
-		try {
 			
-			objIn = new ObjectInputStream(new BufferedInputStream
-					(new FileInputStream("src/team/tjhis/member/Application.text")));
+		for(int i = 0 ; i < MemberDB.memberDB.size() ; i++) {
 			
-			while(true) {
+			if(MemberDB.memberDB.get(i).getId().equals(id) && MemberDB.memberDB.get(i).getPwd().equals(pwd)) {
 				
-				if(!mb.getId().equals(id) && !mb.getPwd().equals(pwd)) {
-					System.out.println("아이디와 비밀번호가 올바르지 않습니다.");
-				} else {
-					System.out.println("로그인 성공");
-				}break;
+				MemberDB.logNo = MemberDB.memberDB.get(i).getNo();
+				isSuccess = true;
+				break;
+				
+			} else {
+				
+				isSuccess = false;
+				
 			}
-					
-		} catch (FileNotFoundException e) {
 			
-			System.out.println("파일을 찾을 수 업습니다.");
-			e.printStackTrace();
-			
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-			
-		} finally {
-			if(objIn != null) {
-				try {
-					objIn.close();
-				} catch (IOException e) {
-					
-					e.printStackTrace();
-				}
-			}
 		}
+		
+		MemberDB.output();
+		return isSuccess;
+
 
   }// login
 }// Login

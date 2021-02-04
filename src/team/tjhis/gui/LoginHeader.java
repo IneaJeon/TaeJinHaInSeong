@@ -59,7 +59,7 @@ public class LoginHeader extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-//				ChangePage.changePanel(mf, MainFrame.body, new MyPage(mf));
+				ChangePage.changePanel(mf, MainFrame.body, new MyPage(mf));
 				
 			}
 			
