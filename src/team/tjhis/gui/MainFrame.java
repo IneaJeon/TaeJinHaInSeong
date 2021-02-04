@@ -22,7 +22,7 @@ public class MainFrame extends JFrame{
 		header = new LogoutHeader(this);
 		footer = new Footer(this);
 		body = new MainPage(this);
-		this.add(body); // 첫 화면(메인 페이지)를 붙인다
+		this.add(body); // 첫 화면(메인 페이지)를 붙인다 
 		
 //		new SignUpPage(this);
 //		new LoginPage(this);		
@@ -41,7 +41,7 @@ public class MainFrame extends JFrame{
 		
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		this.setResizable(false);
+		this.setResizable(false);
 		
 	}
 	
