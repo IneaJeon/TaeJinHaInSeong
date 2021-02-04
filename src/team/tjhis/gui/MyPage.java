@@ -140,12 +140,12 @@ public class MyPage extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				
 				if (pwdTf.getText().equals(pwdConfirmTf.getText()) && !(phoneNumTf.getText().isEmpty())
-						&& !(addrTf.getText().isEmpty())) {
+						&& !(addrTf.getText().isEmpty()) && !(pwdTf.getText().isEmpty()) && !(pwdConfirmTf.getText().isEmpty())) {
 
 					MemberDB.memberDB.get(index).setPwd(pwdTf.getText());
 					MemberDB.memberDB.get(index).setPhoneNum(phoneNumTf.getText());
 					MemberDB.memberDB.get(index).setAddr(addrTf.getText());
-					PopUpPage.returnPopUp(mf, "images/updateComplete.png");
+					PopUpPage.popUp(mf, "images/updateComplete.png");
 					
 				} else {
 					

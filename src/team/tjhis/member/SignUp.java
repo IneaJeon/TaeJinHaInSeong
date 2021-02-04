@@ -16,8 +16,6 @@ public class SignUp {
 		 
 		MemberDB.output();
 		 
-		System.out.println("회원가입 완료 됐습니다.");
-		 
 	}
 		 
 }
