@@ -123,7 +123,7 @@ public class FindIdPage extends JPanel {
 					}
 				}
 
-				if (isSuccess = true) {
+				if (isSuccess == true) {
 					ChangePage.changePanel(mf, op, np);
 
 				} else {
